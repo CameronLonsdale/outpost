@@ -1,0 +1,99 @@
+Carbine 5
+AR 4
+SMG 4
+PDW 3
+Sniper 4
+Shotgun 3
+BR 3
+MG 4
+Total 30
+
+M4A1 | Carbine
+A all rounder fully automatic Carbine, good at most ranges
+Scar-L | Assault Rifle
+A stealthy fully automatic Assault Rifle, great at long range
+UMP-45 | SMG
+A beastly fully automatic SMG, good at close to medium range
+USAS-12 | Shotgun
+A epic fully automatic Shotgun, great for close quaters
+XM8 | Assault Rifle
+A powerful fully automatic Assault Rifle, great for medium range
+SKS | Carbine
+A sniper-like semi-automatic Carbine, good at long range
+Stoner 63 | MG
+A fully automatic bullet blasting Mashine Gun, good at close quaters
+SV-98 | Sniper
+A powerful boltaction Sniper Rifle, good at long range
+ACR | Assault Rifle
+A compact fully automatic Assault Rifle, great for medium range and close quaters.
+FN-FAL | Battle Rifle
+A powerfull fully automatic battle rifle, good at long range
+AKS-74U | Carbine
+Another all rounder fullt automatic Carbine, good at most ranges
+870 MCS | Shotgun
+An unstoppable hitting force of a shotgun, great for clse quaters
+M98B | Sniper
+The best boltaction sniper rifle for very long range enagagements
+M60 | MG
+A huge automatic Mashine Gun, good with prolonged fire at medium range
+KAC PDW | PDW
+A sneaky little automatic PDW, good for short to medium range
+MP7 | SMG
+A quick little automatic SMG, very capable at short ranges
+SG-553 | Carbine
+The equalibrium between damage, accuracy and fire rate, another automatic Carbine
+AUG-A3 | Assault Rifle
+The All rounder of automatic Assault Rifles, good at all ranges
+Mtar | Carbine
+A powerfull automatic Carbine, very good at close ranges
+CZW-438 | PDW
+A weak automatic PDW with lots of ammo, good at all ranges
+HK-417 | Battle Rifle
+A sniper-like semi-automatic Battle Rifle, good at long range
+Mangpul-PDR | PDW
+A all-rounder of the sutomatic PDW's, good at all ranges
+SCAR-H | Battle Rifle
+The high powered Battle Rifle version of the SCAR-L, good at long ranges
+M1014 | Shotgun
+A powerfull semi-automatic shotgun designed for close range
+M110 | Sniper Rifle
+An all-round semi-automatic sniper rifle, good for medium to long range
+FAMAE-SAF | SMG
+A quick automatic SMG, very good at close quaters
+QBB-95 | MG
+The all rounder of the MG class, very capable at almost any range
+VSS | Sniper Rifle
+The close range automatic sniper rifle, who's onle weakness is sniping
+M249 | MG
+A powerfull Machine Gun good at close to medium range
+PP-19 | SMG
+If you'd combine an MG with a PDW, you'd get this, good at most ranges
+
+Semi 2
+Auto 3
+Rev 2
+Special 4
+Total 11
+
+M1911 | Semi
+A powerfull semi-automatic Handgun, good at close to medium ranges
+M9 | Semi
+A quick sneaky semi-automatic Handgun, good at close ranges
+93R | Auto
+A burst Mashine Pistol, very capable at close range
+G18 | Auto
+A automatic Machine Pistol, very good at close range
+.44 Magnum | Revolver
+A powerfull Revolver, good at all ranges, a perfect finisher
+AT4 | Special
+A one time use powerful rocket launcher, good at killing everything, everywhere
+Health Rod | Special
+Take care of your comrads and yourself, by healing them
+Ammo Pod | Special
+Give your team some ammunition, so they can shoot more bullets
+Proximity Mine | Special
+Get too close and it will blow you away... literally
+MP412 REX |Revolver
+A Rapid Fire revolver, good at close to medium range
+MP9-N | Auto
+A powerfull Machine Pistol, only good at very close quaters

@@ -1,0 +1,17 @@
+#pragma strict
+
+class test extends MonoBehaviour {
+	function Start () {
+		ObjectSaver.Load("lol.txt", saveTest);
+		
+		Debug.Log(saveTest.i);
+		Debug.Log(saveTest.k);
+	}
+}
+
+static class saveTest {
+	var i:int = 1;
+	var j:float = 2.547;
+	var s:String = "lol";
+	var k:KeyCode = KeyCode.K;
+}

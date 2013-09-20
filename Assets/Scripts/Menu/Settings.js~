@@ -1,0 +1,535 @@
+#pragma strict
+#pragma downcast
+import System.IO;
+import System.Reflection;
+import System.CodeDom.Compiler;
+import System.Text;
+import System;
+
+static var NetworkManagerPrefab:NetworkManager;
+
+static class AccountSettings {
+	var username:String = "";
+	
+	function Save() {
+		ObjectSaver.Save("Settings" + Path.DirectorySeparatorChar + "account.conf", AccountSettings);
+	}
+	
+	function Load() {
+		if (File.Exists("Settings" + Path.DirectorySeparatorChar + "account.conf")) {
+			ObjectSaver.Load("Settings" + Path.DirectorySeparatorChar + "account.conf", AccountSettings);
+		}
+		else {
+			Save();
+		}
+	}
+}
+
+static class Controls {
+	var Sensitivity:float = 100;
+	
+	var jump:KeyCode = KeyCode.Space;
+	var sprint:KeyCode = KeyCode.LeftShift;
+	var crouch:KeyCode = KeyCode.LeftControl;
+	var action:KeyCode = KeyCode.E;
+	var stp:KeyCode = KeyCode.Alpha1;
+	var sts:KeyCode = KeyCode.Alpha2;
+	var quickswap:KeyCode = KeyCode.Q;
+	var grenade:KeyCode = KeyCode.G;
+	var reload:KeyCode = KeyCode.R;
+	var chat:KeyCode = KeyCode.T;
+	var fire:KeyCode = KeyCode.Mouse0;
+	var aim:KeyCode = KeyCode.Mouse1;
+	
+	var normalSprint:int = 0;
+	
+	
+	function Save() {
+		ObjectSaver.Save("Settings" + Path.DirectorySeparatorChar + "controls.conf", Controls);
+	}
+	
+	function Load() {
+		if (File.Exists("Settings" + Path.DirectorySeparatorChar + "controls.conf")) {
+			ObjectSaver.Load("Settings" + Path.DirectorySeparatorChar + "controls.conf", Controls);
+		}
+		else {
+			Save();
+		}
+	}
+	
+	function Reset() {
+		Sensitivity = 100;
+		
+		jump = KeyCode.Space;
+		sprint = KeyCode.LeftShift;
+		crouch = KeyCode.LeftControl;
+		action = KeyCode.E;
+		stp = KeyCode.Alpha1;
+		sts = KeyCode.Alpha2;
+		quickswap = KeyCode.Q;
+		grenade = KeyCode.G;
+		reload = KeyCode.R;
+		chat = KeyCode.T;
+		fire = KeyCode.Mouse0;
+		aim = KeyCode.Mouse1;
+	}
+	
+	function AssignKey(key:KeyCode) {
+		if (key == KeyCode.None){
+			key = GetAnyKey();
+			if (key != KeyCode.None) {
+				if (!CheckDoubles(key)) {
+					key = KeyCode.None;
+				}
+			}
+		}
+		return key;
+	}
+	
+	function GetAnyKey() {
+		var tmp:KeyCode;
+		
+		for (tmp in KeyCode.GetValues(KeyCode)) {
+			if (Input.GetKeyDown(tmp)) {
+				return tmp;
+			}
+		}
+		return KeyCode.None;
+	}
+	
+	function CheckDoubles(key:KeyCode) {
+		if ("" + key == "" + jump || "" + key == "" + sprint || "" + key == "" + crouch || "" + key == "" + action) {
+			return false;
+		}
+		if ("" + key == "" + reload || "" + key == "" + chat || "" + key == "" + fire || "" + key == "" + aim) {
+			return false;
+		}
+		if ("" + key == "" + stp || "" + key == "" + sts || "" + key == "" + quickswap || "" + key == "" + grenade) {
+			return false;
+		}
+		return true;
+	}
+}
+
+static class VideoSettings {
+	var fullScreen:boolean = false;
+	
+	var resolutions:Vector2[] = [
+		Vector2(854, 480),
+		Vector2(960, 540),
+		Vector2(1024, 720),
+		Vector2(1366, 768),
+		Vector2(1600, 900),
+		Vector2(1920, 1080),
+		Vector2(2048, 1152),
+		Vector2(2560, 1440)
+	];
+	var resolution:int = 0;
+	
+	var qualityLevels:String[] = [
+		"Miss",
+		"Normal",
+		"Mini-Crit",
+		"Crit",
+		"Uber-Crit",
+		"Instakill"
+	];
+	var qualityLevel:int = 5;
+	
+	var shadowDistance:float = 20;
+	
+	var antiAliasings:int[] = [
+		0,
+		2,
+		4,
+		8
+	];
+	var antiAliasing:int = 0;
+	
+	var vSyncs:String[] = [
+		"Don't Sync",
+		"Single Buffer",
+		"Double Buffer"
+	];
+	
+	var vSync:int = 0;
+	
+	var anisotropicFiltering:AnisotropicFiltering = AnisotropicFiltering.Disable;
+	
+	
+	var textureMipMaps:String[] = [
+		"Full",
+		"Half",
+		"Quater"
+	];
+	var textureMipMapLevel:int = 0;
+	
+	function Apply() {
+		//Set resolution
+		Screen.SetResolution(resolutions[resolution].x,  resolutions[resolution].y, fullScreen);
+		
+		//Set overall quality level
+		QualitySettings.SetQualityLevel(qualityLevel);
+		//Set individual quality levels
+		QualitySettings.shadowDistance = shadowDistance;
+		QualitySettings.antiAliasing = antiAliasing;
+		QualitySettings.vSyncCount = vSync;
+		QualitySettings.anisotropicFiltering = anisotropicFiltering;
+		QualitySettings.masterTextureLimit = textureMipMapLevel;
+	}
+	
+	function Save() {
+		ObjectSaver.Save("Settings" + Path.DirectorySeparatorChar + "video.conf", VideoSettings);
+	}
+	
+	function Load() {
+		if (File.Exists("Settings" + Path.DirectorySeparatorChar + "video.conf")) {
+			ObjectSaver.Load("Settings" + Path.DirectorySeparatorChar + "video.conf", VideoSettings);
+		}
+		else {
+			Save();
+		}
+	}
+}
+
+static class SoundSettings {
+	var speakerMode:AudioSpeakerMode = AudioSpeakerMode.Stereo;
+	var volume:float = 50;
+	
+	function Apply() {
+		AudioSettings.speakerMode = speakerMode;
+		AudioListener.volume = Mathf.Clamp01(volume/100);
+	}
+	
+	function Save() {
+		ObjectSaver.Save("Settings" + Path.DirectorySeparatorChar + "audio.conf", SoundSettings);
+	}
+	
+	function Load() {
+		if (File.Exists("Settings" + Path.DirectorySeparatorChar + "video.conf")) {
+			ObjectSaver.Load("Settings" + Path.DirectorySeparatorChar + "video.conf", VideoSettings);
+		}
+		else {
+			Save();
+		}
+	}
+}
+
+static class ServerSettings {
+	var nextLevel:int = 0;
+	var gameMode:int = 0;
+	
+	//Timings
+	var gameStartTime:float = 0;
+	var spawnTime:float = 5;
+	
+	var deathCamTime:float = 3;
+	
+	var winScreenTime:float = 8;
+	
+	//Other
+	var killGoal:int = 100;
+	
+	function Save() {
+		ObjectSaver.Save("Settings" + Path.DirectorySeparatorChar + "server.conf", ServerSettings);
+	}
+	
+	function Load() {
+		if (File.Exists("Settings" + Path.DirectorySeparatorChar + "server.conf")) {
+			ObjectSaver.Load("Settings" + Path.DirectorySeparatorChar + "server.conf", ServerSettings);
+		}
+		else {
+			Save();
+		}
+	}
+}
+
+static var KillGoal:int = 100;
+static var SelectedMain:int = 0;
+static var SelectedSecondary:int = 0;
+static var SelectedMainClass:GunClassMain;
+static var SelectedSecondaryClass:GunClassSecondary;
+static var GunsMain:Gun[];
+static var GunsSecondary:Gun[];
+static var GrenadeType:int = 0;
+
+static var Sensitivity:float = 100;
+static var StartSpawnTime:int = 0;
+static var RespawnTime:int = 5;
+static var WinScreenTime:int = 8;
+static var KillAddTime:int = 1;
+static var GameMode:int = 0;
+static var SceneToLoad:int = 0;
+static var DeathTime:int = 3;
+
+static var username:String = "OfflinePlayer";
+static var password:String = "";
+static var email:String = "";
+static var loginid:int = -1;
+static var ticket:String = "";
+static var secureCode:String = "";
+
+static function LoadLoadouts() {
+	if (!File.Exists(Application.dataPath + "/Loadouts.txt")) {
+		File.Create(Application.dataPath + "/Loadouts.txt");
+		SaveLoadouts();
+	}
+	var fr:StreamReader = new StreamReader(Application.dataPath + "/Loadouts.txt");
+	try {
+		SelectedMainClass = System.Enum.ToObject(typeof(GunClass), Mathf.Clamp(parseInt(fr.ReadLine()), 0, 8));
+		SelectedSecondaryClass = System.Enum.ToObject(typeof(GunClass), Mathf.Clamp(parseInt(fr.ReadLine()), 9, 13));
+		SelectedMain = parseInt(fr.ReadLine());
+		SelectedSecondary = parseInt(fr.ReadLine());
+		GrenadeType = parseInt(fr.ReadLine());
+		var tmpGun:Gun;
+		var tmpOutput:String[];
+		for (tmpGun in GunsMain) {
+			tmpOutput = fr.ReadLine().Split(";"[0]);
+			tmpGun.Addons[0] = parseInt(tmpOutput[0]);
+			tmpGun.Addons[1] = parseInt(tmpOutput[1]);
+			tmpGun.Addons[2] = parseInt(tmpOutput[2]);
+		}
+		for (tmpGun in GunsSecondary) {
+			tmpOutput = fr.ReadLine().Split(";"[0]);
+			tmpGun.Addons[0] = parseInt(tmpOutput[0]);
+			tmpGun.Addons[1] = parseInt(tmpOutput[1]);
+			tmpGun.Addons[2] = parseInt(tmpOutput[2]);
+		}
+		fr.Close();
+	}
+	catch (err) {
+		fr.Close();
+		SaveLoadouts();
+	}
+}
+
+static function SaveLoadouts() {
+	var fw:StreamWriter = new StreamWriter(Application.dataPath + "/Loadouts.txt");
+	fw.WriteLine("" + parseInt(SelectedMainClass));
+	fw.WriteLine("" + parseInt(SelectedSecondaryClass));
+	fw.WriteLine("" + SelectedMain);
+	fw.WriteLine("" + SelectedSecondary);
+	fw.WriteLine("" + GrenadeType);
+	var tmpGun:Gun;
+	for (tmpGun in GunsMain) {
+		fw.WriteLine(tmpGun.Addons[0] + ";" + tmpGun.Addons[1] + ";" + tmpGun.Addons[2]);
+	}
+	for (tmpGun in GunsSecondary) {
+		fw.WriteLine(tmpGun.Addons[0] + ";" + tmpGun.Addons[1] + ";" + tmpGun.Addons[2]);	
+	}
+	fw.Close();
+}
+
+//Saves/Loads public variables from a static class
+static class ObjectSaver {
+	function Save(path:String, T:Type) {
+		var fields:FieldInfo[] = T.GetFields(BindingFlags.Public | BindingFlags.Static);
+		
+		var lines:String = "";
+		for (var field:FieldInfo in fields) {
+			if (IsSupported(field.FieldType)) {
+				lines += ToString(field) + "\n";
+			}
+		}
+		
+		Directory.CreateDirectory(Path.GetDirectoryName(path));
+		File.WriteAllText(path, lines);
+	}
+	
+	function Load(path:String, T:Type) {
+		var lines:String[] = File.ReadAllLines(path);
+		for (var line:String in lines) {
+			FromString(T, line);
+		}
+	}
+	
+	private function IsSupported(T:Type) {
+		if (T == int || T == float || T == String || T == boolean || T.IsEnum) {
+			return true;
+		}
+		return false;
+	}
+	
+	private function ToString(field:FieldInfo) {
+		return field.Name + " : " + field.GetValue(null);
+	}
+	
+	private function FromString(type:Type, line:String) {
+		var split:String[] = line.Split([" : "] as String[], 2, StringSplitOptions.RemoveEmptyEntries);
+		if (split.length == 2) {
+			var field:FieldInfo = type.GetField(split[0]);
+			
+			switch (field.FieldType) {
+				case int:
+					field.SetValue(null, parseInt(split[1]));
+				break;
+				case float:
+					field.SetValue(null, parseFloat(split[1]));
+				break;
+				case String:
+					field.SetValue(null, split[1]);
+				break;
+				case boolean:
+					field.SetValue(null, boolean.Parse(split[1]));
+				break;
+				default:
+					if (field.FieldType.IsEnum) {
+						field.SetValue(null, System.Enum.Parse(field.FieldType, split[1]));
+					}
+				break;
+			}
+		}
+	}
+}
+
+class Mod {
+	//the instance of the assembly and it's respective type
+	
+	private var assembly:Assembly;
+	private var instance:Object;
+	private var _type:Type;
+	
+	//instance attributes for easy access
+	private var methods:Dictionary.<String, MethodInfo>;
+	
+	//errors while loading a Mod
+	var errors:String[];
+	
+	/*---
+	PROPERTIES
+	---*/
+	
+	function get type():Type {
+		return _type;
+	}
+	
+	/*---
+	CONSTRUCTORS
+	---*/
+	
+	//Create a new instance of Mod (load a C# file at runtime)
+	function Mod(path:String) {
+		errors = new String[0];
+		
+		//check for path related errors
+		if (CheckPath(path)) {
+			return;
+		}
+		
+		//Load/compile the assembly from the path
+		assembly = LoadAssembly(path);
+		
+		//if the assembly has errors we stop
+		if (assembly == null) {
+			return;
+		} 
+		
+		//Create a new instance from the assembly with the same name as the file
+		instance = assembly.CreateInstance(Path.GetFileNameWithoutExtension(path), true);
+		
+		//if there was an error creating the instance we add it to the error list and stop
+		if (instance == null) {
+			AddError("No class in <'" + Path.GetFileName(path) + "'> matches the file name <'" + Path.GetFileNameWithoutExtension(path) + "'>");
+			return;
+		}
+		
+		//get the type of our instance
+		_type = instance.GetType();
+		
+		//Store all the methods of the instance in a Hashtable for easy access
+		methods = new Dictionary.<String, MethodInfo>();
+		for (var info:MethodInfo in _type.GetMethods()) {
+			methods[info.Name] = info;
+		}
+	}
+	
+	//Check if the file exists at the path
+	//And wether the path links to a C# file
+	//Add errors when nessecary
+	private function CheckPath(path:String):boolean {
+		if (File.Exists(path)) {
+			if (Path.GetExtension(path) == ".cs") {
+				return false;
+			}
+			else {
+				AddError("File <'" + Path.GetFileName(path) +"'> is not of the right type <'.cs'>");
+			}
+		}
+		else {
+			AddError("File <'" + Path.GetFileName(path) +"'> does not exist");
+		}
+		return true;
+	}
+	
+	//.Add function for static length list
+	//negates having errors be dynamic
+	private function AddError(name:String) {
+		var new_errors:String[] = new String[errors.length + 1];
+		
+		for (var i:int = 0; i < errors.length; i++) {
+			new_errors[i] = errors[i];
+		}
+		
+		new_errors[new_errors.length - 1] = name;
+		errors = new_errors;
+	}
+	
+	//Load an assembly from file
+	private function LoadAssembly(path:String):Assembly {
+		//Set compiler parameters
+		var params:CompilerParameters = new CompilerParameters();
+		params.GenerateExecutable = false; //Don't make executable
+	    params.GenerateInMemory = false; //Don't save the dll
+	    //params.ReferencedAssemblies.Add("System.dll"); //Allow access to System namespaces
+	    
+	    //create C# provider and compile assembly
+	    var provider:CodeDomProvider = new CodeDomProvider.CreateProvider("CSharp");
+	    var results:CompilerResults = provider.CompileAssemblyFromFile(params, path);
+	    
+	    //On compiler errors dump them to file
+	    //return null on errors
+	    if (results.Errors.HasErrors) {
+	        DumpCompilerErrors(results.Errors, path);
+	        AddError("Compiler errors found in <'" + Path.GetFileName(path) + "'>. errors dumped.");
+	        return null;
+	    }
+	    else {
+	    	//return the compiler assembly
+	        return results.CompiledAssembly;
+	    }
+	}
+	
+	//dump a list of errors to dump.txt in same directory
+	private function DumpCompilerErrors(errors:CompilerErrorCollection, path:String) {
+		//Put errors into list for writing
+		var lines:String[] = new String[errors.Count];
+		for (var i:int = 0; i < errors.Count; i++) {
+			//Put errors in the same format as they are in the Unity Editor
+			lines[i] = errors[i].FileName + "(" + errors[i].Line + ", " + errors[i].Column + "): " + errors[i].ErrorText;
+		}
+		
+		//Dump error to disc in same directory as the original file
+		path = Path.GetDirectoryName(path) + Path.DirectorySeparatorChar + "dump.txt";
+		File.WriteAllLines(path, lines);
+	}
+	
+	/*---
+	INSTANCE FUNCTIONS
+	---*/
+	
+	//Invoke a method by 'name' and return it's value
+	function Invoke(name:String):Object {
+		if (name in methods) {
+			return (methods[name] as MethodInfo).Invoke(instance, new Object[0]);
+		}
+		return null;
+	}
+	
+	//Invoke a method by 'name' with parameters
+	function Invoke(name:String, parameters:Object[]) {
+		if (name in methods) {
+			return (methods[name] as MethodInfo).Invoke(instance, parameters);
+		}
+		return null;
+	}
+}

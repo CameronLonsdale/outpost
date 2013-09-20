@@ -1,0 +1,115 @@
+fileFormatVersion: 2
+guid: cbe8271e94785bf45af1a81d3598c65f
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: Cube
+    100002: Cube_001
+    100004: //RootNode
+    100006: DescSeperator
+    100008: Table
+    100010: ScreenAlive
+    100012: ScreenDead
+    100014: ScreenDead_001
+    100016: Circle_001
+    100018: OfficeChair
+    400000: Cube
+    400002: Cube_001
+    400004: //RootNode
+    400006: DescSeperator
+    400008: Table
+    400010: ScreenAlive
+    400012: ScreenDead
+    400014: ScreenDead_001
+    400016: Circle_001
+    400018: OfficeChair
+    2300000: Cube
+    2300002: Cube_001
+    2300004: DescSeperator
+    2300006: Table
+    2300008: ScreenAlive
+    2300010: ScreenDead
+    2300012: ScreenDead_001
+    2300014: Circle_001
+    2300016: OfficeChair
+    3300000: Cube
+    3300002: Cube_001
+    3300004: DescSeperator
+    3300006: Table
+    3300008: ScreenAlive
+    3300010: ScreenDead
+    3300012: ScreenDead_001
+    3300014: Circle_001
+    3300016: OfficeChair
+    4300000: Cube_001
+    4300002: Cube
+    4300004: DescSeperator
+    4300006: Table
+    4300008: ScreenDead_001
+    4300010: ScreenDead
+    4300012: ScreenAlive
+    4300014: Circle_001
+    4300016: OfficeChair
+    6400000: Cube
+    6400002: Cube_001
+    6400004: DescSeperator
+    6400006: Table
+    6400008: ScreenAlive
+    6400010: ScreenDead
+    6400012: ScreenDead_001
+    6400014: Circle_001
+    6400016: OfficeChair
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .560000002
+    meshCompression: 0
+    addColliders: 1
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 87
+    splitTangentsAcrossUV: 1
+    normalImportMode: 1
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 0
+  userData: 

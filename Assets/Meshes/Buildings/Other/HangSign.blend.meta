@@ -1,0 +1,81 @@
+fileFormatVersion: 2
+guid: b92b0a28da0cad84ba9e97796395f43b
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: SignAlive
+    100004: SignDeadPiece1
+    100006: SignDeadPiece2
+    100008: SignDeadPiece3
+    400000: //RootNode
+    400002: SignAlive
+    400004: SignDeadPiece1
+    400006: SignDeadPiece2
+    400008: SignDeadPiece3
+    2300000: SignAlive
+    2300002: SignDeadPiece1
+    2300004: SignDeadPiece2
+    2300006: SignDeadPiece3
+    3300000: SignAlive
+    3300002: SignDeadPiece1
+    3300004: SignDeadPiece2
+    3300006: SignDeadPiece3
+    4300000: SignDeadPiece3
+    4300002: SignDeadPiece2
+    4300004: SignAlive
+    4300006: SignDeadPiece1
+    7400000: Default Take
+    9500000: //RootNode
+  materials:
+    importMaterials: 0
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 0
+    bakeSimulation: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .180000007
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    handles: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  additionalBone: 1
+  animationType: 0
+  userData: 

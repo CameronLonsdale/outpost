@@ -1,0 +1,106 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400000}
+  - 33: {fileID: 3300000}
+  - 23: {fileID: 2300000}
+  - 114: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: TreeRandomForrest
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 75.2974091, y: 5.73684025, z: 18.3247032}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+--- !u!23 &2300000
+Renderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_LightmapIndex: 255
+  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_Materials:
+  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_LightProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+--- !u!33 &3300000
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c64de470cd2124ebae8783a0542c3d, type: 3}
+  m_Name: 
+  Size: .800000012
+  Lod0:
+  - {fileID: 100004, guid: bfa4baf098225e94c993d8e6c0df1c4c, type: 2}
+  - {fileID: 100004, guid: 6ad140fc43943a747aae2ad22aee5b42, type: 2}
+  - {fileID: 100004, guid: 46fa34977deee5a44841a89cd2bebdd2, type: 2}
+  - {fileID: 100004, guid: da91813f5be66874898afc6405bfcaf2, type: 2}
+  - {fileID: 100004, guid: 7f820d08a06a96043a703625531065f1, type: 2}
+  - {fileID: 100004, guid: 2957fbcc06f2b174baa9b3930bdbc4d5, type: 2}
+  - {fileID: 100004, guid: 5f7ecf4e86ce1d642aa54d203e822180, type: 2}
+  - {fileID: 100004, guid: ce4ff1e72630d47478ae2c034052765d, type: 2}
+  Lod1:
+  - {fileID: 100004, guid: f7697de6f88f1144aa2821881aa1d229, type: 2}
+  - {fileID: 100004, guid: 46780821e88490b478ccab4af2aabb6b, type: 2}
+  - {fileID: 100004, guid: 8dcfa78de4bdd3c45a52de9046ef8953, type: 2}
+  - {fileID: 100004, guid: 1474dd803f103c547a60c150d92b3b3b, type: 2}
+  - {fileID: 100004, guid: 4abe36705d80e1149983c5f10640394e, type: 2}
+  - {fileID: 100004, guid: 23b3344136b1d1b4983747a98a91a1ab, type: 2}
+  - {fileID: 100004, guid: 7f939472a3bfff3498f95c08a9231e24, type: 2}
+  - {fileID: 100004, guid: 857bca747f67a664ca463d8558a94410, type: 2}
+  Lod2:
+  - {fileID: 100004, guid: 927714ecd9fbe0549b2660ed6c7ec2c7, type: 2}
+  - {fileID: 100004, guid: 4a09751fc58936b419aa3746b7d6cb68, type: 2}
+  - {fileID: 100004, guid: 952b350e1485f3d47a8dca118c38c683, type: 2}
+  - {fileID: 100004, guid: 2278d7cbff147b7449d289acf71f2ea8, type: 2}
+  - {fileID: 100004, guid: 21e4fc82b5cb0b743bcf342dd4b3118a, type: 2}
+  - {fileID: 100004, guid: 74628a499a3bc8541ab90bcd8b28b60a, type: 2}
+  - {fileID: 100004, guid: 56765c92e03c71f4a94b6500e8c35865, type: 2}
+  - {fileID: 100004, guid: 2403a4c58357675459683f4f245fa764, type: 2}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100000}
+  m_IsPrefabParent: 1
+  m_IsExploded: 1

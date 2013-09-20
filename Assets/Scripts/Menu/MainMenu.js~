@@ -1,0 +1,1024 @@
+import System.IO;
+import System;
+
+//--GLOBAL--
+var NetworkManagerPrefab:NetworkManager;
+private var state:int = 0;
+private var www:WWW;
+private var output:Array = [];
+
+//--LOGIN--
+private var url:String = "http://api.outpostsoftware.com";
+private var logintype:int = 0;
+private var previousLogintype:int = 0;
+private var loggingIn:boolean = false;
+private var registering:boolean = false;
+private var password2:String = "";
+private var email2:String = "";
+
+//--MENU--
+//controls
+private var Detect:boolean = false;
+
+//Window Display
+private var ShowArea:boolean;
+private var ShowPlay:boolean;
+private var ShowServerList:boolean;
+
+//Text Scaling --
+private var swidth:int = 0;
+private var sheight:int = 0;
+
+//temporary map texture
+var mapTexture: Texture;
+
+//outpost symbol
+var image:Texture;
+
+//Custom Styles
+var MenuStyle : GUIStyle;
+
+private var Scene:int;
+private var playerS:NetworkPlayer;
+private var ScrollPosition:Vector2;
+private var Host:HostData;
+private var ShowWindow:boolean = false;
+private var OptionsType: int;
+var UpdateDelay:float;
+var Skin:GUISkin;
+var Effect:Transform;
+var EffectDamping:float;
+var Connect:Collider;
+var Replays:Collider;
+var Play:Collider;
+var Options:Collider;
+var Exit:Collider;
+private var Window:int = 0;
+private var hit:RaycastHit;
+private var UpdateDelayTimer:float;
+private var EditingServer:boolean = false;
+private var playerLimit:float = 20;
+private var GameName:String = "";
+private var Comment:String = "";
+private var dcip:String = "";
+private var IndexList:int;
+var label:String  = "Quality : Good";
+private var fr:StreamReader;
+private var fw:StreamWriter;
+private var line:String;
+private var MessageContent:String = "";
+var MessageBox:boolean = false;
+var UpToDate:boolean = true;
+private var started:boolean = false;
+
+//Replay Screen Variables
+var files:FileSystemInfo[];
+var file:FileSystemInfo;
+var dirInfo:DirectoryInfo;
+
+function Awake() {
+	Input.eatKeyPressOnTextFieldFocus = false;
+	dirInfo = new DirectoryInfo(Application.dataPath);
+	files = dirInfo.GetFiles();
+	
+	Settings.NetworkManagerPrefab = NetworkManagerPrefab;
+	
+	ServerSettings.Save();
+	ServerSettings.Load();
+}
+
+function Start() {
+	swidth = Screen.width;
+	
+	//Load all settings
+	VideoSettings.Load();
+	VideoSettings.Apply();
+	SoundSettings.Load();
+	SoundSettings.Apply();
+	Controls.Load();
+	ServerSettings.Load();
+	AccountSettings.Load();
+	
+	if (Settings.ticket != "") {
+		state = 1;
+	}
+}
+
+function Login() {
+	try {
+		www = WWW(url + "/v1/auth/login?username=" + Settings.username + "&password=" + Settings.password);
+		loggingIn = true;
+	}
+	catch (err) {
+		MessageContent = "Error connecting to outpostsoftware.com";
+		return;
+	}
+	
+	yield www;
+	
+	if (www.text) {
+		output = www.text.Trim().Split("`"[0]);
+		if (output[0] == "fail") {
+			MessageContent = "Error logging in";
+		}
+		else if (output[0] != "") {
+			state = 1;
+			Settings.SaveSettings();
+			Settings.ticket = output[0];
+			Settings.secureCode = output[1];
+		}
+	}
+	else {
+		MessageContent = "Connection failed";
+	}
+	loggingIn = false;
+}
+
+function Register() {
+	if (Settings.password == password2) {
+		if (Settings.username != "") {
+			if (Settings.password != "" && password2 != "") {
+				if (Settings.email != "") {
+					try {
+						www = WWW(url + "/v1/auth/register?username=" + Settings.username + "&email=" + Settings.email + "&password=" + Settings.password + "&subscription=0");
+						registering = true;
+					}
+					catch (err) {
+						MessageContent = "Error registering";
+						return;
+					}
+					yield www;
+					if (www.text) {
+						output = [www.text.Trim()];
+						if (output[0] == "fail") {
+							MessageContent = "Error registering";
+						}
+						else {
+							Settings.ticket = output[0];
+							state = 1;
+							Settings.SaveSettings();
+						}
+					}
+					else {
+						MessageContent = "Connection failed";
+					}
+				}
+				else {
+					MessageContent = "No Email";
+				}
+			}
+			else {
+				MessageContent = "No Password";
+			}
+		}
+		else {
+			MessageContent = "No Username";
+		}
+	}
+	else {
+		MessageContent = "Passwords Don't Match";
+	}
+	registering = false;
+}
+
+function CheckVersion() {
+	try {
+		www = WWW("http://api.OutpostSoftware.com/v1/outpost/version");
+	}
+	catch (err) {
+		MessageContent = "Error Connecting";
+		MessageBox = true;
+		UpToDate = true;
+		return;
+	}
+	yield www;
+	if (www.text) {
+		if (www.text.Trim() == "0.2") {
+			UpToDate = true;
+		}
+		else {
+			MessageContent = "Please Update Outpost";
+			MessageBox = true;
+			UpToDate = false;
+		}
+	}
+	else {
+		MessageContent = "Error Connecting";
+		MessageBox = true;
+		UpToDate = true;
+	}
+}
+
+function RequestHostList() {
+	MasterServer.ClearHostList();
+	MasterServer.RequestHostList("OutpostGameV0.25");
+}
+
+function OnGUI () {
+	tmpFloat = 8+12*(Screen.width-360)/(1080-360);
+	GUI.skin = Skin;
+	GUI.skin.label.fontSize = tmpFloat;
+	GUI.skin.box.fontSize = tmpFloat;
+	GUI.skin.button.fontSize = tmpFloat;
+	GUI.skin.textField.fontSize = tmpFloat;
+	GUI.skin.window.fontSize = tmpFloat;
+	
+	if (state == 0) {
+		started = false;
+				
+		GUI.Box(Rect(Screen.width/16*5, 0, Screen.width/16*6, Screen.height/16*6), "");	
+		GUI.Box(Rect(Screen.width/16*6, Screen.height/16*6, Screen.width/16*4, Screen.height/16*11), "");
+		GUI.DrawTexture(Rect(Screen.width/16*6.5, Screen.height/16, Screen.width/16*3, Screen.height/16*4), image, ScaleMode.StretchToFill, true, 10.0f);	
+		
+		GUILayout.BeginArea(Rect(Screen.width/16*6, Screen.height/16*6.5, Screen.width/16*4, Screen.height/16*9));
+		
+		
+		
+		logintype = GUILayout.SelectionGrid(logintype, ["Login", "Register"], 2, GUILayout.Height(Screen.height/18));
+		if (previousLogintype != logintype) {
+			MessageContent = "";
+			previousLogintype = logintype;
+		}
+		
+		GUILayout.Space(40);
+		
+		if (logintype == 0) {
+			GUILayout.BeginHorizontal();
+			GUILayout.Box("username: ", GUILayout.ExpandWidth(false));
+			Settings.username = GUILayout.TextField(Settings.username, GUILayout.ExpandWidth(true));
+			GUILayout.EndHorizontal();
+			
+			GUILayout.BeginHorizontal();
+			GUILayout.Box("password: ", GUILayout.ExpandWidth(false));
+			Settings.password = GUILayout.PasswordField(Settings.password, "*"[0], GUILayout.ExpandWidth(true));
+			GUILayout.EndHorizontal();
+			
+			GUILayout.Label(MessageContent);
+			if (loggingIn) {
+				GUILayout.Label("Logging In");
+			}	
+			if (GUILayout.Button("Login") || Input.GetKeyDown(KeyCode.Return)) {
+				Login();
+				MessageContent = "";
+			}
+			if (GUILayout.Button("PlayOffline") || Input.GetKeyDown(KeyCode.Return)) {
+				Settings.username = "OfflinePlayer";
+				Settings.ticket = "FAKE!!!";
+				state = 1;
+				MessageContent = "";
+			}
+			if (GUILayout.Button("Quit")) {
+				Application.Quit();
+			}
+		}
+		else if (logintype == 1) {
+			GUILayout.BeginHorizontal();
+			GUILayout.Box("username: ", GUILayout.ExpandWidth(false));
+			Settings.username = GUILayout.TextField(Settings.username, GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
+			GUILayout.EndHorizontal();
+			
+			GUILayout.BeginHorizontal();
+			GUILayout.Box("password: ", GUILayout.ExpandWidth(false));
+			Settings.password = GUILayout.PasswordField(Settings.password, "*"[0], GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
+			GUILayout.EndHorizontal();
+			
+			GUILayout.BeginHorizontal();
+			GUILayout.Box("confirm password: ", GUILayout.ExpandWidth(false));
+			password2 = GUILayout.PasswordField(password2, "*"[0], GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
+			GUILayout.EndHorizontal();
+			
+			GUILayout.BeginHorizontal();
+			GUILayout.Box("email: ", GUILayout.ExpandWidth(false));
+			Settings.email = GUILayout.TextField(Settings.email, "*"[0], GUILayout.ExpandWidth(true), GUILayout.ExpandHeight(true));
+			GUILayout.EndHorizontal();
+			
+			GUILayout.Label(MessageContent);
+			if (registering) {
+				GUILayout.Label("Registering");
+			}
+			
+			GUILayout.FlexibleSpace();
+			
+			GUILayout.BeginHorizontal();
+			if (GUILayout.Button("Register")) {
+				Register();
+			}
+			if (GUILayout.Button("Quit")) {
+				Application.Quit();
+			}
+			GUILayout.EndHorizontal();
+		}
+		
+		GUILayout.EndArea();
+	}
+	else if (state == 1) {
+		if (!started) {
+			CheckVersion();
+			started = true;
+		}
+		if (Network.peerType == NetworkPeerType.Connecting) {
+			GUI.Window(3, Rect(Screen.width/5*2, Screen.height/3, Screen.width/5, Screen.height/3), MessageWindow, "Connecting");
+		}
+		else {
+			if (UpToDate) {
+				if (Window == 1) {
+					GUI.Window(0, Rect(0, 0, Screen.width, Screen.height), MasterServerListMenu, "");
+				}
+				else if (Window == 2) {
+					GUI.Window(1, Rect(0, 0, Screen.width, Screen.height), ServerEditWindow, "");
+				}
+				else if (Window == 3) {
+					GUI.Window(2, Rect(0, 0, Screen.width, Screen.height), OptionsWindow, "");
+				}
+				else if (Window == 4) {
+					GUI.Window(3, Rect(0, 0, Screen.width, Screen.height), CreditsWindow, "Credits / Terms and Agreements");
+				}
+				else if (Window == 5) {
+					GUI.Window(3, Rect(0, 0, Screen.width, Screen.height), ReplaysWindow, "");
+				}
+			}
+			if (MessageBox) {
+				//Window = 0;
+				GUI.Window(4, Rect(Screen.width/5*2, Screen.height/3, Screen.width/5, Screen.height/3), MessageWindow, " ");
+			}
+		}
+		GUI.Box(Rect(0,Screen.height/16*14, Screen.width, Screen.height/16*2.5),"This is the Middle");
+		
+		GUILayout.BeginArea(Rect(0,0, Screen.width, Screen.height/16), MenuStyle);
+		GUILayout.FlexibleSpace();
+
+		GUILayout.BeginHorizontal();
+		GUILayout.FlexibleSpace();
+		GUILayout.Button("Home", GUILayout.Width(Screen.width/16), GUILayout.Height(Screen.height/16));
+		if(GUILayout.Button("Play", GUILayout.Width(Screen.width/16*3), GUILayout.Height(Screen.height/16))) {
+			ShowPlay = !ShowPlay;
+		}
+		GUILayout.Button("Profile", GUILayout.Width(Screen.width/16*3), GUILayout.Height(Screen.height/16));
+		GUILayout.Button("Options", GUILayout.Width(Screen.width/16*3), GUILayout.Height(Screen.height/16));
+		GUILayout.Button("Quit", GUILayout.Width(Screen.width/16), GUILayout.Height(Screen.height/16));
+		GUILayout.FlexibleSpace();
+		GUILayout.EndHorizontal();
+		
+		GUILayout.EndArea();
+		
+		
+		if (ShowPlay) {
+			GUILayout.BeginArea(Rect(Screen.width/16*3.5, Screen.height/16, Screen.width/16*3, Screen.height/16*4), MenuStyle);
+			GUILayout.Button("QuickMatch");
+			GUILayout.Button("Server List");
+			GUILayout.Button("Host");
+			GUILayout.EndArea();
+		}
+		
+		
+		if (ShowArea) {
+			GUILayout.BeginArea(Rect(Screen.width/2 - Screen.width/16*3/2 - Screen.width/16*3,Screen.height/16*4, Screen.width/16*3, Screen.height/16*9), MenuStyle);
+			GUILayout.FlexibleSpace();
+			GUILayout.Button("Quick Match" ,GUILayout.Height(Screen.height/16*3/2));
+			GUILayout.FlexibleSpace();
+			if (GUILayout.Button("Server List",GUILayout.Height(Screen.height/16*3/2))) {
+				ShowServerList = !ShowServerList;
+			}	
+			
+			GUILayout.FlexibleSpace();
+			GUILayout.Button("Host Game",GUILayout.Height(Screen.height/16*3/2));
+			GUILayout.FlexibleSpace();
+			GUILayout.EndArea();
+		}
+		if (ShowServerList) {
+			GUI.Label(Rect(Screen.width/2 - Screen.width/16*3/2 , Screen.height/16*3, Screen.width/16*2, Screen.height/16), "Server list"); 
+			GUILayout.BeginArea(Rect(Screen.width/2 - Screen.width/16*3/2, Screen.height/16*4, Screen.width/16*9, Screen.height/16*9), MenuStyle);
+			GUILayout.Box("Is this area too small for what we are planning to do here?");
+			GUILayout.BeginHorizontal();
+			GUILayout.FlexibleSpace();
+			GUILayout.EndHorizontal();
+			
+			GUILayout.BeginHorizontal();
+			//if (GUILayout.Button("Direct Connect")) {
+			//	Network.Connect(dcip, 2000);
+			//	MessageContent = "Connecting...";
+			///	MessageBox = true;
+			//}
+			//dcip = GUILayout.TextField(dcip);
+			GUILayout.EndHorizontal();
+			
+			GUILayout.BeginHorizontal();
+			GUILayout.Label("Name");
+			GUILayout.Label("Players");
+			GUILayout.Label("Map");
+			GUILayout.Label("Mode");
+			GUILayout.Label("Comment");
+			GUILayout.EndHorizontal();
+			
+			ScrollPosition = GUILayout.BeginScrollView(ScrollPosition, false, true);
+			
+			for (Host in MasterServer.PollHostList()) {
+				GUILayout.BeginHorizontal();
+				GUILayout.Label(Host.gameName, GUILayout.Width((Screen.width-Screen.width/10)/4));
+				GUILayout.Label(Host.connectedPlayers + " / " + Host.playerLimit, GUILayout.Width((Screen.width-Screen.width/10)/9));
+				if (parseInt(Host.comment.Split(","[0])[0]) == 0) {
+					GUILayout.Label("Manhatten Project", GUILayout.Width((Screen.width-Screen.width/10)/5));
+				}
+				if (parseInt(Host.comment.Split(","[0])[1]) == 0) {
+					GUILayout.Label("TDM", GUILayout.Width((Screen.width-Screen.width/10)/10));
+				}
+				else {
+					GUILayout.Label("KOTH", GUILayout.Width((Screen.width-Screen.width/10)/10));
+				}
+				GUILayout.Label(Host.comment.Split(","[0])[2], GUILayout.Width((Screen.width-Screen.width/10)/6));
+				if (GUILayout.Button("Connect")) {
+					Network.Connect(Host);
+					StartGame(false, true);
+				}
+				
+			
+				GUILayout.EndHorizontal();
+				GUILayout.Box("");
+			}
+			
+			GUILayout.EndScrollView();
+			
+			GUILayout.BeginHorizontal();
+			if (GUILayout.Button("Close")) {
+				Window = 0;
+			}
+			GUILayout.FlexibleSpace();
+			if (GUILayout.Button("HACK!!!")) {
+				Network.Connect("127.0.0.1", 2000);
+				StartGame(false, true);
+			}
+			if (GUILayout.Button("Refresh")) {
+				RequestHostList();
+			}
+			GUILayout.EndHorizontal();
+			
+				
+			GUILayout.EndArea();
+		}
+	}
+}
+		
+/*	
+		//Social and Stats window
+		if (SocialShow) {
+			GUI.Box(Rect(Screen.width/16*27/2, Screen.height/16*7/2, Screen.width/16*2, Screen.height/16*10),"Social Window");
+		}
+		if (StatsShow) {
+			GUI.Box(Rect(Screen.width/16*21/2, Screen.height/16*7/2, Screen.width/16*3, Screen.height/16*10),"Stats Window");
+		}
+		
+		//Bar up the top
+		if (GUI.Button(Rect(Screen.width/16*27/2, Screen.height/16*7/2, Screen.width/16*2, Screen.height/16*3/4),"")) {
+			SocialShow = !SocialShow;
+		}
+		if (GUI.Button(Rect(Screen.width/16*11, Screen.height/16*7/2, Screen.width/16*5/2, Screen.height/16*3/4),"")) {
+			StatsShow = !StatsShow;
+		}
+		if (GUI.Button(Rect(Screen.width/16*21/2, Screen.height/16*7/2, Screen.width/16*1/2, Screen.height/16*3/4),"X")) {
+			if ((SocialShow == false) || (StatsShow == false)) {
+				SocialShow = true;
+				StatsShow = true;
+			}
+			else {
+				SocialShow = false;
+				StatsShow = false;
+			}
+		}
+	}
+}
+
+*/
+
+
+
+function MessageWindow() {
+	GUILayout.Label(MessageContent);
+	if (UpToDate) {
+		if (GUILayout.Button("Close")) {
+			MessageBox = false;
+		}
+	}
+	else if (GUILayout.Button("Update")) {
+		Application.OpenURL("http://www.outpostsoftware.com");
+	}
+}
+
+function Update() {
+	if (state == 1) {
+		if (ShowWindow) {
+			if (UpdateDelayTimer < Time.time) {
+				RequestHostList();
+				UpdateDelayTimer = Time.time + UpdateDelay;
+			}
+		}
+		
+		if (Input.GetButtonDown("Fire1")) {
+			if (Physics.Raycast( Camera.main.ScreenPointToRay (Input.mousePosition), hit, 100)) {
+				if (Window == 0) {
+					if (hit.collider == Play) {
+						Window = 2;
+					}
+					else if (hit.collider == Connect) {
+						Window = 1;
+						RequestHostList();
+					}
+					else if (hit.collider == Replays) {
+						Window = 5;
+					}
+					else if (hit.collider == Options) {
+						Window = 3;
+					}
+					else if (hit.collider == Exit) {
+						Application.Quit();
+					}
+				}
+			}
+		}
+	}
+}
+
+function CreditsWindow() {
+	if (GUILayout.Button("Close")) {
+		Window = 0;
+	}
+	GUILayout.BeginArea(Rect(Screen.width/20, Screen.height/10, Screen.width/20*18, Screen.height/20*19));
+	GUILayout.Label("Main Team:");
+	GUILayout.Space(10);
+	GUILayout.Label("Lead Programmer, 3D Artist and Designer");
+	GUILayout.Label("Benjamin Schaaf");
+	GUILayout.Space(10);
+	GUILayout.Label("Lead Designer, 3D Artist and Programmer");
+	GUILayout.Label("Cameron Lonsdale");
+	GUILayout.Space(20);
+	GUILayout.Label("Contributors:");
+	GUILayout.Space(10);
+	GUILayout.Label("Dean Gouskos");
+	GUILayout.Space(10);
+	GUILayout.Label("Tobias ******");
+	GUILayout.Space(20);
+	GUILayout.Space(20);
+	GUILayout.Label("© 2012 Outpost Software. All rights reserved. Outpost Software, the Outpost Software logos and the Outpost game itself and included content are copyrighted under the Australian copyright law; the Copyright Act 1968. All other creative material is property of its respective owners.");
+	GUILayout.Space(20);
+	GUILayout.Label("Outpost Software makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability  or other violation of rights. In no event shall Outpost Software be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising from the use or inability to use the software and games produced by Outpost Software, even if Outpost Software or an Outpost Software authorized representative has been notified orally or in writing of the possibility of such damage.");
+	GUILayout.Space(20);
+	GUILayout.Label("By installing, using or accessing the Software or Services you are considered to have accepted the terms set out in this document. If you do not agree with or otherwise wish to accept the terms set out in this document, do not install, use or access the Software and/or the Services.");
+	GUILayout.EndArea();
+}
+	
+
+function OptionsWindow() {
+	GUILayout.BeginArea(Rect(Screen.width/20, Screen.height/20, Screen.width/20*18, Screen.height/20*18));
+	
+	tmpFloat = 8+12*(Screen.width-360)/(1080-360);
+	GUI.skin.label.fontSize = 40;
+	GUILayout.Label("Options");
+	GUI.skin.label.fontSize = 24; 
+	OptionsType = GUILayout.SelectionGrid(OptionsType, ["Video",  "Controls"], 2, GUILayout.Height(Screen.height/18));
+	if (OptionsType == 0){
+		ScrollPosition = GUILayout.BeginScrollView(ScrollPosition);
+		GUILayout.BeginVertical();
+		GUILayout.BeginHorizontal();
+		GUILayout.Label("Quality Level");
+		GUILayout.Space(20);
+		if (GUILayout.Button("<")){
+			QualitySettings.DecreaseLevel();
+		}
+		GUILayout.Label(QualitySettings.names[QualitySettings.GetQualityLevel()]);
+		if (GUILayout.Button(">")) {
+			QualitySettings.IncreaseLevel();
+		}
+		GUILayout.FlexibleSpace();
+		GUILayout.EndHorizontal();
+		GUILayout.Space(20);
+		GUILayout.BeginHorizontal();
+		GUILayout.Label("Screen Size");
+		GUILayout.Space(20);
+		if (GUILayout.Button("<")) {
+			Settings.ResInt  = Mathf.Clamp(Settings.ResInt-1, 0, Settings.Reses.length-1);
+		}
+		GUILayout.Label(Settings.Reses[Settings.ResInt].x + "x" + Settings.Reses[Settings.ResInt].y);
+		if (GUILayout.Button(">")) {
+			Settings.ResInt  = Mathf.Clamp(Settings.ResInt+1, 0, Settings.Reses.length-1);
+		}
+		GUILayout.FlexibleSpace();
+		GUILayout.EndHorizontal();
+		GUILayout.Space(20);
+		GUILayout.BeginHorizontal();
+		GUILayout.Label("Fullscreen");
+		GUILayout.Space(20);
+		Screen.fullScreen = GUILayout.Toggle(Screen.fullScreen, "");
+		GUILayout.EndHorizontal();
+		GUILayout.Space(20);
+		GUILayout.BeginHorizontal();
+		GUILayout.Label("Texture Quality");
+		GUILayout.Space(20);
+		if (GUILayout.Button("<")) {
+			QualitySettings.masterTextureLimit  = Mathf.Clamp(QualitySettings.masterTextureLimit+1, 0, 3);
+		}
+		GUILayout.Label(["Full Resolution", "Half Resolution", "Quater Resolution", "Eighth Resolution"][QualitySettings.masterTextureLimit]);
+		if (GUILayout.Button(">")) {
+			QualitySettings.masterTextureLimit  = Mathf.Clamp(QualitySettings.masterTextureLimit-1, 0, 3);
+		}
+		GUILayout.FlexibleSpace();
+		GUILayout.EndHorizontal();
+		GUILayout.Space(20);
+		GUILayout.BeginHorizontal();
+		GUILayout.Label("Shadow Distance");
+		GUILayout.Space(20);
+		GUILayout.Label(parseInt(QualitySettings.shadowDistance) + "");
+		QualitySettings.shadowDistance = parseInt(GUILayout.HorizontalSlider(QualitySettings.shadowDistance, 0, 80));
+		GUILayout.EndHorizontal();
+		GUILayout.Space(20);
+		
+		GUILayout.BeginHorizontal();
+		GUILayout.Label("Volume");
+		GUILayout.Space(20);
+		GUILayout.Label(parseInt(Settings.Volume*100) + "");
+		Settings.Volume = GUILayout.HorizontalSlider(Settings.Volume, 0.0, 1.0);
+		GUILayout.EndHorizontal();
+		GUILayout.Space(20);
+		
+		GUILayout.BeginHorizontal();
+		GUILayout.Label("Sensitivity");
+		GUILayout.Space(20);
+		GUILayout.Label(parseInt(Settings.Sensitivity)/5 + "");
+		Settings.Sensitivity = GUILayout.HorizontalSlider(Settings.Sensitivity, 0.0, 500);
+		GUILayout.EndHorizontal();
+		GUILayout.Space(20);
+		
+		GUILayout.BeginHorizontal();
+		GUILayout.Label("Anti Aliasing");
+		GUILayout.Space(20);
+		if (GUILayout.Button("<")) {
+			QualitySettings.antiAliasing -= 1;
+		}
+		if (QualitySettings.antiAliasing != 0){
+			GUILayout.Label(QualitySettings.antiAliasing + "x");
+		}
+		else{
+			GUILayout.Label("Disabled");
+		}
+		if (GUILayout.Button(">")) {
+			if (QualitySettings.antiAliasing == 0){
+				QualitySettings.antiAliasing = 2;
+			}
+			else if(QualitySettings.antiAliasing == 2){
+				QualitySettings.antiAliasing = 4;
+			}
+			else if(QualitySettings.antiAliasing == 4){
+				QualitySettings.antiAliasing = 8;
+			}
+		}
+		GUILayout.FlexibleSpace();
+		GUILayout.EndHorizontal();
+		GUILayout.Space(40);
+		GUILayout.EndVertical();
+		GUILayout.EndScrollView();
+	}
+	else {
+		ScrollPosition = GUILayout.BeginScrollView(ScrollPosition);
+		
+		GUILayout.BeginHorizontal();
+		
+		//keyboard controls
+		GUILayout.BeginVertical(GUILayout.Width(Screen.width/20*18/2));
+		
+		Settings.jump = KeyField(Settings.jump, "Jump");
+		
+		GUILayout.Space(20);
+		
+		Settings.crouch = KeyField(Settings.crouch, "Crouch");
+		
+		GUILayout.Space(20);
+		
+		Settings.sprint = KeyField(Settings.sprint, "Sprint");
+		
+		GUILayout.Space(20);
+		
+		Settings.action = KeyField(Settings.action, "Action");
+		
+		GUILayout.Space(20);
+		
+		Settings.stp = KeyField(Settings.stp, "Primary Weapon");
+		
+		GUILayout.Space(20);
+		
+		Settings.sts = KeyField(Settings.sts, "Secondary Weapon");
+		
+		GUILayout.Space(20);
+		
+		Settings.quickswap = KeyField(Settings.quickswap, "Quick Swap");
+		
+		GUILayout.EndVertical();
+		
+		//Second column
+		
+		GUILayout.BeginVertical();
+		
+		Settings.reload = KeyField(Settings.reload, "Reload");
+		
+		GUILayout.Space(20);
+		
+		Settings.grenade = KeyField(Settings.grenade, "Grenade");
+		
+		GUILayout.Space(20);
+		
+		Settings.chat = KeyField(Settings.chat, "Global Chat");
+		
+		GUILayout.Space(20);
+		
+		Settings.fire = KeyField(Settings.fire, "Fire");
+		
+		GUILayout.Space(20);
+		
+		Settings.aim = KeyField(Settings.aim, "Aim");
+		
+		GUILayout.EndVertical();
+		
+		GUILayout.EndHorizontal();
+		GUILayout.EndScrollView();
+	}
+	GUILayout.BeginHorizontal();
+	if (GUILayout.Button("Save")) {
+		Window = 0;
+		Settings.SaveSettings();
+		Settings.LoadSettings();
+	}
+	if (GUILayout.Button("Exit Without Saving")) {
+		Window = 0;
+		Settings.LoadSettings();
+	}
+	if (GUILayout.Button("Restore to Default")){
+		Settings.ResetKeys();
+	}
+	if (GUILayout.Button("Credits")){
+		Window = 4;
+	}
+	GUILayout.EndHorizontal();
+	
+	GUILayout.EndArea();
+}
+
+function KeyField(key:KeyCode, name:String) {
+	GUILayout.BeginHorizontal();
+	GUILayout.Label(name);
+	GUILayout.FlexibleSpace();
+	if(GUILayout.Button("" + key, GUILayout.Width(Screen.width/8)) && !Detect){
+		key = KeyCode.None;
+		Detect = true;
+	}
+	else if (Detect && key == KeyCode.None) {
+		key = Settings.AssignKey(key);
+		if (key != KeyCode.None) {
+			Detect = false;
+		}
+	}
+	GUILayout.EndHorizontal();
+	return key;
+}
+					
+function OnConnectedToServer () {
+	Application.LoadLevel(Scene + 1);
+}
+
+function OnFailedToConnect() {
+	MessageContent = "Failed to connect";
+	MessageBox = true;
+}
+
+function ReplaysWindow(ID:int) {
+	GUILayout.BeginArea(Rect(Screen.width/20, Screen.height/20, Screen.width/20*18, Screen.height/20*18));
+	
+	GUILayout.BeginHorizontal();
+	GUILayout.Label("Replays");
+	GUILayout.FlexibleSpace();
+	GUILayout.EndHorizontal();
+	
+	for (file in files) {
+		if (file.Extension == ".replay") {
+			GUILayout.BeginHorizontal();
+			GUILayout.Box(file.Name.Substring(0, file.Name.length-7));
+			if (GUILayout.Button("Replay")) {
+				Settings.replayMode = true;
+				Settings.replayName = file.Name.Substring(0, file.Name.length-7);
+				Network.InitializeServer(0, 110, false);
+				StartGame(true, false);
+			}
+			GUILayout.EndHorizontal();
+		}
+	}
+	
+	GUILayout.FlexibleSpace();
+	if (GUILayout.Button("back")) {
+		Window = 0;
+	}
+	
+	GUILayout.EndArea();
+}
+
+static function StartGame(server:boolean, client:boolean) {
+	var networkManager:NetworkManager = Instantiate(Settings.NetworkManagerPrefab, Vector3.zero, Quaternion.identity);
+	DontDestroyOnLoad(networkManager);
+	
+	networkManager.gameObject.AddComponent(NetworkServer);
+	networkManager.gameObject.AddComponent(NetworkClient);
+	
+	if (!client) {
+		networkManager.GetComponent(NetworkClient).enabled = false;
+	}
+	if (!server) {
+		networkManager.GetComponent(NetworkServer).enabled = false;
+	}
+	
+	Application.LoadLevel(1);
+}
+
+function MasterServerListMenu(ID:int) {
+	GUILayout.BeginArea(Rect(Screen.width/20, Screen.height/20, Screen.width/20*18, Screen.height/20*18));
+	
+	GUILayout.BeginHorizontal();
+	GUILayout.Label("Server List");
+	GUILayout.FlexibleSpace();
+	GUILayout.EndHorizontal();
+	
+	GUILayout.BeginHorizontal();
+	//if (GUILayout.Button("Direct Connect")) {
+	//	Network.Connect(dcip, 2000);
+	//	MessageContent = "Connecting...";
+	///	MessageBox = true;
+	//}
+	//dcip = GUILayout.TextField(dcip);
+	GUILayout.EndHorizontal();
+	
+	GUILayout.BeginHorizontal();
+	GUILayout.Label("Name", GUILayout.Width((Screen.width-Screen.width/10)/4));
+	GUILayout.Label("Players", GUILayout.Width((Screen.width-Screen.width/10)/9));
+	GUILayout.Label("Map", GUILayout.Width((Screen.width-Screen.width/10)/5));
+	GUILayout.Label("Mode", GUILayout.Width((Screen.width-Screen.width/10)/10));
+	GUILayout.Label("Comment", GUILayout.Width((Screen.width-Screen.width/10)/6));
+	GUILayout.EndHorizontal();
+	GUILayout.Box("");
+	
+	ScrollPosition = GUILayout.BeginScrollView(ScrollPosition, false, true);
+	
+	for (Host in MasterServer.PollHostList()) {
+		GUILayout.BeginHorizontal();
+		GUILayout.Label(Host.gameName, GUILayout.Width((Screen.width-Screen.width/10)/4));
+		GUILayout.Label(Host.connectedPlayers + " / " + Host.playerLimit, GUILayout.Width((Screen.width-Screen.width/10)/9));
+		if (parseInt(Host.comment.Split(","[0])[0]) == 0) {
+			GUILayout.Label("Manhatten Project", GUILayout.Width((Screen.width-Screen.width/10)/5));
+		}
+		if (parseInt(Host.comment.Split(","[0])[1]) == 0) {
+			GUILayout.Label("TDM", GUILayout.Width((Screen.width-Screen.width/10)/10));
+		}
+		else {
+			GUILayout.Label("KOTH", GUILayout.Width((Screen.width-Screen.width/10)/10));
+		}
+		GUILayout.Label(Host.comment.Split(","[0])[2], GUILayout.Width((Screen.width-Screen.width/10)/6));
+		if (GUILayout.Button("Connect")) {
+			Network.Connect(Host);
+			StartGame(false, true);
+		}
+		
+	
+		GUILayout.EndHorizontal();
+		GUILayout.Box("");
+	}
+	
+	GUILayout.EndScrollView();
+	
+	GUILayout.BeginHorizontal();
+	if (GUILayout.Button("Close")) {
+		Window = 0;
+	}
+	GUILayout.FlexibleSpace();
+	if (GUILayout.Button("HACK!!!")) {
+		Network.Connect("127.0.0.1", 2000);
+		StartGame(false, true);
+	}
+	if (GUILayout.Button("Refresh")) {
+		RequestHostList();
+	}
+	GUILayout.EndHorizontal();
+	
+	GUILayout.EndArea();
+}
+
+function ServerEditWindow(ID:int) {
+	GUILayout.BeginArea(Rect(Screen.width/20, Screen.height/20, Screen.width/20*18, Screen.height/20*18));
+	
+	GUILayout.BeginHorizontal();
+	GUILayout.Label("Server Name");
+	GUILayout.Space(30);
+	GameName = GUILayout.TextField(GameName, 40);
+	GUILayout.EndHorizontal();
+	
+	GUILayout.Space(20);
+	ScrollPosition = GUILayout.BeginScrollView(ScrollPosition);
+	
+	GUILayout.BeginVertical();
+	GUILayout.BeginHorizontal();
+	if(GUILayout.Button("<",  GUILayout.Height(Screen.height/3))){
+		if(Settings.SceneToLoad > 0){
+			Settings.SceneToLoad -= 1;
+		}
+	}
+	
+	GUILayout.BeginVertical(GUILayout.Height(Screen.height/3));
+	if (Settings.SceneToLoad == 0){
+		GUILayout.Box("Manhatten Project", GUILayout.ExpandWidth(true));
+		GUILayout.Box("Map Image", GUILayout.ExpandHeight(true), GUILayout.ExpandWidth(true));
+	}
+	GUILayout.EndVertical();
+	
+	if(GUILayout.Button(">", GUILayout.Height(Screen.height/3))){
+		if(Settings.SceneToLoad < 0){
+			Settings.SceneToLoad += 1;
+		}
+	}
+	GUILayout.EndHorizontal();
+	GUILayout.EndVertical();
+	
+	if (Settings.SceneToLoad == 0) {
+		Settings.GameMode = GUILayout.SelectionGrid(Settings.GameMode, ["Team Death Match", "King of the Hill"], 2, GUILayout.Height(40));
+	}
+	else {
+		Settings.GameMode = GUILayout.SelectionGrid(Settings.GameMode, ["Team Death Match", "King of the Hill", "Capture Point"], 3, GUILayout.Height(30));
+	}
+	
+	GUILayout.Space(20);
+	
+	GUILayout.BeginHorizontal();
+	GUILayout.Label("Player Limit");
+	GUILayout.FlexibleSpace();
+	GUILayout.Label((playerLimit + 1).ToString());
+	playerLimit = Mathf.Round(GUILayout.HorizontalSlider(playerLimit, 1, 31, GUILayout.Width(Screen.width/6*4)));
+	
+	GUILayout.EndHorizontal();
+	
+	GUILayout.BeginHorizontal();
+	GUILayout.Label("Target Kills");
+	GUILayout.FlexibleSpace();
+	GUILayout.Label("" + Settings.KillGoal);
+	Settings.KillGoal = Mathf.Round(GUILayout.HorizontalSlider(Settings.KillGoal, 5, 1000, GUILayout.Width(Screen.width/6*4)));
+	GUILayout.EndHorizontal();
+	
+	GUILayout.BeginHorizontal();
+	GUILayout.Label("Respawn Time");
+	GUILayout.FlexibleSpace();
+	GUILayout.Label("" + Settings.RespawnTime);
+	Settings.RespawnTime = Mathf.Round(GUILayout.HorizontalSlider(Settings.RespawnTime, Settings.DeathTime, 10, GUILayout.Width(Screen.width/6*4)));
+	GUILayout.EndHorizontal();
+	
+	
+	GUILayout.BeginHorizontal();
+	GUILayout.Label("Kill Cam Time");
+	GUILayout.FlexibleSpace();
+	GUILayout.Label("" + Settings.DeathTime);
+	Settings.DeathTime= Mathf.Round(GUILayout.HorizontalSlider(Settings.DeathTime, 0, Settings.RespawnTime, GUILayout.Width(Screen.width/6*4)));
+	GUILayout.EndHorizontal();
+	
+	
+	GUILayout.BeginHorizontal();
+	GUILayout.Label("Comment");
+	GUILayout.FlexibleSpace();
+	Comment = GUILayout.TextField(Comment, 60, GUILayout.Width(Screen.width/6*4));
+	GUILayout.EndHorizontal();
+
+	GUILayout.EndScrollView();
+	GUILayout.Space(20);
+	
+	GUILayout.BeginHorizontal();
+	if (GUILayout.Button("Back")) {
+		Window = 0;
+	}
+	if (GUILayout.Button("Play Offline")) {
+		Network.InitializeServer(playerLimit, 2000, true);
+		StartGame(true, true);
+		Window = 0;
+	}
+	
+	if(GUILayout.Button("Start Server")) {
+		if(GameName != ""){
+			if(Settings.username != ""){
+				// Creating server
+				Network.InitializeServer(playerLimit, 2000, true);
+				MasterServer.RegisterHost("OutpostGameV0.25", GameName, Settings.SceneToLoad + "," + Settings.GameMode + "," + Comment);
+				EditingServer = false;
+				Playing = true;
+				StartGame(true, true);
+			}
+			else {
+				MessageContent = "No Player Name Set";
+				MessageBox = true;
+			}
+		}
+		else {
+			MessageContent = "No Server Name Set";
+			MessageBox = true;
+		}
+	}
+	GUILayout.EndHorizontal();
+	
+	GUILayout.EndArea();
+}

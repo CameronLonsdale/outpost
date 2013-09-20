@@ -1,0 +1,41 @@
+#pragma strict
+import System.Reflection;
+
+static function Interpret(input:String) {
+	input = input.Replace("/", "");
+	
+	var func:String = null;
+	var vars:String[] = null;
+	
+	var interpret:String[] = input.Split(" "[0]);
+	
+	try {
+		return typeof(Chat).GetMethod(interpret[0]).Invoke(null, interpret[1:-1]);
+	}
+	catch (err) {
+		switch (typeof(err)) {
+			case TargetException:
+				return "Error: '" + interpret[0] + "' does not exist";
+			case TargetParameterCountException:
+				return "Error: Argument length (" + (interpret.length - 1) + ") did not match declaration";
+			default:
+				return "Error: An unknown error has occured '" + err.ToString() + "'";
+		}
+	}
+}
+
+static function toggle(value:String) {
+	try {
+		var obj:Object = typeof(Settings).GetField(value);
+	}
+	catch (err) {
+		return "Error: '" + value + "' does not exist";
+	}
+	
+	if (typeof(obj) == boolean) {
+		obj = !obj;
+		return "";
+	}
+	
+	return "Error: Cannot toggle variable of type: '" + typeof(obj) + "'";
+}

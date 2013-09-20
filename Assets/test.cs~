@@ -1,0 +1,29 @@
+using UnityEngine;
+
+class test:MonoBehaviour {
+	public float movementSpeed = 0.5f;
+	
+	public void Update() {
+		//Get input
+		float hor = Input.GetAxis("Horizontal");
+		float vert = Input.GetAxis("Vertical");
+		
+		//Calculate the direction
+		//If you are unsure what "normalized" does
+		//I suggest learning how vectors work
+		Vector3 direction = new Vector3(hor, 0f, vert);
+		
+		//only move when we don't have a very small Input value
+		if (direction.magnitude > 0.001) {
+			direction.Normalize();
+		}
+		else {
+			return;
+		}
+		
+		//Calculate Velocity from direction
+		//And move
+		Vector3 velocity = direction * movementSpeed * Time.deltaTime;
+		transform.Translate(velocity, Space.World);
+	}
+}

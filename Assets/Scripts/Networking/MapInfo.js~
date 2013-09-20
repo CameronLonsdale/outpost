@@ -1,0 +1,30 @@
+#pragma strict
+class MapInfo extends MonoBehaviour {
+	//Team 1 Setup
+	var Team1Cam:Camera;
+	var Team1Spawns:Transform[];
+	
+	//Team 2 Setup
+	var Team2Cam:Camera;
+	var Team2Spawns:Transform[];
+	
+	//Common Team Setup
+	var CommonCam:Camera;
+	var RandomSpawns:Transform[];
+	
+	//Capture System Setup
+	var CaptureTheFlagPoint:CapturePoint;
+	var CapturePointPoints:CapturePoint[];
+	
+	//General Map Settings
+	var DeathPlane:Transform;
+	var Ladders:Ladder[];
+	var StaticNetworkObjects:StaticNetworkObject[];
+	var VehicleSpawnPoints:VehicleSpawnPoint[];
+	
+	function UpdateReferences() {
+		Ladders = FindObjectsOfType(typeof(Ladder)) as Ladder[];
+		StaticNetworkObjects = FindObjectsOfType(typeof(StaticNetworkObject)) as StaticNetworkObject[];
+		VehicleSpawnPoints = FindObjectsOfType(typeof(VehicleSpawnPoint)) as VehicleSpawnPoint[];
+	}
+}
