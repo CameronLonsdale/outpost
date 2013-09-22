@@ -3858,7 +3858,7 @@ Prefab:
     - target: {fileID: 2300000, guid: ac5e94c929b66294faaa7b7481bb4e0a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 46653a92899e9e14ea80266faa99a90b, type: 2}
+      objectReference: {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac5e94c929b66294faaa7b7481bb4e0a, type: 3}
   m_RootGameObject: {fileID: 1228524860}
@@ -3934,7 +3934,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 133fbc7d4c899c94f88b312bba8d1ad9, type: 2}
+  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -4965,7 +4965,7 @@ Prefab:
     - target: {fileID: 2300000, guid: fcac6457e0da2184e8f149fce06d13bd, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: de04e111fbe0fbe4981485283d7b145e, type: 2}
+      objectReference: {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: fcac6457e0da2184e8f149fce06d13bd, type: 3}
   m_RootGameObject: {fileID: 1793244546}
@@ -15151,7 +15151,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 46653a92899e9e14ea80266faa99a90b, type: 2}
+  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -21858,7 +21858,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: de04e111fbe0fbe4981485283d7b145e, type: 2}
+  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
