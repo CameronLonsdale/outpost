@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: RightBuilding
-  m_Shader: {fileID: 4, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: PerspexBridge
+  m_Shader: {fileID: 7, guid: 0000000000000000e000000000000000, type: 0}
   m_ShaderKeywords: []
   m_SavedProperties:
     serializedVersion: 2
@@ -16,19 +16,12 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 6fbe18de2b08be142a135e17cb0b2e57, type: 3}
+          m_Texture: {fileID: 2800000, guid: b001c3fb32da22a41b2c5b0ff1b8b5a0, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
-        second:
-          m_Texture: {fileID: 2800000, guid: b351d0458e5e8764a9929aebf039f258, type: 3}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _ParallaxMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -38,10 +31,6 @@ Material:
         first:
           name: _Shininess
         second: 1
-      data:
-        first:
-          name: _Parallax
-        second: .0199999996
     m_Colors:
       data:
         first:
