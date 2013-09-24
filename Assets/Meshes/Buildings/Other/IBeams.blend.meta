@@ -20,11 +20,13 @@ ModelImporter:
     2300004: Cube_002
     2300006: Ibeam1
     2300008: Ibeam2
+    2300010: //RootNode
     3300000: Cube
     3300002: Cube_001
     3300004: Cube_002
     3300006: Ibeam1
     3300008: Ibeam2
+    3300010: //RootNode
     4300000: Cube_001
     4300002: Cube
     4300004: Cube_002
