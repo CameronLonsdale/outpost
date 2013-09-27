@@ -55,6 +55,29 @@ ModelImporter:
     100098: RightWoodPiece2D1
     100100: RightWoodPiece2D2
     100102: ShadowCaster
+    100104: RightMain_001
+    100106: RightMain_002
+    100108: RightMain_003
+    100110: RightMain_004
+    100112: RightMain_005
+    100114: RightMain_006
+    100116: RightMain_007
+    100118: RightMain_008
+    100120: RightMain_009
+    100122: RightMain_010
+    100124: RightMain_011
+    100126: RightMain_012
+    100128: RightMain_013
+    100130: RightMain_014
+    100132: RightMain_015
+    100134: RightMain_016
+    100136: RightMain_017
+    100138: RightMain_018
+    100140: RightMain_019
+    100142: RightMain_020
+    100144: RightMain_021
+    100146: RightMain_022
+    100148: RightMain_023
     400000: BackDrop
     400002: //RootNode
     400004: Bomb
@@ -107,6 +130,29 @@ ModelImporter:
     400098: RightWoodPiece2D1
     400100: RightWoodPiece2D2
     400102: ShadowCaster
+    400104: RightMain_001
+    400106: RightMain_002
+    400108: RightMain_003
+    400110: RightMain_004
+    400112: RightMain_005
+    400114: RightMain_006
+    400116: RightMain_007
+    400118: RightMain_008
+    400120: RightMain_009
+    400122: RightMain_010
+    400124: RightMain_011
+    400126: RightMain_012
+    400128: RightMain_013
+    400130: RightMain_014
+    400132: RightMain_015
+    400134: RightMain_016
+    400136: RightMain_017
+    400138: RightMain_018
+    400140: RightMain_019
+    400142: RightMain_020
+    400144: RightMain_021
+    400146: RightMain_022
+    400148: RightMain_023
     2300000: BackDrop
     2300002: Bomb
     2300004: Debris
@@ -158,6 +204,29 @@ ModelImporter:
     2300096: RightWoodPiece2D1
     2300098: RightWoodPiece2D2
     2300100: ShadowCaster
+    2300102: RightMain_001
+    2300104: RightMain_002
+    2300106: RightMain_003
+    2300108: RightMain_004
+    2300110: RightMain_005
+    2300112: RightMain_006
+    2300114: RightMain_007
+    2300116: RightMain_008
+    2300118: RightMain_009
+    2300120: RightMain_010
+    2300122: RightMain_011
+    2300124: RightMain_012
+    2300126: RightMain_013
+    2300128: RightMain_014
+    2300130: RightMain_015
+    2300132: RightMain_016
+    2300134: RightMain_017
+    2300136: RightMain_018
+    2300138: RightMain_019
+    2300140: RightMain_020
+    2300142: RightMain_021
+    2300144: RightMain_022
+    2300146: RightMain_023
     3300000: BackDrop
     3300002: Bomb
     3300004: Debris
@@ -209,6 +278,29 @@ ModelImporter:
     3300096: RightWoodPiece2D1
     3300098: RightWoodPiece2D2
     3300100: ShadowCaster
+    3300102: RightMain_001
+    3300104: RightMain_002
+    3300106: RightMain_003
+    3300108: RightMain_004
+    3300110: RightMain_005
+    3300112: RightMain_006
+    3300114: RightMain_007
+    3300116: RightMain_008
+    3300118: RightMain_009
+    3300120: RightMain_010
+    3300122: RightMain_011
+    3300124: RightMain_012
+    3300126: RightMain_013
+    3300128: RightMain_014
+    3300130: RightMain_015
+    3300132: RightMain_016
+    3300134: RightMain_017
+    3300136: RightMain_018
+    3300138: RightMain_019
+    3300140: RightMain_020
+    3300142: RightMain_021
+    3300144: RightMain_022
+    3300146: RightMain_023
     4300000: MiddleLadder
     4300002: RightMain
     4300004: MiddleBuildingTallTable
@@ -260,6 +352,29 @@ ModelImporter:
     4300096: BackDrop
     4300098: DoorFrame
     4300100: DoorAlive
+    4300102: RightMain_023
+    4300104: RightMain_022
+    4300106: RightMain_021
+    4300108: RightMain_020
+    4300110: RightMain_019
+    4300112: RightMain_018
+    4300114: RightMain_017
+    4300116: RightMain_016
+    4300118: RightMain_015
+    4300120: RightMain_014
+    4300122: RightMain_013
+    4300124: RightMain_012
+    4300126: RightMain_011
+    4300128: RightMain_010
+    4300130: RightMain_009
+    4300132: RightMain_008
+    4300134: RightMain_007
+    4300136: RightMain_006
+    4300138: RightMain_005
+    4300140: RightMain_004
+    4300142: RightMain_003
+    4300144: RightMain_002
+    4300146: RightMain_001
     7400000: Default Take
   materials:
     importMaterials: 0

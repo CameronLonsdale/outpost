@@ -541,12 +541,12 @@ static function GetGameMode(map:int):int[] {
 static var mod:Mod = null;
 
 static function LoadMod(name:String) {
-    if (!File.Exists("Mods" + Path.DirectorySeparatorChar + name + ".cs")) {
+    if (!File.Exists("Mods" + Path.DirectorySeparatorChar + name + ".dll")) {
         Directory.CreateDirectory("Mods");
-        File.WriteAllText("Mods" + Path.DirectorySeparatorChar + "Default.cs", defaultMod.text);
+        File.WriteAllBytes("Mods" + Path.DirectorySeparatorChar + "Default.dll", defaultMod.bytes);
         name = "Default";
     }
-    mod = new Mod("Mods" + Path.DirectorySeparatorChar + name + ".cs");
+    mod = new Mod("Mods" + Path.DirectorySeparatorChar + name + ".dll");
 }
 
 //Mod class
@@ -650,6 +650,8 @@ class Mod {
 	
 	//Load an assembly from file
 	private function LoadAssembly(path:String):Assembly {
+		return Assembly.LoadFile(path);
+		/*
 		//Set compiler parameters
 		var params:CompilerParameters = new CompilerParameters();
 		params.GenerateExecutable = false; //Don't make executable
@@ -679,6 +681,7 @@ class Mod {
 	    	//return the compiler assembly
 	        return results.CompiledAssembly;
 	    }
+	    */
 	}
 	
 	//dump a list of errors to dump.txt in same directory
