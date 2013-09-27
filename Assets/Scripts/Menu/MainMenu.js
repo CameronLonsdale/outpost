@@ -19,6 +19,7 @@ class BackendMessage {
 
 //--GLOBAL--
 var NetworkManagerPrefab:NetworkManager;
+var DefaultMod:TextAsset;
 
 //--LOGIN--
 
@@ -83,6 +84,7 @@ var refreshTime:float;
 private var refreshTimer:float;
 
 function Awake() {
+    Settings.defaultMod = DefaultMod;
 	Input.eatKeyPressOnTextFieldFocus = false;
 	
     Loadout.gunsMain = NetworkManagerPrefab.GetComponent(typeof(NetworkManager)).PlayerPrefab.GetComponent(typeof(Player)).GunsMain;

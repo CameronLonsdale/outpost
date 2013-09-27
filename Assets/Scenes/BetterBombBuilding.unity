@@ -176,7 +176,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -243,7 +243,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 2100000, guid: 285004506ebbf7f4888a210c7a76ff8d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
@@ -362,7 +362,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -464,6 +464,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee6090d688c6cdc4287861b2e45ba30e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   team: 0
   CP: 0
   CaptureDistance: 4
@@ -555,6 +556,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &51381815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,6 +568,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 30
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400000, guid: 70acc8bc89176c947859673a809c7d66, type: 2}
@@ -580,6 +583,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 40
 --- !u!1001 &54106183
 Prefab:
@@ -695,7 +699,7 @@ Renderer:
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 903b0356db9a4aa49a72303dd8a47f3d, type: 2}
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -1105,6 +1109,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 120
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400008, guid: 56b1f27580e2faa41994c64ec0644ec7, type: 2}
@@ -1119,6 +1124,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &140389452
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1605,6 +1611,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c022accf4f11dd4a90b2bfffaba2595, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Top: {fileID: 1033196759}
   Bottom: {fileID: 1051110982}
 --- !u!1 &180538970
@@ -1649,7 +1656,7 @@ Renderer:
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 903b0356db9a4aa49a72303dd8a47f3d, type: 2}
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2044,6 +2051,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 30
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400000, guid: 70acc8bc89176c947859673a809c7d66, type: 2}
@@ -2058,6 +2066,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &207604345
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2069,6 +2078,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 40
 --- !u!1 &212843504
 GameObject:
@@ -2216,7 +2226,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 2100000, guid: eba93c0ace978af4ebc693e5935d2550, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
@@ -2274,6 +2284,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 1
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400002, guid: e20a56ee4d4216c45bd643385847da1b, type: 2}
@@ -2288,6 +2299,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &243747140
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2352,6 +2364,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 20
 --- !u!1001 &249790136
 Prefab:
@@ -2548,7 +2561,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2691,7 +2704,7 @@ Renderer:
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 903b0356db9a4aa49a72303dd8a47f3d, type: 2}
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2748,7 +2761,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -2885,7 +2898,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -3477,7 +3490,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -3763,7 +3776,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -3842,7 +3855,7 @@ Prefab:
     - target: {fileID: 2300000, guid: ac5e94c929b66294faaa7b7481bb4e0a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+      objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ac5e94c929b66294faaa7b7481bb4e0a, type: 3}
   m_RootGameObject: {fileID: 1228524860}
@@ -4054,7 +4067,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -4191,6 +4204,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 100
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400060, guid: 249295d9cb694cd4dbbe8f6eeb2741b8, type: 2}
@@ -4205,6 +4219,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &364832943
 Renderer:
   m_ObjectHideFlags: 0
@@ -4361,7 +4376,7 @@ Renderer:
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 903b0356db9a4aa49a72303dd8a47f3d, type: 2}
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -4406,7 +4421,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -4708,7 +4723,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -4767,6 +4782,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 100
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400010, guid: 8b1dd5bc75cdb5d45ae0908cee635e90, type: 2}
@@ -4781,6 +4797,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &445473622
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4807,8 +4824,8 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -4947,7 +4964,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 2100000, guid: 82f42373942ef4a4691db252b6ead967, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
@@ -5390,6 +5407,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &504903779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5401,6 +5419,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 40
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400000, guid: 2557f49dc57ecd74d96398bef66bdee4, type: 2}
@@ -5415,6 +5434,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 30
 --- !u!1 &507787895
 GameObject:
@@ -5572,6 +5592,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee6090d688c6cdc4287861b2e45ba30e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   team: 0
   CP: 0
   CaptureDistance: 4
@@ -5621,7 +5642,7 @@ Renderer:
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 903b0356db9a4aa49a72303dd8a47f3d, type: 2}
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -5672,6 +5693,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee6090d688c6cdc4287861b2e45ba30e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   team: 0
   CP: 0
   CaptureDistance: 4
@@ -5780,7 +5802,7 @@ Prefab:
     - target: {fileID: 2300000, guid: 2269853510a555243a3c6114c4a74b49, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+      objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2269853510a555243a3c6114c4a74b49, type: 3}
   m_RootGameObject: {fileID: 1553724556}
@@ -5860,7 +5882,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -5916,7 +5938,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -6169,7 +6191,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -6375,7 +6397,7 @@ Prefab:
     - target: {fileID: 2300000, guid: fac035ac2e7c15a468b6eafdca63251c, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+      objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
     - target: {fileID: 2300000, guid: fac035ac2e7c15a468b6eafdca63251c, type: 3}
       propertyPath: m_CastShadows
       value: 1
@@ -6590,7 +6612,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -6755,7 +6777,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 2100000, guid: 285004506ebbf7f4888a210c7a76ff8d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
@@ -6802,6 +6824,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 1
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400002, guid: e20a56ee4d4216c45bd643385847da1b, type: 2}
@@ -6816,6 +6839,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &611337781
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6880,6 +6904,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 20
 --- !u!1 &611953805
 GameObject:
@@ -7139,6 +7164,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 100
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400060, guid: 249295d9cb694cd4dbbe8f6eeb2741b8, type: 2}
@@ -7153,6 +7179,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &631563349
 Renderer:
   m_ObjectHideFlags: 0
@@ -7470,7 +7497,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -7540,7 +7567,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -7722,7 +7749,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -7819,7 +7846,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -8051,6 +8078,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &719001141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8062,6 +8090,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 5
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400000, guid: 92e7bf7a9a9fd0e4db06340805282698, type: 2}
@@ -8240,7 +8269,7 @@ Renderer:
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 903b0356db9a4aa49a72303dd8a47f3d, type: 2}
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -8379,6 +8408,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &749557973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8390,6 +8420,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 1
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400002, guid: e20a56ee4d4216c45bd643385847da1b, type: 2}
@@ -8445,6 +8476,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 20
 --- !u!1 &750684871
 GameObject:
@@ -8476,7 +8508,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -8532,6 +8564,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 5
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400000, guid: 92e7bf7a9a9fd0e4db06340805282698, type: 2}
@@ -8546,6 +8579,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &757652458
 Renderer:
   m_ObjectHideFlags: 0
@@ -8865,6 +8899,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ee6090d688c6cdc4287861b2e45ba30e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   team: 0
   CP: 0
   CaptureDistance: 4
@@ -9192,7 +9227,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 2100000, guid: 285004506ebbf7f4888a210c7a76ff8d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
@@ -9314,6 +9349,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &798063217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9325,6 +9361,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 1
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400002, guid: e20a56ee4d4216c45bd643385847da1b, type: 2}
@@ -9380,6 +9417,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 20
 --- !u!1001 &799500089
 Prefab:
@@ -9682,7 +9720,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -9706,6 +9744,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &824553753
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9716,6 +9755,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 500
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400004, guid: 7dd7937de3d6ec844b30a9b3c5a5b46e, type: 2}
@@ -9789,7 +9829,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -9888,7 +9928,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -9954,7 +9994,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -10010,7 +10050,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -10213,7 +10253,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -10291,7 +10331,7 @@ Renderer:
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 903b0356db9a4aa49a72303dd8a47f3d, type: 2}
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -10595,7 +10635,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -10897,7 +10937,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -11136,7 +11176,7 @@ Renderer:
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 903b0356db9a4aa49a72303dd8a47f3d, type: 2}
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -11228,7 +11268,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -11432,7 +11472,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 2100000, guid: 285004506ebbf7f4888a210c7a76ff8d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
@@ -11489,7 +11529,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -11613,6 +11653,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 1
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400002, guid: e20a56ee4d4216c45bd643385847da1b, type: 2}
@@ -11627,6 +11668,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &978810621
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11691,6 +11733,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 20
 --- !u!1 &980806095
 GameObject:
@@ -11740,6 +11783,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!33 &980806098
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -11768,6 +11812,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 50
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400000, guid: 568ebe1d9816f834b81121875eb8c3f0, type: 2}
@@ -11888,6 +11933,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 1
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400002, guid: e20a56ee4d4216c45bd643385847da1b, type: 2}
@@ -11902,6 +11948,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &984298811
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -11966,6 +12013,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 20
 --- !u!1 &984339845
 GameObject:
@@ -12009,7 +12057,7 @@ Renderer:
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 903b0356db9a4aa49a72303dd8a47f3d, type: 2}
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -12319,7 +12367,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -12460,6 +12508,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 10
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400004, guid: b0e4eeb064360394f8caac69e5e6a2d6, type: 2}
@@ -12474,6 +12523,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &1040703177
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12766,6 +12816,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 30
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400000, guid: 70acc8bc89176c947859673a809c7d66, type: 2}
@@ -12780,6 +12831,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1064545413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12791,6 +12843,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 40
 --- !u!1 &1068564090
 GameObject:
@@ -12897,7 +12950,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -12968,7 +13021,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -14130,6 +14183,7 @@ ParticleSystem:
       m_Bits: 4294967295
     quality: 0
     voxelSize: .5
+    collisionMessages: 0
   SubModule:
     enabled: 0
     subEmitterBirth: {fileID: 0}
@@ -14292,7 +14346,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -14427,7 +14481,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -14888,7 +14942,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -15173,6 +15227,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1210023019
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15184,6 +15239,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 500
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400000, guid: 65d3daee2132c48478d8d07d594db0d6, type: 2}
@@ -15198,6 +15254,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 80
 --- !u!65 &1210023021
 BoxCollider:
@@ -15339,7 +15396,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -15434,7 +15491,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 2100000, guid: 285004506ebbf7f4888a210c7a76ff8d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
@@ -15626,7 +15683,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -15751,6 +15808,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1262301060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15762,6 +15820,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 1
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400002, guid: e20a56ee4d4216c45bd643385847da1b, type: 2}
@@ -15829,6 +15888,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 20
 --- !u!1001 &1265444865
 Prefab:
@@ -15953,7 +16013,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -16050,7 +16110,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -16300,7 +16360,7 @@ Renderer:
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 903b0356db9a4aa49a72303dd8a47f3d, type: 2}
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -16916,7 +16976,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -17182,6 +17242,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b8ede95f01cb3f347838500441275ee9, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Team1Spawns: []
   Team2Spawns: []
   SpawnCam: {fileID: 1831216814}
@@ -17496,7 +17557,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -17640,7 +17701,7 @@ Renderer:
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 903b0356db9a4aa49a72303dd8a47f3d, type: 2}
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -17940,7 +18001,7 @@ Renderer:
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 903b0356db9a4aa49a72303dd8a47f3d, type: 2}
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -18190,7 +18251,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -18249,6 +18310,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1449554308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18260,6 +18322,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 10
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400004, guid: b0e4eeb064360394f8caac69e5e6a2d6, type: 2}
@@ -18480,7 +18543,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -18600,6 +18663,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1487844268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18611,6 +18675,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 40
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400006, guid: db04924edac0c4c4a8264a6e7f4facca, type: 2}
@@ -18640,7 +18705,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -18676,6 +18741,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 60
 --- !u!1001 &1499401408
 Prefab:
@@ -18766,7 +18832,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -18888,6 +18954,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 30
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400000, guid: ce1391cc40ec9a240be8e95197cb5863, type: 2}
@@ -18902,6 +18969,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &1512558121
 Renderer:
   m_ObjectHideFlags: 0
@@ -18952,6 +19020,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 40
 --- !u!1 &1515016744
 GameObject:
@@ -18983,7 +19052,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   - {fileID: 2100000, guid: 285004506ebbf7f4888a210c7a76ff8d, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
@@ -19661,7 +19730,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -20050,6 +20119,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1588159094
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20061,6 +20131,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 40
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400006, guid: db04924edac0c4c4a8264a6e7f4facca, type: 2}
@@ -20090,7 +20161,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -20126,6 +20197,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 60
 --- !u!1 &1597116014
 GameObject:
@@ -20169,7 +20241,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -20790,7 +20862,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -20998,6 +21070,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1690640773
 Transform:
   m_ObjectHideFlags: 0
@@ -21021,6 +21094,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 5
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400000, guid: 92e7bf7a9a9fd0e4db06340805282698, type: 2}
@@ -21456,7 +21530,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -21610,6 +21684,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1730150629
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21621,6 +21696,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 30
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400000, guid: 70acc8bc89176c947859673a809c7d66, type: 2}
@@ -21635,6 +21711,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 40
 --- !u!1 &1731444321
 GameObject:
@@ -21755,6 +21832,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c022accf4f11dd4a90b2bfffaba2595, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Top: {fileID: 1137331793}
   Bottom: {fileID: 1308509534}
 --- !u!1 &1738095176
@@ -21801,6 +21879,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1738095179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21812,6 +21891,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 1
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400002, guid: e20a56ee4d4216c45bd643385847da1b, type: 2}
@@ -21867,6 +21947,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 20
 --- !u!1 &1742511498
 GameObject:
@@ -22227,7 +22308,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -22325,6 +22406,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1805522404
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22336,6 +22418,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 30
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400000, guid: 70acc8bc89176c947859673a809c7d66, type: 2}
@@ -22350,6 +22433,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 40
 --- !u!1 &1808334810
 GameObject:
@@ -22390,6 +22474,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8c022accf4f11dd4a90b2bfffaba2595, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Top: {fileID: 1994439023}
   Bottom: {fileID: 1742511499}
 --- !u!1 &1810690910
@@ -22497,7 +22582,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -22602,7 +22687,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -22900,6 +22985,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &1847202164
 Renderer:
   m_ObjectHideFlags: 0
@@ -22939,6 +23025,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 30
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400000, guid: ce1391cc40ec9a240be8e95197cb5863, type: 2}
@@ -22966,6 +23053,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 40
 --- !u!1 &1849464847
 GameObject:
@@ -23054,6 +23142,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 100
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400060, guid: 249295d9cb694cd4dbbe8f6eeb2741b8, type: 2}
@@ -23068,6 +23157,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &1855332760
 Renderer:
   m_ObjectHideFlags: 0
@@ -23312,7 +23402,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -23476,6 +23566,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1876656419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23487,6 +23578,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 30
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400000, guid: 70acc8bc89176c947859673a809c7d66, type: 2}
@@ -23514,6 +23606,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 40
 --- !u!1 &1885577952
 GameObject:
@@ -23545,7 +23638,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -23940,6 +24033,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 1
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400002, guid: e20a56ee4d4216c45bd643385847da1b, type: 2}
@@ -23954,6 +24048,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &1912976407
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24018,6 +24113,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 20
 --- !u!1 &1915535781
 GameObject:
@@ -24060,7 +24156,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -24388,6 +24484,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1930508581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24398,6 +24495,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 150
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400002, guid: f34a1565c58cac349b16d1e30a742558, type: 2}
@@ -24538,6 +24636,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 1
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400002, guid: e20a56ee4d4216c45bd643385847da1b, type: 2}
@@ -24552,6 +24651,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &1935993867
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24616,6 +24716,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 20
 --- !u!1 &1949299425
 GameObject:
@@ -24649,6 +24750,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1949299427
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24660,6 +24762,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 40
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400000, guid: 2557f49dc57ecd74d96398bef66bdee4, type: 2}
@@ -24726,6 +24829,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 30
 --- !u!1 &1954805805
 GameObject:
@@ -24825,7 +24929,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -24871,6 +24975,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1977988791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24882,6 +24987,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 150
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400000, guid: 4f33a777eec480548baae468158718e4, type: 2}
@@ -24911,7 +25017,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -24947,6 +25053,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 70
 --- !u!1 &1978807036
 GameObject:
@@ -25021,7 +25128,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -25081,6 +25188,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1984655136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25092,6 +25200,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 150
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400000, guid: 4f33a777eec480548baae468158718e4, type: 2}
@@ -25121,7 +25230,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -25157,6 +25266,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 70
 --- !u!1001 &1984887692
 Prefab:
@@ -25428,6 +25538,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 120
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400008, guid: 56b1f27580e2faa41994c64ec0644ec7, type: 2}
@@ -25442,6 +25553,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!64 &1997335009
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -25629,7 +25741,7 @@ Renderer:
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 903b0356db9a4aa49a72303dd8a47f3d, type: 2}
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -25891,6 +26003,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &2039162175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25901,6 +26014,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 50
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400000, guid: 53f7c6048742dff49ae6282b21a56c2c, type: 2}
@@ -26050,7 +26164,7 @@ Prefab:
     - target: {fileID: 2300000, guid: dc0d3353a74468b4bb7481d5d87762f8, type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+      objectReference: {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dc0d3353a74468b4bb7481d5d87762f8, type: 3}
   m_RootGameObject: {fileID: 740592302}
@@ -26098,7 +26212,7 @@ Renderer:
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 903b0356db9a4aa49a72303dd8a47f3d, type: 2}
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -26230,7 +26344,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -26301,6 +26415,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 80
 --- !u!23 &2090784384
 Renderer:
@@ -26370,7 +26485,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -26552,7 +26667,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -26756,7 +26871,7 @@ Renderer:
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 903b0356db9a4aa49a72303dd8a47f3d, type: 2}
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0

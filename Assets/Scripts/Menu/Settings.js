@@ -530,6 +530,7 @@ MODDING
 */
 
 static var maps:String[] = ["lolies"];
+static var defaultMod:TextAsset;
 
 static function GetGameMode(map:int):int[] {
     if (map == 0) {
@@ -542,7 +543,7 @@ static var mod:Mod = null;
 static function LoadMod(name:String) {
     if (!File.Exists("Mods" + Path.DirectorySeparatorChar + name + ".cs")) {
         Directory.CreateDirectory("Mods");
-        File.WriteAllText("Mods" + Path.DirectorySeparatorChar + "Default.cs", (AssetDatabase.LoadAssetAtPath("Assets/DefaultMod.txt", TextAsset) as TextAsset).text);
+        File.WriteAllText("Mods" + Path.DirectorySeparatorChar + "Default.cs", defaultMod.text);
         name = "Default";
     }
     mod = new Mod("Mods" + Path.DirectorySeparatorChar + name + ".cs");

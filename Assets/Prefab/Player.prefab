@@ -14847,7 +14847,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .640668392, y: 14.1806049, z: .512383461}
+  m_LocalPosition: {x: 17.3994102, y: 7.52476501, z: -2.25053191}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -27836,7 +27836,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -27927,7 +27927,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -37770,6 +37770,8 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -37826,6 +37828,8 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -37882,6 +37886,8 @@ AudioSource:
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -40505,6 +40511,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f6204e4eebd11a44996a6765e2f43ccd, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   MaxHealth: 100
   Health: 0
   HealthRegen: 2
@@ -40587,6 +40594,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Proximity Mine
   Type: 5
   Class: 13
@@ -40634,6 +40642,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ammo Pod
   Type: 5
   Class: 13
@@ -40681,6 +40690,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Famae SAF
   Type: 0
   Class: 1
@@ -40738,6 +40748,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 44e159da29488d748a876a4da08c2846, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   startAutomatically: 1
   useIK: 0
   maxFootRotationAngle: 45
@@ -40773,6 +40784,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95a4378a026625e4fb8e79779a26d607, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   fixedUpdate: 0
 --- !u!114 &11400012
 MonoBehaviour:
@@ -40784,6 +40796,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a7b3267fad0cfe24ab41232a21f2a108, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   groundPlaneHeight: 0
   groundedPose: {fileID: 7400000, guid: b7464abcc2cae374781120d9dbd2767e, type: 3}
   rootBone: {fileID: 400914}
@@ -86411,10 +86424,7 @@ MonoBehaviour:
   sourceAnimationsBackwards: []
   m_HipAverage: {x: .0605306812, y: .87232852, z: .012695631}
   m_HipAverageGround: {x: .0605306812, y: 0, z: .012695631}
-  m_Motions: []
-  m_CycleMotions: []
   m_MotionGroups: []
-  m_NonGroupMotions: []
 --- !u!114 &11400014
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -86425,6 +86435,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ext-Mags
   Description: Increase the amount of amunition per clip. More bullets = better
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
@@ -86451,6 +86462,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ext-Mags
   Description: Increase the amount of amunition per clip. More bullets = better
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
@@ -86477,6 +86489,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: 
   Description: No Attachment
   texture: {fileID: 2800000, guid: 50993c35dc7640246aa009466fecc376, type: 3}
@@ -86503,6 +86516,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -86529,6 +86543,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -86555,6 +86570,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -86581,6 +86597,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -86607,6 +86624,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -86633,6 +86651,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: SG553
   Type: 0
   Class: 7
@@ -86690,6 +86709,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: M1014
   Type: 1
   Class: 6
@@ -86745,6 +86765,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: AT4
   Type: 1
   Class: 13
@@ -86793,6 +86814,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -86819,6 +86841,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -86845,6 +86868,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -86871,6 +86895,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ext-Mags
   Description: Increase the amount of amunition per clip. More bullets = better
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
@@ -86897,6 +86922,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -86923,6 +86949,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -86949,6 +86976,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -86975,6 +87003,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ext-Mags
   Description: Increase the amount of amunition per clip. More bullets = better
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
@@ -87001,6 +87030,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -87027,6 +87057,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -87053,6 +87084,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -87079,6 +87111,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -87105,6 +87138,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -87131,6 +87165,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -87157,6 +87192,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -87183,6 +87219,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -87209,6 +87246,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -87235,6 +87273,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -87261,6 +87300,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -87287,6 +87327,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -87313,6 +87354,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -87339,6 +87381,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -87365,6 +87408,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: MP412 Rex
   Type: 1
   Class: 12
@@ -87418,6 +87462,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -87444,6 +87489,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -87470,6 +87516,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -87496,6 +87543,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -87522,6 +87570,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -87548,6 +87597,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Buckshot
   Description: Fill the body of your enemy with hundreds of pelates in one single
     blast.
@@ -87575,6 +87625,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -87601,6 +87652,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -87627,6 +87679,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: M1911
   Type: 1
   Class: 11
@@ -87682,6 +87735,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -87708,6 +87762,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -87734,6 +87789,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -87760,6 +87816,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -87786,6 +87843,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -87812,6 +87870,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -87838,6 +87897,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -87864,6 +87924,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -87890,6 +87951,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: MP9-N
   Type: 0
   Class: 10
@@ -87946,6 +88008,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -87972,6 +88035,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -87998,6 +88062,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -88024,6 +88089,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -88050,6 +88116,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -88076,6 +88143,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -88102,6 +88170,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -88128,6 +88197,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -88154,6 +88224,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -88180,6 +88251,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -88206,6 +88278,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -88232,6 +88305,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -88258,6 +88332,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -88284,6 +88359,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -88310,6 +88386,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -88336,6 +88413,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -88362,6 +88440,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -88388,6 +88467,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -88414,6 +88494,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -88440,6 +88521,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -88466,6 +88548,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -88492,6 +88575,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -88518,6 +88602,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -88544,6 +88629,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -88570,6 +88656,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: M249
   Type: 0
   Class: 2
@@ -88626,6 +88713,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -88652,6 +88740,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -88678,6 +88767,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -88704,6 +88794,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -88730,6 +88821,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -88756,6 +88848,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -88782,6 +88875,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -88808,6 +88902,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -88834,6 +88929,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -88860,6 +88956,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -88886,6 +88983,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: FN-Fal
   Type: 0
   Class: 3
@@ -88943,6 +89041,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -88969,6 +89068,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -88995,6 +89095,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -89021,6 +89122,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -89047,6 +89149,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -89073,6 +89176,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -89099,6 +89203,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -89125,6 +89230,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -89151,6 +89257,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -89177,6 +89284,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -89203,6 +89311,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a366563276e7d3a4ea1f1b3386afd9cd, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   time: 10
 --- !u!114 &11400216
 MonoBehaviour:
@@ -89214,6 +89323,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: M110
   Type: 1
   Class: 5
@@ -89270,6 +89380,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -89296,6 +89407,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -89322,6 +89434,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -89348,6 +89461,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -89374,6 +89488,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: M98B
   Type: 4
   Class: 5
@@ -89428,6 +89543,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -89454,6 +89570,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -89480,6 +89597,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -89506,6 +89624,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -89532,6 +89651,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: PP-19
   Type: 0
   Class: 1
@@ -89587,6 +89707,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -89613,6 +89734,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -89639,6 +89761,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -89665,6 +89788,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -89691,6 +89815,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -89717,6 +89842,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -89743,6 +89869,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -89769,6 +89896,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -89795,6 +89923,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -89821,6 +89950,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -89847,6 +89977,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -89873,6 +90004,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -89899,6 +90031,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -89925,6 +90058,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -89951,6 +90085,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Tar-21
   Type: 0
   Class: 7
@@ -90007,6 +90142,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -90033,6 +90169,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -90059,6 +90196,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -90085,6 +90223,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -90111,6 +90250,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -90137,6 +90277,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -90163,6 +90304,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -90189,6 +90331,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -90215,6 +90358,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -90241,6 +90385,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -90267,6 +90412,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -90293,6 +90439,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -90319,6 +90466,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -90345,6 +90493,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -90371,6 +90520,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -90397,6 +90547,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: M4A1
   Type: 0
   Class: 7
@@ -90453,6 +90604,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -90479,6 +90631,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: USAS12
   Type: 0
   Class: 6
@@ -90535,6 +90688,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 773a893ca232d0a4780efc07619b675d, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   player: {fileID: 11400000}
   Multi: 1.29999995
 --- !u!114 &11400306
@@ -90547,6 +90701,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -90573,6 +90728,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -90599,6 +90755,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -90625,6 +90782,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -90651,6 +90809,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -90677,6 +90836,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ext-Mags
   Description: Increase the amount of amunition per clip. More bullets = better
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
@@ -90703,6 +90863,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -90729,6 +90890,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -90755,6 +90917,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: M9
   Type: 1
   Class: 11
@@ -90810,6 +90973,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -90836,6 +91000,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -90862,6 +91027,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -90888,6 +91054,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -90914,6 +91081,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -90940,6 +91108,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -90966,6 +91135,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -90992,6 +91162,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -91018,6 +91189,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -91044,6 +91216,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -91070,6 +91243,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -91096,6 +91270,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -91122,6 +91297,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -91148,6 +91324,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -91174,6 +91351,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -91200,6 +91378,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ext-Mags
   Description: Increase the amount of amunition per clip. More bullets = better
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
@@ -91226,6 +91405,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -91252,6 +91432,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -91278,6 +91459,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -91304,6 +91486,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: 93R
   Type: 2
   Class: 10
@@ -91358,6 +91541,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: XM8
   Type: 0
   Class: 4
@@ -91413,6 +91597,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -91439,6 +91624,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -91465,6 +91651,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -91491,6 +91678,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -91517,6 +91705,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: VSS
   Type: 0
   Class: 5
@@ -91570,6 +91759,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -91596,6 +91786,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -91622,6 +91813,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -91648,6 +91840,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -91674,6 +91867,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -91700,6 +91894,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -91726,6 +91921,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -91752,6 +91948,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -91778,6 +91975,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -91804,6 +92002,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -91830,6 +92029,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -91856,6 +92056,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -91882,6 +92083,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -91908,6 +92110,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -91934,6 +92137,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -91960,6 +92164,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -91986,6 +92191,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -92012,6 +92218,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -92038,6 +92245,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -92064,6 +92272,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -92090,6 +92299,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: QBB-95
   Type: 0
   Class: 2
@@ -92146,6 +92356,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 773a893ca232d0a4780efc07619b675d, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   player: {fileID: 11400000}
   Multi: 1
 --- !u!114 &11400426
@@ -92158,6 +92369,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: ACR
   Type: 0
   Class: 4
@@ -92216,6 +92428,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ext-Mags
   Description: Increase the amount of amunition per clip. More bullets = better
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
@@ -92242,6 +92455,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -92268,6 +92482,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -92294,6 +92509,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -92320,6 +92536,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -92346,6 +92563,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -92372,6 +92590,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -92398,6 +92617,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -92424,6 +92644,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -92450,6 +92671,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -92476,6 +92698,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -92502,6 +92725,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: CZW438
   Type: 0
   Class: 8
@@ -92559,6 +92783,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ext-Mags
   Description: Increase the amount of amunition per clip. More bullets = better
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
@@ -92585,6 +92810,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -92611,6 +92837,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -92637,6 +92864,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -92663,6 +92891,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -92689,6 +92918,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -92715,6 +92945,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -92741,6 +92972,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -92767,6 +92999,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -92793,6 +93026,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -92819,6 +93053,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -92845,6 +93080,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Scar-H
   Type: 0
   Class: 3
@@ -92901,6 +93137,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -92927,6 +93164,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -92953,6 +93191,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -92979,6 +93218,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -93005,6 +93245,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -93031,6 +93272,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -93057,6 +93299,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -93083,6 +93326,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -93109,6 +93353,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -93135,6 +93380,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -93161,6 +93407,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: AKS74U
   Type: 0
   Class: 7
@@ -93217,6 +93464,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -93243,6 +93491,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -93269,6 +93518,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -93295,6 +93545,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -93321,6 +93572,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -93347,6 +93599,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -93373,6 +93626,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -93399,6 +93653,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -93425,6 +93680,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -93451,6 +93707,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -93477,6 +93734,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: SKS
   Type: 1
   Class: 7
@@ -93533,6 +93791,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Magpul PDR
   Type: 0
   Class: 8
@@ -93589,6 +93848,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: AUG A3
   Type: 0
   Class: 4
@@ -93645,6 +93905,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -93671,6 +93932,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -93697,6 +93959,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -93723,6 +93986,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -93749,6 +94013,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -93775,6 +94040,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -93801,6 +94067,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -93827,6 +94094,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -93853,6 +94121,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -93879,6 +94148,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -93905,6 +94175,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ext-Mags
   Description: Increase the amount of amunition per clip. More bullets = better
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
@@ -93931,6 +94202,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -93957,6 +94229,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -93983,6 +94256,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -94009,6 +94283,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -94035,6 +94310,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -94061,6 +94337,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -94087,6 +94364,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -94113,6 +94391,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -94139,6 +94418,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -94165,6 +94445,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -94191,6 +94472,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -94217,6 +94499,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -94243,6 +94526,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -94269,6 +94553,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -94295,6 +94580,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -94321,6 +94607,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -94347,6 +94634,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -94373,6 +94661,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -94399,6 +94688,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -94425,6 +94715,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -94451,6 +94742,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Health Rod
   Type: 5
   Class: 13
@@ -94498,6 +94790,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Rifled Slugs
   Description: One single powerfull round that will decimate at any range.
   texture: {fileID: 2800000, guid: f6ef60d11bdf8e44d8e9c625a39e35aa, type: 3}
@@ -94524,6 +94817,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ext-Mags
   Description: Increase the amount of amunition per clip. More bullets = better
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
@@ -94550,6 +94844,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Buckshot
   Description: Fill the body of your enemy with hundreds of pelates in one single
     blast.
@@ -94577,6 +94872,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Rifled Slugs
   Description: One single powerfull round that will decimate at any range.
   texture: {fileID: 2800000, guid: f6ef60d11bdf8e44d8e9c625a39e35aa, type: 3}
@@ -94603,6 +94899,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: KAC PDW
   Type: 0
   Class: 8
@@ -94660,6 +94957,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ext-Mags
   Description: Increase the amount of amunition per clip. More bullets = better
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
@@ -94686,6 +94984,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -94712,6 +95011,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -94738,6 +95038,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -94764,6 +95065,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -94790,6 +95092,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -94816,6 +95119,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -94842,6 +95146,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -94868,6 +95173,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -94894,6 +95200,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -94920,6 +95227,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Scar-L
   Type: 0
   Class: 7
@@ -94976,6 +95284,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -95002,6 +95311,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -95028,6 +95338,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -95054,6 +95365,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -95080,6 +95392,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -95106,6 +95419,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -95132,6 +95446,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -95158,6 +95473,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -95184,6 +95500,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -95210,6 +95527,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -95236,6 +95554,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: .44 Magnum
   Type: 1
   Class: 12
@@ -95290,6 +95609,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -95316,6 +95636,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -95342,6 +95663,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -95368,6 +95690,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -95394,6 +95717,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -95420,6 +95744,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -95446,6 +95771,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -95472,6 +95798,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -95498,6 +95825,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da9277fc4bc94de48bd1a60b93950fdf, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   LeftFootSound: {fileID: 0}
   RightFootSound: {fileID: 0}
 --- !u!114 &11400664
@@ -95510,6 +95838,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: 870MCS
   Type: 3
   Class: 6
@@ -95565,6 +95894,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Buckshot
   Description: Fill the body of your enemy with hundreds of pelates in one single
     blast.
@@ -95592,6 +95922,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Rifled Slugs
   Description: One single powerfull round that will decimate at any range.
   texture: {fileID: 2800000, guid: f6ef60d11bdf8e44d8e9c625a39e35aa, type: 3}
@@ -95618,6 +95949,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -95644,6 +95976,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -95670,6 +96003,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -95696,6 +96030,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -95722,6 +96057,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -95748,6 +96084,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ext-Mags
   Description: Increase the amount of amunition per clip. More bullets = better
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
@@ -95774,6 +96111,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -95800,6 +96138,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -95826,6 +96165,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: HK417
   Type: 1
   Class: 3
@@ -95882,6 +96222,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -95908,6 +96249,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -95934,6 +96276,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -95960,6 +96303,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -95986,6 +96330,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -96012,6 +96357,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -96038,6 +96384,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -96064,6 +96411,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -96090,6 +96438,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -96116,6 +96465,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -96142,6 +96492,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: UMP45
   Type: 0
   Class: 1
@@ -96199,6 +96550,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -96225,6 +96577,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -96251,6 +96604,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ext-Mags
   Description: Increase the amount of amunition per clip. More bullets = better
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
@@ -96277,6 +96631,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -96303,6 +96658,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -96329,6 +96685,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -96355,6 +96712,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -96381,6 +96739,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -96407,6 +96766,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -96433,6 +96793,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -96459,6 +96820,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -96485,6 +96847,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: G18
   Type: 0
   Class: 10
@@ -96541,6 +96904,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -96567,6 +96931,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -96593,6 +96958,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -96619,6 +96985,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -96645,6 +97012,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -96671,6 +97039,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -96697,6 +97066,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -96723,6 +97093,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -96749,6 +97120,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ext-Mags
   Description: Increase the amount of amunition per clip. More bullets = better
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
@@ -96775,6 +97147,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -96801,6 +97174,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Stoner63
   Type: 0
   Class: 2
@@ -96857,6 +97231,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -96883,6 +97258,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -96909,6 +97285,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -96935,6 +97312,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -96961,6 +97339,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -96987,6 +97366,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -97013,6 +97393,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -97039,6 +97420,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -97065,6 +97447,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -97091,6 +97474,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -97117,6 +97501,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: SV-98
   Type: 4
   Class: 5
@@ -97171,6 +97556,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -97197,6 +97583,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -97223,6 +97610,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -97249,6 +97637,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -97275,6 +97664,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -97301,6 +97691,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -97327,6 +97718,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -97353,6 +97745,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -97379,6 +97772,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: M60
   Type: 0
   Class: 2
@@ -97435,6 +97829,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -97461,6 +97856,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -97487,6 +97883,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -97513,6 +97910,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -97539,6 +97937,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -97565,6 +97964,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Foregrip
   Description: Hold your gun more easily, decreases recoil
   texture: {fileID: 2800000, guid: f69a78c583da82e47a338c34d151c828, type: 3}
@@ -97591,6 +97991,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -97617,6 +98018,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -97643,6 +98045,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -97669,6 +98072,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -97695,6 +98099,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 746d4f685adc65747b7ad6e61d53f35e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: MP7
   Type: 0
   Class: 1
@@ -97752,6 +98157,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Supressor
   Description: Mask the noise of your shots, but decrease thair strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
@@ -97778,6 +98184,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Reflex
   Description: Low powered scope, used for close quater situations
   texture: {fileID: 2800000, guid: 482ab220c3631c7448eada8a1895bf06, type: 3}
@@ -97804,6 +98211,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Lazer
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
@@ -97830,6 +98238,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Iron Sights
   Description: The default sights for the weapon, AKA No-Scope
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
@@ -97856,6 +98265,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Holo
   Description: Low powered scope, great for medium range encounters
   texture: {fileID: 2800000, guid: 0b3957206494c854fbfe603f5bfed695, type: 3}
@@ -97882,6 +98292,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Supressor
   Description: Hide the flash from your gun, while decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
@@ -97908,6 +98319,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Flash Light
   Description: Light up the dark with the sun in your hand
   texture: {fileID: 2800000, guid: a195e2ac462468140a823a6367b01c8a, type: 3}
@@ -97934,6 +98346,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Ballistics
   Description: High powered scope, great for getting headshots over large distances
   texture: {fileID: 2800000, guid: d41195b6f187a3f42a7cc2e5098f66c2, type: 3}
@@ -97960,6 +98373,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Name: Acog
   Description: High powered scope, in the mid-range for sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
@@ -98123,7 +98537,7 @@ CapsuleCollider:
   m_Center: {x: .0199999996, y: 0, z: 0}
 --- !u!137 &13700000
 SkinnedMeshRenderer:
-  m_ObjectHideFlags: 13
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100170}
