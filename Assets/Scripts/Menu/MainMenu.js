@@ -531,12 +531,13 @@ function MainMenuScreen(weight:float) {
         }
     }
     if (GUILayout.Button("Options", GUILayout.Width(Screen.width/12*2), GUILayout.ExpandHeight(true))) {
-        if (dropdown != Dropdown.options) {
+      	if (dropdown != Dropdown.options) {
             dropdown = Dropdown.options;
         }
         else {
             dropdown = Dropdown.none;
-        }
+        }      
+       
     }
     if (GUILayout.Button("Quit", GUILayout.Width(Screen.width/12), GUILayout.ExpandHeight(true))) {
         if (dropdown != Dropdown.quit) {
@@ -716,6 +717,7 @@ function ServerEditScreen(weight:float) {
 function ProfileScreen(weight:float) {
 }
 
+
 function OptionsScreen(weight:float) {
     GUI.color.a = weight;
     GUI.skin.box.fontSize = fontSize - 4;
@@ -723,6 +725,8 @@ function OptionsScreen(weight:float) {
     GUI.skin.button.fontSize = fontSize - 4;
     
     GUI.Box(Rect(windowOffset.x, windowOffset.y, swidth, sheight), "");
+    
+    
     GUILayout.BeginArea(Rect(windowOffset.x, windowOffset.y, swidth, sheight));
     
     optionsType = GUILayout.SelectionGrid(optionsType, ["Video",  "Controls"], 2, GUILayout.Height(Screen.height/18));
@@ -914,8 +918,8 @@ function OptionsScreen(weight:float) {
     GUI.skin.label.fontSize = fontSize;
     GUI.skin.button.fontSize = fontSize;
     GUI.color = Color.white;
+    
 }
-
 function KeyField(key:KeyCode, name:String) {
 	GUILayout.BeginHorizontal();
 	GUILayout.Label(name);
