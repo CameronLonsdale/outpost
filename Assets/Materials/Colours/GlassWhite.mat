@@ -6,8 +6,8 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: GlassReflective
-  m_Shader: {fileID: 33, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: GlassWhite
+  m_Shader: {fileID: 4800000, guid: f75b05d1ab6ac4540b9eb094acc5d8ad, type: 3}
   m_ShaderKeywords: []
   m_SavedProperties:
     serializedVersion: 2
@@ -16,28 +16,28 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 3c69b4d0d66f2a74b8c5e527c91b67c1, type: 3}
-          m_Scale: {x: 5, y: 5}
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 2800000, guid: 4dee7ff5d1189874996bb4e8b3d33b3c, type: 3}
-          m_Scale: {x: 20, y: 20}
+          m_Texture: {fileID: 2800000, guid: d861d16a348ea1e4a821062dbeff992a, type: 3}
+          m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _Cube
         second:
-          m_Texture: {fileID: 8900000, guid: fd5d43ff2de9a974782c779a7e4e98c8, type: 2}
+          m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
     m_Floats:
       data:
         first:
           name: _Shininess
-        second: .078125
+        second: .0227657892
     m_Colors:
       data:
         first:
@@ -46,8 +46,8 @@ Material:
       data:
         first:
           name: _SpecColor
-        second: {r: .5, g: .5, b: .5, a: 1}
+        second: {r: .507352948, g: .507352948, b: .507352948, a: 1}
       data:
         first:
           name: _ReflectColor
-        second: {r: 1, g: 1, b: 1, a: 1}
+        second: {r: 1, g: 1, b: 1, a: .5}

@@ -40698,7 +40698,7 @@ MonoBehaviour:
   Muzzle: {fileID: 401564}
   GunObject: {fileID: 400232}
   MuzzleFlashType: 0
-  texture: {fileID: 2800000, guid: e374d289f3e86924ca8c3d65b491fd1c, type: 3}
+  texture: {fileID: 2800000, guid: 1a65c96d32bada94b889de88b71c2ff8, type: 3}
   BulletType: 0
   PrefabIndex: 0
   BulletTimes: 1
@@ -86717,7 +86717,7 @@ MonoBehaviour:
   Muzzle: {fileID: 400146}
   GunObject: {fileID: 400280}
   MuzzleFlashType: 0
-  texture: {fileID: 2800000, guid: dd5a80258fb19664b848d09837bf0ebd, type: 3}
+  texture: {fileID: 2800000, guid: 39d63cea355a33443beab2bbd00249b5, type: 3}
   BulletType: 0
   PrefabIndex: 0
   BulletTimes: 6
@@ -87959,7 +87959,7 @@ MonoBehaviour:
   Muzzle: {fileID: 400138}
   GunObject: {fileID: 400706}
   MuzzleFlashType: 0
-  texture: {fileID: 2800000, guid: 484d3f31aa4ef834e9c70479d3b337b8, type: 3}
+  texture: {fileID: 2800000, guid: b4dfdbc326090ed4d8a3a8ea1b4f5b85, type: 3}
   BulletType: 0
   PrefabIndex: 0
   BulletTimes: 1
@@ -88664,7 +88664,7 @@ MonoBehaviour:
   Muzzle: {fileID: 400432}
   GunObject: {fileID: 400448}
   MuzzleFlashType: 0
-  texture: {fileID: 2800000, guid: 18bbb345b960dc64dbed33894517b83c, type: 3}
+  texture: {fileID: 2800000, guid: 2b025577b22160e488b7345ecf4cde67, type: 3}
   BulletType: 0
   PrefabIndex: 0
   BulletTimes: 1
@@ -89331,7 +89331,7 @@ MonoBehaviour:
   Muzzle: {fileID: 400136}
   GunObject: {fileID: 400312}
   MuzzleFlashType: 0
-  texture: {fileID: 2800000, guid: 12856b94ead264242acafe40f7a1c950, type: 3}
+  texture: {fileID: 2800000, guid: 7ee6e9c71d9a2ae48b49dae3488bb305, type: 3}
   BulletType: 0
   PrefabIndex: 0
   BulletTimes: 1
@@ -89659,7 +89659,7 @@ MonoBehaviour:
   Muzzle: {fileID: 400334}
   GunObject: {fileID: 400178}
   MuzzleFlashType: 0
-  texture: {fileID: 2800000, guid: bdd1da02c374a2c40ab0190b635f406f, type: 3}
+  texture: {fileID: 2800000, guid: 5bf073e9a79a6b94da59be4b2afd5afd, type: 3}
   BulletType: 0
   PrefabIndex: 0
   BulletTimes: 1
@@ -91713,7 +91713,7 @@ MonoBehaviour:
   Muzzle: {fileID: 400828}
   GunObject: {fileID: 400836}
   MuzzleFlashType: 0
-  texture: {fileID: 2800000, guid: 34a79a1b1d41fca4083ed2d1d4e59fb8, type: 3}
+  texture: {fileID: 2800000, guid: b59e3785e53351d40ba992a2d595787b, type: 3}
   BulletType: 0
   PrefabIndex: 0
   BulletTimes: 1
@@ -92307,7 +92307,7 @@ MonoBehaviour:
   Muzzle: {fileID: 400902}
   GunObject: {fileID: 400886}
   MuzzleFlashType: 0
-  texture: {fileID: 2800000, guid: 8bf7f36e1ae97b445bea35867024dd5e, type: 3}
+  texture: {fileID: 2800000, guid: 78454f55211ce214cb6ee6de873485be, type: 3}
   BulletType: 0
   PrefabIndex: 0
   BulletTimes: 1
