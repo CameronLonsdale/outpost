@@ -7,7 +7,7 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: GlassReflective
-  m_Shader: {fileID: 21, guid: 0000000000000000e000000000000000, type: 0}
+  m_Shader: {fileID: 33, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
   m_SavedProperties:
     serializedVersion: 2
@@ -33,7 +33,11 @@ Material:
           m_Texture: {fileID: 8900000, guid: fd5d43ff2de9a974782c779a7e4e98c8, type: 2}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
-    m_Floats: {}
+    m_Floats:
+      data:
+        first:
+          name: _Shininess
+        second: .078125
     m_Colors:
       data:
         first:
@@ -41,5 +45,9 @@ Material:
         second: {r: 1, g: 1, b: 1, a: 1}
       data:
         first:
+          name: _SpecColor
+        second: {r: .5, g: .5, b: .5, a: 1}
+      data:
+        first:
           name: _ReflectColor
-        second: {r: .425373137, g: .425373137, b: .425373137, a: 1}
+        second: {r: 1, g: 1, b: 1, a: 1}

@@ -211,6 +211,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 51adda48cbef7ad4f843fa9fbca46414, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   NetworkManagerPrefab: {fileID: 11400000, guid: 70096a621eecce84da0c5e395fab1f4c,
     type: 2}
   DefaultMod: {fileID: 4900000, guid: c7e1c676c9a41d74bab8b81c69d6f405, type: 3}
