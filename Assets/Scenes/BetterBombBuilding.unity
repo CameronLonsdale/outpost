@@ -4738,7 +4738,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b2f251a96bd5f4c4182c0b41cba0eceb, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -8906,24 +8906,28 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 00f8bf3661412f04bbdc4cfe19d3c933, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -3.20794378e-08
+      value: -3.20794413e-08
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 00f8bf3661412f04bbdc4cfe19d3c933, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -2.19831287e-09
+      value: -2.19831309e-09
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 00f8bf3661412f04bbdc4cfe19d3c933, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -.473920792
+      value: -.473920822
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 00f8bf3661412f04bbdc4cfe19d3c933, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -.880567431
+      value: -.880567491
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 00f8bf3661412f04bbdc4cfe19d3c933, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 4294967295
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 00f8bf3661412f04bbdc4cfe19d3c933, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: b2f251a96bd5f4c4182c0b41cba0eceb, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 00f8bf3661412f04bbdc4cfe19d3c933, type: 3}
   m_RootGameObject: {fileID: 398706749}
