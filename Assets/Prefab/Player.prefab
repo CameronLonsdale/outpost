@@ -40694,7 +40694,7 @@ MonoBehaviour:
   Name: Famae SAF
   Type: 0
   Class: 1
-  Description: A quick automatic SMG, very good at close quaters
+  Description: A quick Automatic SMG, very good at close quaters
   Muzzle: {fileID: 401564}
   GunObject: {fileID: 400232}
   MuzzleFlashType: 0
@@ -86713,7 +86713,7 @@ MonoBehaviour:
   Name: M1014
   Type: 1
   Class: 6
-  Description: A powerfull semi-automatic shotgun designed for close range
+  Description: A powerful Semi-Automatic Shotgun designed for close range
   Muzzle: {fileID: 400146}
   GunObject: {fileID: 400280}
   MuzzleFlashType: 0
@@ -86769,7 +86769,7 @@ MonoBehaviour:
   Name: AT4
   Type: 1
   Class: 13
-  Description: A one time use powerful rocket launcher, good at killing everything,
+  Description: A single use powerful rocket launcher, good at killing everything,
     everywhere
   Muzzle: {fileID: 401688}
   GunObject: {fileID: 400504}
@@ -87412,7 +87412,7 @@ MonoBehaviour:
   Name: MP412 Rex
   Type: 1
   Class: 12
-  Description: A Rapid Fire revolver, good at close to medium range
+  Description: A rapid fire Revolver, good at close to medium range
   Muzzle: {fileID: 400862}
   GunObject: {fileID: 400298}
   MuzzleFlashType: 0
@@ -87683,7 +87683,7 @@ MonoBehaviour:
   Name: M1911
   Type: 1
   Class: 11
-  Description: A powerfull semi-automatic Handgun, good at close to medium ranges
+  Description: A foreceful semi-automatic Handgun, good at close to medium ranges
   Muzzle: {fileID: 401454}
   GunObject: {fileID: 400756}
   MuzzleFlashType: 0
@@ -87955,7 +87955,7 @@ MonoBehaviour:
   Name: MP9-N
   Type: 0
   Class: 10
-  Description: A powerfull Machine Pistol, only good at very close quaters
+  Description: A powerful Machine Pistol, only good at very close quaters
   Muzzle: {fileID: 400138}
   GunObject: {fileID: 400706}
   MuzzleFlashType: 0
@@ -88660,7 +88660,7 @@ MonoBehaviour:
   Name: M249
   Type: 0
   Class: 2
-  Description: A powerfull Machine Gun good at close to medium range
+  Description: A powerful Machine Gun good at close to medium range
   Muzzle: {fileID: 400432}
   GunObject: {fileID: 400448}
   MuzzleFlashType: 0
@@ -88987,7 +88987,7 @@ MonoBehaviour:
   Name: FN-Fal
   Type: 0
   Class: 3
-  Description: A powerfull fully automatic battle rifle, good at long range
+  Description: A dynamic fully automatic battle rifle, good at long range
   Muzzle: {fileID: 400480}
   GunObject: {fileID: 400496}
   MuzzleFlashType: 0
@@ -89327,7 +89327,7 @@ MonoBehaviour:
   Name: M110
   Type: 1
   Class: 5
-  Description: An all-round semi-automatic sniper rifle, good for medium to long range
+  Description: An all-round Semi-Automatic Sniper Rifle, good for medium to long range
   Muzzle: {fileID: 400136}
   GunObject: {fileID: 400312}
   MuzzleFlashType: 0
@@ -89492,7 +89492,7 @@ MonoBehaviour:
   Name: M98B
   Type: 4
   Class: 5
-  Description: The best boltaction sniper rifle for very long range enagagements
+  Description: The best boltaction Sniper Rifle for very long range enagagements
   Muzzle: {fileID: 400550}
   GunObject: {fileID: 400534}
   MuzzleFlashType: 0
@@ -89655,7 +89655,7 @@ MonoBehaviour:
   Name: PP-19
   Type: 0
   Class: 1
-  Description: If you'd combine an MG with a PDW, you'd get this, good at most ranges
+  Description: If you combined an MG with a PDW, you'd get this, good at most ranges
   Muzzle: {fileID: 400334}
   GunObject: {fileID: 400178}
   MuzzleFlashType: 0
@@ -90089,7 +90089,7 @@ MonoBehaviour:
   Name: Tar-21
   Type: 0
   Class: 7
-  Description: A powerfull automatic Carbine, very good at close ranges
+  Description: A powerful automatic Carbine, very good at close ranges
   Muzzle: {fileID: 400612}
   GunObject: {fileID: 400606}
   MuzzleFlashType: 0
@@ -90551,7 +90551,7 @@ MonoBehaviour:
   Name: M4A1
   Type: 0
   Class: 7
-  Description: A all rounder fully automatic Carbine, good at most ranges
+  Description: An all rounded fully Automatic Carbine, good at most ranges
   Muzzle: {fileID: 400654}
   GunObject: {fileID: 400658}
   MuzzleFlashType: 0
@@ -90635,7 +90635,7 @@ MonoBehaviour:
   Name: USAS12
   Type: 0
   Class: 6
-  Description: A epic fully automatic Shotgun, great for close quaters
+  Description: A dominant fully automatic Shotgun, great for close quaters
   Muzzle: {fileID: 400684}
   GunObject: {fileID: 400700}
   MuzzleFlashType: 0
@@ -90921,7 +90921,7 @@ MonoBehaviour:
   Name: M9
   Type: 1
   Class: 11
-  Description: A quick sneaky semi-automatic Handgun, good at close ranges
+  Description: A quick devious semi-automatic Handgun, good at close ranges
   Muzzle: {fileID: 400360}
   GunObject: {fileID: 400230}
   MuzzleFlashType: 0
@@ -91490,7 +91490,7 @@ MonoBehaviour:
   Name: 93R
   Type: 2
   Class: 10
-  Description: A burst Mashine Pistol, very capable at close range
+  Description: A burst Mashine Pistol, lethal at close range
   Muzzle: {fileID: 400798}
   GunObject: {fileID: 400796}
   MuzzleFlashType: 0
@@ -91545,7 +91545,7 @@ MonoBehaviour:
   Name: XM8
   Type: 0
   Class: 4
-  Description: 'A powerful fully automatic Assault Rifle, great for medium '
+  Description: An lntense fully automatic Assault Rifle, great for medium range encounters
   Muzzle: {fileID: 400812}
   GunObject: {fileID: 400268}
   MuzzleFlashType: 0
@@ -91709,7 +91709,7 @@ MonoBehaviour:
   Name: VSS
   Type: 0
   Class: 5
-  Description: The close range automatic sniper rifle, who's onle weakness is sniping
+  Description: The close range Automatic Sniper Rifle, who's only weakness is sniping
   Muzzle: {fileID: 400828}
   GunObject: {fileID: 400836}
   MuzzleFlashType: 0
@@ -93411,7 +93411,7 @@ MonoBehaviour:
   Name: AKS74U
   Type: 0
   Class: 7
-  Description: Another all rounder fullt automatic Carbine, good at most ranges
+  Description: An all rounded fully Automatic Carbine, good at most ranges
   Muzzle: {fileID: 401190}
   GunObject: {fileID: 401194}
   MuzzleFlashType: 0
@@ -93795,7 +93795,7 @@ MonoBehaviour:
   Name: Magpul PDR
   Type: 0
   Class: 8
-  Description: A all-rounder of the sutomatic PDW's, good at all ranges
+  Description: An all-rounder of the automatic PDW's, good at all ranges
   Muzzle: {fileID: 401270}
   GunObject: {fileID: 401290}
   MuzzleFlashType: 0
@@ -93852,7 +93852,7 @@ MonoBehaviour:
   Name: AUG A3
   Type: 0
   Class: 4
-  Description: The All rounder of automatic Assault Rifles, good at all ranges
+  Description: The Jack of all trades of Automatic Assault Rifles, good at all ranges
   Muzzle: {fileID: 401228}
   GunObject: {fileID: 401246}
   MuzzleFlashType: 0
@@ -94745,7 +94745,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Health Rod
   Type: 5
-  Class: 13
+  Class: 0
   Description: Take care of your comrads and yourself, by healing them
   Muzzle: {fileID: 400380}
   GunObject: {fileID: 401342}
@@ -94903,7 +94903,7 @@ MonoBehaviour:
   Name: KAC PDW
   Type: 0
   Class: 8
-  Description: A sneaky little automatic PDW, good for short to medium range
+  Description: A sneaky little Automatic PDW, good for short to medium range
   Muzzle: {fileID: 401422}
   GunObject: {fileID: 401388}
   MuzzleFlashType: 0
@@ -95231,7 +95231,7 @@ MonoBehaviour:
   Name: Scar-L
   Type: 0
   Class: 7
-  Description: A stealthy fully automatic Assault Rifle, great at long range
+  Description: A stealthy fully Automatic Assault Rifle, great at long range
   Muzzle: {fileID: 401422}
   GunObject: {fileID: 401402}
   MuzzleFlashType: 0
@@ -95558,7 +95558,7 @@ MonoBehaviour:
   Name: .44 Magnum
   Type: 1
   Class: 12
-  Description: A powerfull Revolver, good at all ranges, a perfect finisher
+  Description: A powerful Revolver, good at all ranges, a perfect finisher
   Muzzle: {fileID: 401454}
   GunObject: {fileID: 401468}
   MuzzleFlashType: 0
@@ -95842,7 +95842,7 @@ MonoBehaviour:
   Name: 870MCS
   Type: 3
   Class: 6
-  Description: An unstoppable hitting force of a shotgun, great for clse quaters
+  Description: An unstoppable force of a shotgun, great for close quaters
   Muzzle: {fileID: 401490}
   GunObject: {fileID: 401508}
   MuzzleFlashType: 0
@@ -96851,7 +96851,7 @@ MonoBehaviour:
   Name: G18
   Type: 0
   Class: 10
-  Description: A automatic Mashine Pistol, very good at close range
+  Description: An Automatic Mashine Pistol, very good at close range
   Muzzle: {fileID: 401606}
   GunObject: {fileID: 401626}
   MuzzleFlashType: 0
@@ -97776,7 +97776,7 @@ MonoBehaviour:
   Name: M60
   Type: 0
   Class: 2
-  Description: A huge automatic Mashine Gun, good with prolonged fire at medium range
+  Description: A huge automatic Machine Gun, good with prolonged fire at medium range
   Muzzle: {fileID: 401716}
   GunObject: {fileID: 401734}
   MuzzleFlashType: 0
@@ -98103,7 +98103,7 @@ MonoBehaviour:
   Name: MP7
   Type: 0
   Class: 1
-  Description: A quick little automatic SMG, very capable at short ranges
+  Description: Aquick Automatic SMG, effective at short ranges
   Muzzle: {fileID: 401422}
   GunObject: {fileID: 401786}
   MuzzleFlashType: 0
