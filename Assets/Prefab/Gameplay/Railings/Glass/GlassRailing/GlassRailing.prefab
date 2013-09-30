@@ -57,7 +57,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_Mesh: {fileID: 4300054, guid: f4f5082171fe3a04688068d69674e809, type: 3}
+  m_Mesh: {fileID: 4300058, guid: f4f5082171fe3a04688068d69674e809, type: 3}
 --- !u!65 &6500000
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -80,6 +80,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 40
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400000, guid: 2557f49dc57ecd74d96398bef66bdee4, type: 2}
@@ -93,6 +94,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -103,6 +105,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 30
 --- !u!1001 &100100000
 Prefab:
