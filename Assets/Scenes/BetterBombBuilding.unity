@@ -3092,6 +3092,7 @@ GameObject:
   - 33: {fileID: 292920524}
   - 23: {fileID: 292920523}
   - 65: {fileID: 292920525}
+  - 114: {fileID: 292920526}
   m_Layer: 0
   m_Name: Table2
   m_TagString: Untagged
@@ -3149,6 +3150,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.10796261, y: .129999995, z: 1.17837548}
   m_Center: {x: -.0649632439, y: -.129999995, z: .183318034}
+--- !u!114 &292920526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 292920521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Percent: 40
 --- !u!1001 &296126607
 Prefab:
   m_ObjectHideFlags: 0
@@ -7017,6 +7030,7 @@ Renderer:
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
   - {fileID: 2100000, guid: 9a35eedbc7428e44d919c6dd4a4cefe2, type: 2}
+  - {fileID: 10302, guid: 0000000000000000f000000000000000, type: 0}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
