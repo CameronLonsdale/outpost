@@ -1,3 +1,5 @@
+#pragma strict
+
 var Health:float = 30;
 var Dependancy:Transform;
 var DeathPrefab:Transform;
@@ -10,7 +12,7 @@ var point:Vector3 = Vector3.zero;
 private var SNO:StaticNetworkObject;
 
 function Awake() {
-	SNO = GetComponent("StaticNetworkObject");
+	SNO = GetComponent(typeof(StaticNetworkObject)) as StaticNetworkObject;
 }
 
 function Damage(amount:float, dir:Vector3, pnt:Vector3) {

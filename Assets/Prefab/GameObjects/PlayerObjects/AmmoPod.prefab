@@ -44,8 +44,8 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: a336ad761b9c79a4a823d981eb8570d4, type: 2}
-  - {fileID: 2100000, guid: 61a4474bb19019c40bc085cdfced0497, type: 2}
+  - {fileID: 2100000, guid: 429822797270aff47b08260d0fa685d8, type: 2}
+  - {fileID: 2100000, guid: b5b89cfbac3bb694fb660671e8912221, type: 2}
   - {fileID: 2100000, guid: f18f0a1da613ca84fb13f9f8de1353a3, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
@@ -96,10 +96,11 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: eeead14c583cab14e8ffa38fa4e2c96e, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   MaxAmmo: 200
-  AmmoAdd: 1
+  AmmoAdd: 20
   Range: 3
-  AdditionTime: .200000003
+  AdditionTime: 2
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -110,6 +111,9 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4345d14daad24804e854e58e0625a16f, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
+  hasDamage: 0
+  health: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

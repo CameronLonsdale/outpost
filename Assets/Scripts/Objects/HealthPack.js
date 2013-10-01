@@ -1,3 +1,5 @@
+#pragma strict
+
 var MaxHealth:int;
 var HealthAdd:int;
 @System.NonSerialized
@@ -13,29 +15,30 @@ function Awake() {
 	CurrentHealth = MaxHealth;
 	transform.eulerAngles = Vector3(-90, 90, 0);
 	
-	DNO = GetComponent("DynamicNetworkObject");
+	DNO = GetComponent(typeof(DynamicNetworkObject)) as DynamicNetworkObject;
 	Timer = Time.time + AdditionTime;
 }
 
 function Update() {
-	if (!Settings.replayMode) {
-		if (Timer < Time.time) {
-			CurrentHealth -= HealthAdd;
-			CurrentPlayer = DNO.netMan.CurrentPlayer;
-			if (CurrentPlayer) {
-				if (Vector3.Distance(transform.position, CurrentPlayer.transform.position) < Range) {
-					if (DNO.netMan.health < 100) {
-						DNO.netMan.health += HealthAdd;
-						DNO.netMan.health = Mathf.Clamp(DNO.netMan.health, 0, 100);
-					}
-				}
-			}
-			Timer = Time.time + AdditionTime;
-		}
-		if (CurrentHealth <= 0 && Network.isServer) {
-			DNO.netMan.networkView.RPC("_DynamicObjectDeath", RPCMode.All, DNO.index, -1);
-		}
-	}
+    if (Network.isServer) {
+        if (Timer < Time.time) {
+            CurrentHealth -= HealthAdd;
+            
+            for (obj in DNO.netMan.NPlayers.Values) {
+                if (obj.object) {
+                    if (Vector3.Distance(obj.object.transform.position, transform.position) < Range) {
+                        obj.object.Heal(DNO.id, HealthAdd);
+                    }
+                }
+            }
+            
+            Timer = Time.time + AdditionTime;
+        }
+        
+        if (CurrentHealth <= 0) {
+            DNO.netMan.networkView.RPC("_DynamicObjectDeath", RPCMode.All, DNO.index, -1);
+        }
+    }
 }
 
 function OnDeath(pid:int) {

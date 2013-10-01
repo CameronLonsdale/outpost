@@ -44,9 +44,9 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: a336ad761b9c79a4a823d981eb8570d4, type: 2}
-  - {fileID: 2100000, guid: 61a4474bb19019c40bc085cdfced0497, type: 2}
-  - {fileID: 2100000, guid: 4e0cbf75cedfd80478f7649fd0bd8400, type: 2}
+  - {fileID: 2100000, guid: 429822797270aff47b08260d0fa685d8, type: 2}
+  - {fileID: 2100000, guid: b5b89cfbac3bb694fb660671e8912221, type: 2}
+  - {fileID: 2100000, guid: c08c8cfe2d6a19445bbb3f5fbe945828, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -96,6 +96,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 87b94fa4353fafe49bf236bb7e27098b, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   MaxHealth: 200
   HealthAdd: 4
   Range: 3
@@ -110,6 +111,9 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4345d14daad24804e854e58e0625a16f, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
+  hasDamage: 0
+  health: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

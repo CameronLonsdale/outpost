@@ -1,3 +1,5 @@
+#pragma strict
+
 var time:float;
 private var timer:float;
 

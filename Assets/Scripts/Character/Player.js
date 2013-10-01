@@ -246,7 +246,7 @@ private var tempBullet:Projectile;
 private var audioPrefab:AudioSource;
 private var ladder:Ladder;
 
-private var currentGun:Gun;
+private var gun:Gun;
 
 private var rigidTemp:Rigidbody;
 private var renderers:Renderer;
@@ -519,6 +519,21 @@ function Kill() {
 	Destroy(Soldier.GetComponent("LegAnimator"));
 	Soldier.parent = null;
 	Destroy(gameObject);
+}
+
+function Resupply(amount:int) {
+    Resupply(NetId, amount);
+}
+
+function Resupply(id:int, amount:int) {
+    for (gun in equipped) {
+        gun.Ammo += amount/100f * gun.AmmoMax;
+        gun.Ammo = Mathf.Min(gun.AmmoMax, gun.Ammo);
+    }
+    
+    if (Network.isServer) {
+        networkManager.server.OnPlayerResupplied(NetId, id, amount);
+    }
 }
 
 function Heal(amount:float) {
@@ -980,7 +995,6 @@ function GunFire(gun:Gun, time:float) {
 				rigidTemp.velocity.y = 0;
 			}
 		}
-		return;
 	}
 	else {
 		if (Active) {

@@ -368,6 +368,22 @@ function OnPlayerHealed(id:int, hid:int, amount:float) {
 	}
 }
 
+function OnPlayerResupplied(id:int, hid:int, amount:int) {
+	if (networkManager.NPlayers[id].networkPlayer != Network.player) {
+		network.RPC("_ResupplyPlayer", networkManager.NPlayers[id].networkPlayer, amount);
+	}
+	
+	if (id != hid) {
+		networkManager.NPlayers[hid].experience += amount;
+		if (networkManager.NPlayers[hid].networkPlayer == Network.player) {
+			networkManager.client.ResupplyIndication(amount);
+		}
+		else {
+			network.RPC("_ResupplyIndication", networkManager.NPlayers[hid].networkPlayer, amount);
+		}
+	}
+}
+
 function OnPlayerDamaged(id:int, kid:int, amount:float, weapon:String) {
 	if (networkManager.NPlayers[id].networkPlayer != Network.player) {
 		network.RPC("_DamagePlayer", networkManager.NPlayers[id].networkPlayer, amount);
@@ -857,6 +873,8 @@ function GetSpawn(id:int) {
 		}
 	}
 	else if (networkManager.gameMode == 2) {
+        var epochStart:DateTime = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
+        Random.seed = (System.DateTime.UtcNow - epochStart).TotalSeconds;
 		if (networkManager.NPlayers[id].team == 1) {
 			spawn = networkManager.mapInfo.Team1Spawns[Random.Range(0, networkManager.mapInfo.Team1Spawns.length)];
 		}

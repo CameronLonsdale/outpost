@@ -458,7 +458,7 @@ function OnGUI() {
                     GUI.Box(Rect(swidth/16*7, sheight/16*7, swidth/16*2, sheight/16), "You Win!");
                 }
                 else {
-                    GUI.Box(Rect(swidth/16*7, sheight/16*7, swidth/16*2, sheight/16), "You Loose!");
+                    GUI.Box(Rect(swidth/16*7, sheight/16*7, swidth/16*2, sheight/16), "You Lose!");
                 }
             break;
         }
@@ -545,6 +545,20 @@ function _SetServerData(respawnTime:float, killCamTime:float, gameMode:int, map:
         networkManager.map = map;
         networkManager.targetKills = targetKills;
         networkManager.LoadLevel();
+	}
+}
+
+@RPC
+function _ResupplyPlayer(amount:int, info:NetworkMessageInfo) {
+    if (info.sender == Network.connections[0]) {
+		player.object.Heal(amount);
+	}
+}
+
+@RPC
+function _ResupplyIndication(amount:int, info:NetworkMessageInfo) {
+    if (info.sender == Network.connections[0]) {
+		ResupplyIndication(amount);
 	}
 }
 
@@ -821,6 +835,10 @@ function VehicleKillNotification(index:int) {
 
 function VehicleAssistNotification(index:int, amount:float) {
 	
+}
+
+function ResupplyIndication(amount:int) {
+
 }
 
 function HealIndication(amount:float) {
@@ -1745,7 +1763,7 @@ function ScorebordScreen(weight:float) {
     GUI.skin.label.fontSize += 3;
 }
 
-function SortByKills(players:NPlayer[]):NPlayer[] {
+function SortByKills(players:NPlayer[]) {
     System.Array.Sort.<NPlayer>(players, CompareKills);
 }
 
@@ -1766,6 +1784,8 @@ function HUDGUI(weight:float) {
 		else {
 			GUI.color = networkManager.GreenColor;
 		}
+        GUI.color.a = weight;
+        
 		for (nPlayer in networkManager.NPlayers.Values) {
 			if (nPlayer.object && nPlayer.team == player.team && nPlayer != player) {
 				TempVector = player.object.cam.WorldToScreenPoint(nPlayer.object.transform.position + Vector3(0,0.7,0));
@@ -1788,7 +1808,6 @@ function HUDGUI(weight:float) {
 		GUI.color.a = weight;
 		GUI.DrawTexture(Rect(5 + swidth/8*10/3, 5 + sheight/16*15, (swidth/8*8/3  - 10)/100.0*player.object.Health, sheight/16 - 10), networkManager.White, ScaleMode.StretchToFill);
 		GUI.color = Color(1, 1, 1, weight);
-		
 		
 		GUI.Box(Rect(swidth/8*2, sheight/16*14, swidth/8*4/3, sheight/16*2), player.object.currentWeapon.texture);
 		GUI.Box(Rect(swidth/8*10/3, sheight/16*14, swidth/8*4/3, sheight/16), player.object.currentWeapon.Clip + "/" + player.object.currentWeapon.Ammo);

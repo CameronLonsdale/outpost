@@ -1,3 +1,5 @@
+#pragma strict
+
 @System.NonSerialized
 var Pos:Vector3 = Vector3.zero;
 @System.NonSerialized
@@ -19,6 +21,14 @@ var id:int;
 var team:int;
 @System.NonSerialized
 var type:int;
+
+//Attributes
+var hasDamage:boolean = false;;
+var health:float = 0.0;
+
+//Temporary Variables
+private var sno:StaticNetworkObject;
+private var magnitude:float;
 
 function Awake() {
 	if (Network.isClient) {
@@ -42,9 +52,15 @@ function Update() {
 }
 
 function Damage(amount:float, direction:Vector3, point:Vector3, pid:int) {
-	if (GetComponent("ProximityMine")) {
-		GetComponent("ProximityMine").Damage(amount, direction, point, pid);
-	}
+	if (hasDamage) {
+        if (health > 0) {
+            health -= amount;
+            
+            if (health < 0) {
+                netMan.network.RPC("_DynamicObjectDeath", RPCMode.All, index, pid);
+            }
+        }
+    }
 }
 
 function Kill(pid:int) {
@@ -53,4 +69,14 @@ function Kill(pid:int) {
 
 function Vanish() {
 	Destroy(gameObject);
+}
+
+function OnCollisionEnter(collision:Collision) {
+    sno = collision.collider.GetComponent(typeof(StaticNetworkObject)) as StaticNetworkObject;
+    if (sno) {
+        magnitude = rigidbody.velocity.magnitude;
+        if (magnitude > 0.1) {
+            sno.Damage(Mathf.Max(magnitude*5, 30), rigidbody.velocity, collision.contacts[0].point);
+        }
+    }
 }

@@ -1,3 +1,5 @@
+#pragma strict
+
 /*
 ===========================
 Classes
@@ -203,6 +205,8 @@ private var vehicleInstance:VehicleInstance;
 //Temporary
 private var IndexList:int;
 private var IndexList2:int;
+
+private var tmpFloat:float;
 
 /*===
 Random Generator

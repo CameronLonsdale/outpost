@@ -1,3 +1,5 @@
+#pragma strict
+
 var VehicleType:int;
 var TimeDelay:float;
 
