@@ -658,6 +658,9 @@ function _SpawnRequest(id:int, main:int, secondary:int, ma1:int, ma2:int, ma3:in
 @RPC
 function _LeaveRequest(id:int, info:NetworkMessageInfo) {
 	if (networkManager.NPlayers[id].networkPlayer == info.sender || info.sender + "" == "-1") {
+        if (networkManager.NPlayers[id].object) {
+			networkManager.NPlayers[id].object.Damage(Mathf.Infinity);
+		}
 		network.RPC("_LeavePlayer", RPCMode.All, id);
 	}
 }
@@ -684,7 +687,7 @@ function _PlayerFireRequest(id:int, info:NetworkMessageInfo) {
 function _SuicideRequest(id:int, info:NetworkMessageInfo) {
 	if (networkManager.NPlayers[id].networkPlayer == info.sender) {
 		if (networkManager.NPlayers[id].object) {
-			networkManager.NPlayers[id].object.Damage(Mathf.Infinity, "Problems");
+			networkManager.NPlayers[id].object.Damage(Mathf.Infinity);
 		}
 	}
 }

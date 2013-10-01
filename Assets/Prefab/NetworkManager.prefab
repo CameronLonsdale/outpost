@@ -87,7 +87,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 344a9843c1018e44388182f6c79e9938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  UPS: 15
+  UPS: 16
   PingUpdateTime: 6
   PlayerPrefab: {fileID: 400000, guid: f0a4bef21dc504f4f8c6eeeebd250e58, type: 2}
   BulletHits:

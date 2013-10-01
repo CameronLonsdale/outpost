@@ -1,7 +1,5 @@
 #pragma strict
 
-import System.Collections;
-
 //Projectile Properties
 var Speed:float;
 var Penetrability:float = 1;
