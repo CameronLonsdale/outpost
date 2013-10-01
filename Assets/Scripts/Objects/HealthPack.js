@@ -20,20 +20,24 @@ function Awake() {
 }
 
 function Update() {
-    if (Timer < Time.time) {
-        CurrentHealth -= HealthAdd;
-        /*if (CurrentPlayer) {
-            if (Vector3.Distance(transform.position, CurrentPlayer.transform.position) < Range) {
-                if (DNO.netMan.health < 100) {
-                    DNO.netMan.health += HealthAdd;
-                    DNO.netMan.health = Mathf.Clamp(DNO.netMan.health, 0, 100);
+    if (Network.isServer) {
+        if (Timer < Time.time) {
+            CurrentHealth -= HealthAdd;
+            
+            for (obj in DNO.netMan.NPlayers.Values) {
+                if (obj.object) {
+                    if (Vector3.Distance(obj.object.transform.position, transform.position) < Range) {
+                        obj.object.Heal(DNO.id, HealthAdd);
+                    }
                 }
             }
-        } -- need work*/
-        Timer = Time.time + AdditionTime;
-    }
-    if (CurrentHealth <= 0 && Network.isServer) {
-        DNO.netMan.networkView.RPC("_DynamicObjectDeath", RPCMode.All, DNO.index, -1);
+            
+            Timer = Time.time + AdditionTime;
+        }
+        
+        if (CurrentHealth <= 0) {
+            DNO.netMan.networkView.RPC("_DynamicObjectDeath", RPCMode.All, DNO.index, -1);
+        }
     }
 }
 

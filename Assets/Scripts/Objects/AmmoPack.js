@@ -20,20 +20,24 @@ function Awake() {
 }
 
 function Update() {
-    if (Timer < Time.time) {
-        CurrentAmmo -= AmmoAdd;
-        /*if (CurrentPlayer) {
-            if (Vector3.Distance(transform.position, CurrentPlayer.transform.position) < Range) {
-                if (CurrentPlayer.Equipped[CurrentPlayer.Selected].Ammo < CurrentPlayer.Equipped[CurrentPlayer.Selected].AmmoMax) {
-                    CurrentPlayer.Equipped[CurrentPlayer.Selected].Ammo += AmmoAdd;
-                    CurrentPlayer.Equipped[CurrentPlayer.Selected].Ammo = Mathf.Clamp(CurrentPlayer.Equipped[CurrentPlayer.Selected].Ammo, 0, CurrentPlayer.Equipped[CurrentPlayer.Selected].AmmoMax);
+    if (Network.isServer) {
+        if (Timer < Time.time) {
+            CurrentAmmo -= AmmoAdd;
+            
+            for (obj in DNO.netMan.NPlayers.Values) {
+                if (obj.object) {
+                    if (Vector3.Distance(obj.object.transform.position, transform.position) < Range) {
+                        obj.object.Resupply(DNO.id, AmmoAdd);
+                    }
                 }
             }
-        } -- rework*/
-        Timer = Time.time + AdditionTime;
-    }
-    if (CurrentAmmo <= 0 && Network.isServer) {
-        DNO.netMan.networkView.RPC("_DynamicObjectDeath", RPCMode.All, DNO.index, -1);
+            
+            Timer = Time.time + AdditionTime;
+        }
+        
+        if (CurrentAmmo <= 0) {
+            DNO.netMan.networkView.RPC("_DynamicObjectDeath", RPCMode.All, DNO.index, -1);
+        }
     }
 }
 

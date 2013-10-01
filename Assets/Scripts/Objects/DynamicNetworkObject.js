@@ -22,8 +22,13 @@ var team:int;
 @System.NonSerialized
 var type:int;
 
+//Attributes
 var hasDamage:boolean = false;;
 var health:float = 0.0;
+
+//Temporary Variables
+private var sno:StaticNetworkObject;
+private var magnitude:float;
 
 function Awake() {
 	if (Network.isClient) {
@@ -64,4 +69,14 @@ function Kill(pid:int) {
 
 function Vanish() {
 	Destroy(gameObject);
+}
+
+function OnCollisionEnter(collision:Collision) {
+    sno = collision.collider.GetComponent(typeof(StaticNetworkObject)) as StaticNetworkObject;
+    if (sno) {
+        magnitude = rigidbody.velocity.magnitude;
+        if (magnitude > 0.1) {
+            sno.Damage(Mathf.Max(magnitude*5, 30), rigidbody.velocity, collision.contacts[0].point);
+        }
+    }
 }

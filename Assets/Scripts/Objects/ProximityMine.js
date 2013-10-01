@@ -22,9 +22,9 @@ function Update() {
 			}
 		}
 		
-        /*if (!DNO.id in DNO.netMan.NPlayers || !DNO.netMan.NPlayers[DNO.id].object) {
+        if (!DNO.id in DNO.netMan.NPlayers || !DNO.netMan.NPlayers[DNO.id].object) {
             DNO.netMan.networkView.RPC("_DynamicObjectDeath", RPCMode.All, DNO.index, -1);
-        }*/
+        }
 	}
 }
 
