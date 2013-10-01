@@ -159,6 +159,7 @@ var AudioPrefab:Transform;
 //GUI References
 var CustomSkin:GUISkin;
 var White:Texture;
+var HitTexture:Texture;
 
 var MouseTexture:Texture;
 var HitMarkerTexture:Texture;
