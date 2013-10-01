@@ -1,4 +1,6 @@
-//import System.Collections;
+#pragma strict
+
+import System.Collections;
 
 //Projectile Properties
 var Speed:float;
@@ -20,7 +22,7 @@ var networkManager:NetworkManager;
 private var percentage:float = 100;
 private var startPoint:Vector3;
 private var startTime:float;
-private var hits:Array = new Array();
+private var hits:List.<RaycastHit>;
 
 //Iteration/Optimisation
 private var nextPoint:Vector3;
@@ -38,29 +40,35 @@ private var sno:StaticNetworkObject;
 private var dno:DynamicNetworkObject;
 private var penetration:Penetration;
 
+private var obj:Transform;
+
 function Shoot() {
 	transform.position.z = 0;
 	startPoint = transform.position;
 	startTime = Time.time;
 	
-	hits = Physics.RaycastAll(startPoint, transform.TransformDirection(Vector3.up), MaxDistance, networkManager.BulletLayerMask);
-	hits.Sort(SortHits);
+	hits = new List.<RaycastHit>(
+        Physics.RaycastAll(
+            startPoint, transform.TransformDirection(Vector3.up), MaxDistance, networkManager.BulletLayerMask
+        )
+    );
+    hits.Sort(SortHits);
 }
 
 private function SortHits(hit:RaycastHit, hit2:RaycastHit) {
-	return hit.distance - hit2.distance;
+	return hit.distance.CompareTo(hit2.distance);
 }
 
 function Update() {
 	nextPoint = transform.position + transform.TransformDirection(Vector3.up)*Speed*Time.deltaTime;
 	totalDistance += Speed*Time.deltaTime;
 	
-	if (hits.length != 0) {
+	if (hits.Count != 0) {
 		while (hits[0].distance < totalDistance) {
 			EvalHit(hits[0]);
 			hits.RemoveAt(0);
 			
-			if (hits.length == 0) {
+			if (hits.Count == 0) {
 				break;
 			}
 		}
