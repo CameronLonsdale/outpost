@@ -33,7 +33,7 @@ function Update() {
 			Timer = Time.time + AdditionTime;
 		}
 		if (CurrentAmmo <= 0 && Network.isServer) {
-			DNO.netMan.networkView.RPC("DynamicObjectDeath", RPCMode.All, DNO.index, -1);
+			DNO.netMan.networkView.RPC("_DynamicObjectDeath", RPCMode.All, DNO.index, -1);
 		}
 	}
 }

@@ -16,26 +16,26 @@ function Update() {
 		CurrentPlayer = DNO.netMan.CurrentPlayer;
 		if (CurrentPlayer) {
 			if (DNO.netMan.team != DNO.team && Vector3.Distance(CurrentPlayer.transform.position, transform.position) < Proximity) {
-				DNO.netMan.networkView.RPC("DynamicObjectDeath", RPCMode.All, DNO.index, DNO.id);
+				DNO.netMan.networkView.RPC("_DynamicObjectDeath", RPCMode.All, DNO.index, DNO.id);
 			}
 		}
 		
 		for (obj in DNO.netMan.NPlayers.Values) {
 			if (obj.object) {
 				if (obj.Team != DNO.team && Vector3.Distance(obj.object.transform.position, transform.position) < Proximity) {
-					DNO.netMan.networkView.RPC("DynamicObjectDeath", RPCMode.All, DNO.index, DNO.id);
+					DNO.netMan.networkView.RPC("_DynamicObjectDeath", RPCMode.All, DNO.index, DNO.id);
 				}
 			}
 		}
 		
 		if (DNO.id != DNO.netMan.netid) {
 			if (!DNO.netMan.NPlayers[DNO.id].object) {
-				DNO.netMan.networkView.RPC("DynamicObjectDeath", RPCMode.All, DNO.index, -1);
+				DNO.netMan.networkView.RPC("_DynamicObjectDeath", RPCMode.All, DNO.index, -1);
 			}
 		}
 		else {
 			if (!CurrentPlayer) {
-				DNO.netMan.networkView.RPC("DynamicObjectDeath", RPCMode.All, DNO.index, -1);
+				DNO.netMan.networkView.RPC("_DynamicObjectDeath", RPCMode.All, DNO.index, -1);
 			}
 		}
 	}
@@ -45,7 +45,7 @@ function Damage(amount:float, direction:Vector3, point:Vector3, pid:int) {
 	if (Network.isServer && Health > 0 && !Settings.replayMode) {
 		Health -= amount;
 		if (Health <= 0) {
-			DNO.netMan.networkView.RPC("DynamicObjectDeath", RPCMode.All, DNO.index, pid);
+			DNO.netMan.networkView.RPC("_DynamicObjectDeath", RPCMode.All, DNO.index, pid);
 		}
 	}
 }
