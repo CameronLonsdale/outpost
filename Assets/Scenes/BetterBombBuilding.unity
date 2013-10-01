@@ -16768,6 +16768,7 @@ Renderer:
   - {fileID: 2100000, guid: 016fa03d2902bf148b64fcd07c95b168, type: 2}
   - {fileID: 2100000, guid: 82f42373942ef4a4691db252b6ead967, type: 2}
   - {fileID: 2100000, guid: 6ba5c82271a4b9f48b5b61f50cc4bc36, type: 2}
+  - {fileID: 2100000, guid: 462a219a51c12bc4eb7922517419cee0, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
