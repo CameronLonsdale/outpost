@@ -371,6 +371,7 @@ function QuitDropdown() {
     if (GUILayout.Button("Logout")) {
         window = MenuWindow.quickMatch;
         dropdown = Dropdown.none;
+        Settings.offline = false;
         AccountSettings.Reset();
         AccountSettings.Load();
     }
