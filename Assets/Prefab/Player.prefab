@@ -86599,7 +86599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Description: Hides the flash from your gun, however decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -88715,7 +88715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -91380,7 +91380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Ext-Mags
-  Description: Increase the amount of amunition per clip. More bullets = better
+  Description: Increase the amount of amunition per clip.
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -94846,7 +94846,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Buckshot
-  Description: Fill the body of your enemy with hundreds of pelates in one single
+  Description: Fill the body of your enemy with hundreds of pellets in one single
     blast.
   texture: {fileID: 2800000, guid: 5cd6bb745e0cf424899721a54af729d3, type: 3}
   BulletTimes: 0
@@ -94874,7 +94874,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Rifled Slugs
-  Description: One single powerfull round that will decimate at any range.
+  Description: One single powerful round that will decimate at any range.
   texture: {fileID: 2800000, guid: f6ef60d11bdf8e44d8e9c625a39e35aa, type: 3}
   BulletTimes: 1
   BulletPrefabType: -1
@@ -95719,7 +95719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: t sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
