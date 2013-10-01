@@ -785,7 +785,7 @@ function KillFeedMessage(id:int, kid:int, multi:float, weapon:String) {
 	}
 	
 	if (id == kid) {
-		killerName = "Problems";
+		killerName = "Opted Out";
 		tmpColor = Color.grey;
 	}
 	else if (kid == -1) {

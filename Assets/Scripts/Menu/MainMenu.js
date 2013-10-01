@@ -52,7 +52,7 @@ private var Detect:boolean = false;
 private enum Dropdown {none, play, profile, options, quit}
 private var dropdown:Dropdown = Dropdown.none;
 
-private enum MenuWindow {home, quickMatch, serverList, startServer, profile, options}
+private enum MenuWindow {home, quickMatch, serverList, startServer, profile, options, help, credits}
 private var window:MenuWindow = MenuWindow.home;
 
 //Text Scaling --
@@ -305,6 +305,12 @@ function OnGUI () {
             case MenuWindow.options:
                 OptionsScreen(1);
             break;
+            case MenuWindow.help:
+                HelpScreen(1);
+            break;
+            case MenuWindow.credits:
+                CreditsScreen(1);
+            break;
             case MenuWindow.home:
                 HomeScreen(1);
             break;
@@ -361,8 +367,26 @@ function ProfileDropdown() {
 }
 
 function OptionsDropdown() {
-    window = MenuWindow.options;
-    dropdown = Dropdown.none;
+    GUI.skin.button.fontSize = fontSize - 4;
+    GUILayout.BeginArea(Rect(Screen.width/12*3 + Screen.width/12*4 + 7, Screen.height/16, Screen.width/12*2, Screen.height/16*4));
+    GUILayout.Space(2);
+    
+    if (GUILayout.Button("Options")) {
+        window = MenuWindow.options;
+        dropdown = Dropdown.none;
+    }
+    if (GUILayout.Button("Help")) {
+        RequestHostList();
+        window = MenuWindow.help;
+        dropdown = Dropdown.none;
+    }
+    if (GUILayout.Button("Credits")) {
+        window = MenuWindow.credits;
+        dropdown = Dropdown.none;
+    }
+    
+    GUILayout.EndArea();
+    GUI.skin.button.fontSize = fontSize;
 }
 
 function QuitDropdown() {
@@ -964,6 +988,66 @@ function OptionsScreen(weight:float) {
     GUI.color = Color.white;
     
 }
+
+function HelpScreen(weight:float) {
+    GUI.color.a = weight;
+    GUI.skin.box.fontSize = fontSize - 4;
+    GUI.skin.label.fontSize = fontSize - 4;
+    GUI.skin.button.fontSize = fontSize - 4;
+    
+    GUI.Box(Rect(windowOffset.x, windowOffset.y, swidth, sheight), "");
+    
+    
+    GUILayout.BeginArea(Rect(windowOffset.x, windowOffset.y, swidth, sheight));
+    
+  
+  
+    GUILayout.BeginHorizontal();
+    if (GUILayout.Button("Exit")) {
+        window = MenuWindow.home;
+    }
+    GUILayout.EndHorizontal();
+    
+    GUILayout.EndArea();
+    
+    GUI.skin.box.fontSize = fontSize;
+    GUI.skin.label.fontSize = fontSize;
+    GUI.skin.button.fontSize = fontSize;
+    GUI.color = Color.white;
+}
+    
+function CreditsScreen(weight:float) {
+    GUI.color.a = weight;
+    GUI.skin.box.fontSize = fontSize - 4;
+    GUI.skin.label.fontSize = fontSize - 4;
+    GUI.skin.button.fontSize = fontSize - 4;
+    
+    GUI.Box(Rect(windowOffset.x, windowOffset.y, swidth, sheight), "");
+    
+    GUILayout.BeginArea(Rect(windowOffset.x, windowOffset.y, swidth, sheight));
+    GUILayout.Label("Main Team");
+	GUILayout.Label("Benjamin Schaaf \n Lead Programmer, 3D Artist and Designer");
+	GUILayout.Label("Cameron Lonsdale \n Lead Designer, 3D Artist and Programmer");
+	GUILayout.Label("Contributors");
+	GUILayout.Label("Dean Gouskos \n 3D Artist and Designer");
+	GUILayout.Label("© 2012 Outpost Software. All rights reserved. Outpost Software, the Outpost Software logos and the Outpost game itself and included content are copyrighted under the Australian copyright law; the Copyright Act 1968. All other creative material is property of its respective owners.");
+	GUILayout.Label("Outpost Software makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability  or other violation of rights. In no event shall Outpost Software be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising from the use or inability to use the software and games produced by Outpost Software, even if Outpost Software or an Outpost Software authorized representative has been notified orally or in writing of the possibility of such damage.");
+	GUILayout.Label("By installing, using or accessing the Software or Services you are considered to have accepted the terms set out in this document. If you do not agree with or otherwise wish to accept the terms set out in this document, do not install, use or access the Software and/or the Services.");
+  
+    GUILayout.BeginHorizontal();
+    if (GUILayout.Button("Exit")) {
+        window = MenuWindow.home;
+    }
+    GUILayout.EndHorizontal();
+    
+    GUILayout.EndArea();
+    
+    GUI.skin.box.fontSize = fontSize;
+    GUI.skin.label.fontSize = fontSize;
+    GUI.skin.button.fontSize = fontSize;
+    GUI.color = Color.white;
+}
+    
 function KeyField(key:KeyCode, name:String) {
 	GUILayout.BeginHorizontal();
 	GUILayout.Label(name);
@@ -1049,27 +1133,7 @@ function CreditsWindow() {
 	}
     
 	GUILayout.BeginArea(Rect(Screen.width/20, Screen.height/10, Screen.width/20*18, Screen.height/20*19));
-	GUILayout.Label("Main Team:");
-	GUILayout.Space(10);
-	GUILayout.Label("Lead Programmer, 3D Artist and Designer");
-	GUILayout.Label("Benjamin Schaaf");
-	GUILayout.Space(10);
-	GUILayout.Label("Lead Designer, 3D Artist and Programmer");
-	GUILayout.Label("Cameron Lonsdale");
-    GUILayout.Space(10);
-    GUILayout.Label("3D Artist and Designer");
-    GUILayout.Label("Dean Gouskos");
-	GUILayout.Space(20);
-	GUILayout.Label("Contributors:");
-	GUILayout.Space(10);
-	GUILayout.Label("Tobias ******");
-	GUILayout.Space(20);
-	GUILayout.Space(20);
-	GUILayout.Label("© 2012 Outpost Software. All rights reserved. Outpost Software, the Outpost Software logos and the Outpost game itself and included content are copyrighted under the Australian copyright law; the Copyright Act 1968. All other creative material is property of its respective owners.");
-	GUILayout.Space(20);
-	GUILayout.Label("Outpost Software makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability  or other violation of rights. In no event shall Outpost Software be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising from the use or inability to use the software and games produced by Outpost Software, even if Outpost Software or an Outpost Software authorized representative has been notified orally or in writing of the possibility of such damage.");
-	GUILayout.Space(20);
-	GUILayout.Label("By installing, using or accessing the Software or Services you are considered to have accepted the terms set out in this document. If you do not agree with or otherwise wish to accept the terms set out in this document, do not install, use or access the Software and/or the Services.");
+	
 	GUILayout.EndArea();
 }
 */
