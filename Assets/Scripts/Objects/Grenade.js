@@ -1,3 +1,5 @@
+#pragma strict
+
 var Icon:Texture2D;
 var Name:String;
 var ExplosionPrefab:Transform;
@@ -15,7 +17,7 @@ function Awake() {
 }
 
 function Update () {
-	if (Network.isServer && ExplosionTimer < Time.time && !Settings.replayMode) {
+	if (Network.isServer && ExplosionTimer < Time.time) {
 		DNO.netMan.networkView.RPC("_DynamicObjectDeath", RPCMode.All, DNO.index, DNO.id);
 	}
 }
@@ -32,13 +34,13 @@ function OnDeath(pid:int) {
 }
 
 function OnCollisionStay() {
-	if (Network.isServer && InstantExplode && !Settings.replayMode) {
+	if (Network.isServer && InstantExplode) {
 		DNO.netMan.networkView.RPC("_DynamicObjectDeath", RPCMode.All, DNO.index, DNO.id);
 	}
 }
 
 function OnCollisionEnter() {
-	if (Network.isServer && InstantExplode && !Settings.replayMode) {
+	if (Network.isServer && InstantExplode) {
 		DNO.netMan.networkView.RPC("_DynamicObjectDeath", RPCMode.All, DNO.index, DNO.id);
 	}
 }

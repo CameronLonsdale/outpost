@@ -725,12 +725,12 @@ function ServerEditScreen(weight:float) {
     
     GUILayout.BeginHorizontal();
     GUILayout.Label("Map");
-    ServerSettings.map = GUILayout.SelectionGrid(ServerSettings.map, ServerSettings.maps, 1);
+    ServerSettings.map = SelectionGrid(ServerSettings.map, ServerSettings.maps);
     GUILayout.EndHorizontal();
     
     GUILayout.BeginHorizontal();
     GUILayout.Label("Mode");
-    ServerSettings.gameMode = GUILayout.SelectionGrid(ServerSettings.gameMode, ServerSettings.gameModes, 2, GUILayout.ExpandHeight(false));
+    ServerSettings.gameMode = SelectionGrid(ServerSettings.gameMode, ServerSettings.gameModes);
     GUILayout.EndHorizontal();
     
     GUILayout.BeginHorizontal();
@@ -744,15 +744,13 @@ function ServerEditScreen(weight:float) {
     GUILayout.EndHorizontal();
     
     GUILayout.FlexibleSpace();
+    
     if (GUILayout.Button("Start Server")) {
         Network.InitializeServer(ServerSettings.playerLimit, 2000, true);
         MasterServer.RegisterHost("OutpostGameV" + Settings.version, ServerSettings.serverName, ServerSettings.map + ";" + ServerSettings.gameMode + ";" + ServerSettings.comment);
         ServerSettings.Save();
         StartGame(true, true);
     }
-    GUILayout.BeginHorizontal();
-    
-    GUILayout.EndHorizontal();
     
     GUI.skin.label.fontSize = fontSize;
     
@@ -775,7 +773,7 @@ function OptionsScreen(weight:float) {
     
     GUILayout.BeginArea(Rect(windowOffset.x, windowOffset.y, swidth, sheight));
     
-    optionsType = GUILayout.SelectionGrid(optionsType, ["Video",  "Controls"], 2, GUILayout.Height(Screen.height/18));
+    optionsType = GUILayout.Toolbar(optionsType, ["Video",  "Controls"]);
     
 	if (optionsType == 0){
 		ScrollPosition = GUILayout.BeginScrollView(ScrollPosition);
@@ -813,12 +811,12 @@ function OptionsScreen(weight:float) {
 		GUILayout.Label("Fullscreen");
 		GUILayout.FlexibleSpace();
         if (VideoSettings.fullScreen) {
-            if (GUILayout.SelectionGrid(1, ["Off",  "On"], 2, GUILayout.Width(swidth/15*6)) == 0) {
+            if (GUILayout.Toolbar(1, ["Off",  "On"]) == 0) {
                 VideoSettings.fullScreen = false;
             }
         }
         else {
-            if (GUILayout.SelectionGrid(0, ["Off", "On"], 2, GUILayout.Width(swidth/15*6)) == 1) {
+            if (GUILayout.Toolbar(0, ["Off", "On"]) == 1) {
                 VideoSettings.fullScreen = true;
             }
         }
@@ -1030,6 +1028,18 @@ function Split(str:String, position:String, maxNumber:int):String[] {
         }
     }
     return out;
+}
+
+function SelectionGrid(selected:int, texts:String[]) {
+    GUILayout.BeginHorizontal();
+    for (var i:int = 0; i < texts.length; i++) {
+        if (GUILayout.Toggle(selected == i, texts[i])) {
+            selected = i;
+        }
+    }
+    GUILayout.EndHorizontal();
+    
+    return selected;
 }
 
 /*

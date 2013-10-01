@@ -1,3 +1,5 @@
+#pragma strict
+
 var Debris:Transform;
 var Radius:float;
 var RadiusFalloff:float;
@@ -49,7 +51,7 @@ function SetId(nm:NetworkManager, id:int, weapon:String) {
 		if (Network.isServer) {
 			player = col.GetComponent(typeof(Player)) as Player;
 			if (player) {
-				if (nm.NPlayers[id].team != player.team || player.NetId == id) {
+				if (nm.NPlayers[id].team != nm.NPlayers[player.NetId].team || player.NetId == id) {
 					player.Damage(id, damage, weapon);
 				}
 			}

@@ -1,3 +1,5 @@
+#pragma strict
+
 var vehicle:Vehicle;
 var Multi:float = 1;
 

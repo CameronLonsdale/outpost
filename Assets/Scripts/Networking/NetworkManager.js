@@ -300,7 +300,9 @@ function Update() {
 	
 	if (networkTimer < Time.time) {
 		for (dnobj in DynamicObjects) {
-			network.RPC("_DynamicObjectUpdate", RPCMode.Others, dnobj.index, dnobj.transform.position, dnobj.transform.rotation);
+            if (dnobj) {
+                network.RPC("_DynamicObjectUpdate", RPCMode.Others, dnobj.index, dnobj.transform.position, dnobj.transform.rotation);
+            }
 		}
 		
 		networkTimer = Time.time + 1.0/UPS;
@@ -613,7 +615,7 @@ function GetMod() {
     //Temporary
     
     if (Settings.mod.HasField("map")) {
-        map = Mathf.Clamp(Settings.mod.Get("map"), 0, Settings.maps.length - 1);
+        map = Mathf.Clamp(Settings.mod.Get("map"), 0, ServerSettings.maps.length - 1);
     }
     
     if (Settings.mod.HasField("gameMode")) {
@@ -669,6 +671,7 @@ function SaveGameStats() {
         
         return www;
     }
+    return;
 }
 
 }

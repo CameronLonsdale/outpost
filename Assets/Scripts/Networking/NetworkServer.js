@@ -857,6 +857,8 @@ function GetSpawn(id:int) {
 		}
 	}
 	else if (networkManager.gameMode == 2) {
+        var epochStart:DateTime = new System.DateTime(1970, 1, 1, 8, 0, 0, System.DateTimeKind.Utc);
+        Random.seed = (System.DateTime.UtcNow - epochStart).TotalSeconds;
 		if (networkManager.NPlayers[id].team == 1) {
 			spawn = networkManager.mapInfo.Team1Spawns[Random.Range(0, networkManager.mapInfo.Team1Spawns.length)];
 		}

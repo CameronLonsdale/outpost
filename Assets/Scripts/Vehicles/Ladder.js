@@ -1,3 +1,5 @@
+#pragma strict
+
 var Top:Transform;
 var Bottom:Transform;
 

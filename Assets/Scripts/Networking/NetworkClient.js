@@ -458,7 +458,7 @@ function OnGUI() {
                     GUI.Box(Rect(swidth/16*7, sheight/16*7, swidth/16*2, sheight/16), "You Win!");
                 }
                 else {
-                    GUI.Box(Rect(swidth/16*7, sheight/16*7, swidth/16*2, sheight/16), "You Loose!");
+                    GUI.Box(Rect(swidth/16*7, sheight/16*7, swidth/16*2, sheight/16), "You Lose!");
                 }
             break;
         }
@@ -1745,7 +1745,7 @@ function ScorebordScreen(weight:float) {
     GUI.skin.label.fontSize += 3;
 }
 
-function SortByKills(players:NPlayer[]):NPlayer[] {
+function SortByKills(players:NPlayer[]) {
     System.Array.Sort.<NPlayer>(players, CompareKills);
 }
 

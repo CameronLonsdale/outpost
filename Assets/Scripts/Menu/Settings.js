@@ -263,7 +263,7 @@ static class ServerSettings {
     var playerLimit:int = 10;
     
     var maps:String[] = [
-        "lol"
+        "Op Downtown"
     ];
     
 	var map:int = 0;
@@ -483,6 +483,7 @@ static class ObjectSaver {
             }
             return out.Remove(out.length - 1) + "";
         }
+        return "";
 	}
     
     private function FromString(type:Type, value:String):Object {
@@ -520,6 +521,7 @@ static class ObjectSaver {
                 return out.OfType.<boolean>().ToArray();
             }
         }
+        return "";
     }
 }
 
@@ -529,13 +531,13 @@ MODDING
 =====================================================================================================================
 */
 
-static var maps:String[] = ["Project Downtown"];
 static var defaultMod:TextAsset;
 
 static function GetGameMode(map:int):int[] {
     if (map == 0) {
         return [0, 1, 3];
     }
+    return null;
 }
 
 static var mod:Mod = null;
@@ -730,8 +732,9 @@ class Mod {
 	//Invoke a method by 'name' and return it's value
 	function Invoke(name:String):Object {
         if (name in methods) {
-            methods[name].Invoke(instance, new Object[0]);
+            return methods[name].Invoke(instance, new Object[0]);
         }
+        return null;
 	}
     
     //Check if the mod has 'name' method

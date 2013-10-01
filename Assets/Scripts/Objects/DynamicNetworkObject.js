@@ -1,3 +1,5 @@
+#pragma strict
+
 @System.NonSerialized
 var Pos:Vector3 = Vector3.zero;
 @System.NonSerialized
@@ -19,6 +21,9 @@ var id:int;
 var team:int;
 @System.NonSerialized
 var type:int;
+
+var hasDamage:boolean = false;;
+var health:float = 0.0;
 
 function Awake() {
 	if (Network.isClient) {
@@ -42,9 +47,15 @@ function Update() {
 }
 
 function Damage(amount:float, direction:Vector3, point:Vector3, pid:int) {
-	if (GetComponent("ProximityMine")) {
-		GetComponent("ProximityMine").Damage(amount, direction, point, pid);
-	}
+	if (hasDamage) {
+        if (health > 0) {
+            health -= amount;
+            
+            if (health < 0) {
+                netMan.network.RPC("_DynamicObjectDeath", RPCMode.All, index, pid);
+            }
+        }
+    }
 }
 
 function Kill(pid:int) {
