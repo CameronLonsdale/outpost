@@ -86,6 +86,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 344a9843c1018e44388182f6c79e9938, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   UPS: 15
   PingUpdateTime: 6
   PlayerPrefab: {fileID: 400000, guid: f0a4bef21dc504f4f8c6eeeebd250e58, type: 2}
@@ -124,6 +125,7 @@ MonoBehaviour:
   AudioPrefab: {fileID: 0}
   CustomSkin: {fileID: 11400000, guid: 0a12d31a04bb9b04eb726ec6fe8685b3, type: 2}
   White: {fileID: 2800000, guid: 2592bd6bd03504f44a04412b2b4ec328, type: 3}
+  HitTexture: {fileID: 2800000, guid: 93e6b9bc13521ba4a858512ce83a10c8, type: 3}
   MouseTexture: {fileID: 2800000, guid: e7191a528f0819547a10af9be98de221, type: 3}
   HitMarkerTexture: {fileID: 2800000, guid: 89948bed313c03041a01942b73952842, type: 3}
   FlagBlue: {fileID: 2800000, guid: cb6e4f148a4c5194c965919dc7697cb7, type: 3}
@@ -144,6 +146,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dd05e71c69dd4457fa205c9eea7c2326, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   type: 1
   adaptiveTextureSize: 256
   remapCurve:
@@ -177,6 +180,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b0923359e9e352a4b9b11c7b7161ad67, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   m_Radius: .200000003
   m_SampleCount: 2
   m_OcclusionIntensity: 1

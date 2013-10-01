@@ -559,8 +559,8 @@ function MainMenuScreen(weight:float) {
     //
     GUI.Box(Rect(0, sheight/10*8.75, swidth, sheight/10*1.25), "");
     
-    if (GUI.Button(Rect(swidth/10*4, sheight/10*8, swidth/10*2, swidth/10*2), "Swap")) {
-        
+    if (GUI.Button(Rect(swidth/10*4, sheight/20*17, swidth/10*2, swidth/20*3), "Swap")) {
+        //swap team view
     }
     /*============
 	left side

@@ -721,6 +721,19 @@ function Move(input:InputState, deltaTime:float) {
 		//move player
 		controller.Move(currentState.velocity * deltaTime);
 		currentState.grounded = controller.isGrounded;
+        
+        if (!currentState.grounded && previousState.grounded && currentState.velocity.y < 0) {
+            transform.position = previousState.position;
+            currentState.velocity.y = currentState.acceleration.y;
+            
+            //re-add velocity
+            currentState.velocity += currentState.acceleration/2*deltaTime*50;
+            ClampVelocity(currentState, input);
+            
+            //move player again
+            controller.Move(currentState.velocity * deltaTime);
+            currentState.grounded = controller.isGrounded;
+        }
 		
 		//add half acceleration
 		currentState.velocity += currentState.acceleration/2*deltaTime*50;

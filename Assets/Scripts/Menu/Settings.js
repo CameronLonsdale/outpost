@@ -529,7 +529,7 @@ MODDING
 =====================================================================================================================
 */
 
-static var maps:String[] = ["lolies"];
+static var maps:String[] = ["Project Downtown"];
 static var defaultMod:TextAsset;
 
 static function GetGameMode(map:int):int[] {
