@@ -694,7 +694,7 @@ function Move(input:InputState, deltaTime:float) {
 		currentState.ladder = true;
 		currentState.acceleration = Vector3.zero;
 		currentState.velocity = Vector3.zero;
-		currentState.velocity.y = -input.vertical*LadderClimbSpeed*deltaTime;
+		currentState.velocity.y = input.vertical*LadderClimbSpeed*deltaTime;
 		
 		currentState.position.x = ladder.Top.position.x;
 		controller.Move(currentState.velocity*deltaTime);

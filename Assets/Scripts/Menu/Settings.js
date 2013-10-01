@@ -81,7 +81,7 @@ static class Controls {
 	var aim:KeyCode = KeyCode.Mouse1;
 	
 	var normalSprint:int = 0;
-	
+	var autoLadderJump:int = 0;
 	
 	function Save() {
 		ObjectSaver.Save("Settings" + Path.DirectorySeparatorChar + "controls.conf", Controls);

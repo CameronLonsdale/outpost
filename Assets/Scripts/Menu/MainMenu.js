@@ -912,50 +912,66 @@ function OptionsScreen(weight:float) {
 		
 		Controls.jump = KeyField(Controls.jump, "Jump");
 		
-		GUILayout.Space(20);
+		GUILayout.Space(10);
 		
 		Controls.crouch = KeyField(Controls.crouch, "Crouch");
 		
-		GUILayout.Space(20);
+		GUILayout.Space(10);
 		
 		Controls.sprint = KeyField(Controls.sprint, "Sprint");
 		
-		GUILayout.Space(20);
+		GUILayout.Space(10);
 		
 		Controls.action = KeyField(Controls.action, "Action");
 		
-		GUILayout.Space(20);
+		GUILayout.Space(10);
 		
 		Controls.stp = KeyField(Controls.stp, "Primary Weapon");
 		
-		GUILayout.Space(20);
+		GUILayout.Space(10);
 		
 		Controls.sts = KeyField(Controls.sts, "Secondary Weapon");
 		
-		GUILayout.Space(20);
+		GUILayout.Space(10);
 		
 		Controls.quickswap = KeyField(Controls.quickswap, "Quick Swap");
         
-        GUILayout.Space(20);
+        GUILayout.Space(10);
 		
 		Controls.reload = KeyField(Controls.reload, "Reload");
 		
-		GUILayout.Space(20);
+		GUILayout.Space(10);
 		
 		Controls.grenade = KeyField(Controls.grenade, "Grenade");
 		
-		GUILayout.Space(20);
+		GUILayout.Space(10);
 		
 		Controls.chat = KeyField(Controls.chat, "Global Chat");
 		
-		GUILayout.Space(20);
+		GUILayout.Space(10);
 		
 		Controls.fire = KeyField(Controls.fire, "Fire");
 		
-		GUILayout.Space(20);
+		GUILayout.Space(10);
 		
 		Controls.aim = KeyField(Controls.aim, "Aim");
-		
+        
+        GUILayout.Space(10);
+        
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("Sprint Type");
+        GUILayout.FlexibleSpace();
+        Controls.normalSprint = GUILayout.SelectionGrid(Controls.normalSprint, ["Run", "Walk"], 2, GUILayout.Height(Screen.height/20), GUILayout.Width(Screen.width/8*21/16));
+        GUILayout.EndHorizontal();
+        
+        GUILayout.Space(10);
+        
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("Ladder Type");
+        GUILayout.FlexibleSpace();
+        Controls.autoLadderJump = GUILayout.SelectionGrid(Controls.autoLadderJump, ["Auto", "Manual"], 2, GUILayout.Height(Screen.height/20), GUILayout.Width(Screen.width/8*21/16));
+        GUILayout.EndHorizontal();
+        
 		GUILayout.EndScrollView();
 	}
     

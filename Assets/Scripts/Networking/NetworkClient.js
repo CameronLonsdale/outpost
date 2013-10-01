@@ -900,7 +900,7 @@ function UpdateInput(input:InputState, disabled:boolean) {
 		}
 		
 		input.horizontal += Input.GetAxis("Horizontal");
-		input.vertical += Input.GetAxis("Vertical");
+		input.vertical -= Input.GetAxis("Vertical");
 	}
 	
 	if (Input.GetKey(Controls.crouch) && !disabled) {
@@ -954,20 +954,18 @@ function UpdateInput(input:InputState, disabled:boolean) {
 	}
 	
 	if (!disabled) {
-		if (!input.sprint) {
-			input.sprint = ((Input.GetKey(Controls.sprint) && Controls.normalSprint == 0) || (!Input.GetKey(Controls.sprint) && Controls.normalSprint == 1));
+		if ((Input.GetKey(Controls.sprint) && Controls.normalSprint == 0) || 
+            (!Input.GetKey(Controls.sprint) && Controls.normalSprint == 1)) {
+			input.sprint = true;
 		}
 		
-		if (!input.jump) {
-			input.jump = Input.GetKeyDown(Controls.jump);
+		if (Input.GetKeyDown(Controls.jump)) {
+			input.jump = true;
 		}
 		
 		if (Input.GetKey(Controls.action)) {
 			input.ladder = true;
 		}
-		
-		//Check for vehicle entering
-		
 	}
 	
 	input.times += 1;
@@ -979,6 +977,10 @@ function UpdateInput(input:InputState, disabled:boolean) {
 function NetworkUpdate() {
 	//Server
 	inputManager.Average();
+    if (!inputManager.ladder && Controls.autoLadderJump == 0) {
+        inputManager.vertical = 1;
+    }
+    
 	network.RPC("_UpdateInput", RPCMode.Server, NetId, player.object.currentState.lookAngle, inputManager.horizontal, inputManager.vertical, inputManager.crouch, inputManager.rotation, inputManager.sprint, inputManager.jump, inputManager.ladder, player.object.currentState.aimWeight, inputManager.switchTo);
 	
 	if (Network.isServer) {
@@ -1518,6 +1520,12 @@ function OptionsScreen(weight:float) {
 			GUILayout.EndHorizontal();
 			
 			GUILayout.Space(10);
+            
+            GUILayout.BeginHorizontal();
+			GUILayout.Label("Ladder Type");
+			GUILayout.FlexibleSpace();
+            Controls.autoLadderJump = GUILayout.SelectionGrid(Controls.autoLadderJump, ["Auto", "Manual"], 2, GUILayout.Height(sheight/20), GUILayout.Width(swidth/8*21/16));
+			GUILayout.EndHorizontal();
 			
 			GUILayout.EndScrollView();
 		}
