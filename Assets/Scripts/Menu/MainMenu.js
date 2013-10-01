@@ -65,6 +65,8 @@ var mapTexture:Texture;
 
 //outpost symbol
 var image:Texture;
+//rank
+var rank:Texture;
 
 //Custom Styles
 private var ScrollPosition:Vector2;
@@ -556,24 +558,67 @@ function MainMenuScreen(weight:float) {
     //Bottom Bar
     //rank, exp, kills, button, casualties, war direction
     //
-    GUI.Box(Rect(0, sheight/10*9, swidth, sheight/10), "");
+    GUI.Box(Rect(0, sheight/10*8.75, swidth, sheight/10*1.25), "");
     
     if (GUI.Button(Rect(swidth/10*4, sheight/20*17, swidth/10*2, swidth/20*3), "Swap")) {
         //swap team view
     }
+    /*============
+	left side
+	=============*/
+	
+	//Rank insignia
+	GUI.DrawTexture(Rect(swidth/10*0.1, sheight/10*8.7, swidth/10, sheight/10), rank, ScaleMode.ScaleToFit);	
+	GUI.Label(Rect(swidth/10*0.08, sheight/10*9.2, swidth/10, sheight/10), "1");
+	 
+    //username
+    GUI.skin.label.alignment = TextAnchor.MiddleLeft;
+    GUI.Label(Rect(swidth/10*1.2, sheight/10*8.5, swidth/6, sheight/10), "" + AccountSettings.username);
+  
+     
+    //experience
+    GUI.Box(Rect(swidth/10*1.2, sheight/10*9.2, swidth/8, sheight/30), "");
+    GUI.color = Color.yellow;
+    GUI.Box(Rect(swidth/10*1.2, sheight/10*9.2, swidth/8*0.3, sheight/30), "");
+	GUI.color = Color.white;
+	GUI.skin.label.fontSize = 18;
+	GUI.Label(Rect(swidth/10*1.2, sheight/10*9.2, swidth/6, sheight/10), "700XP til next level");
+	
+	GUI.skin.label.alignment = TextAnchor.MiddleCenter;
+	GUI.skin.label.fontSize = 25;
+	
+	//skill level
+	GUI.Label(Rect(swidth/10*2.4, sheight/10*8.5, swidth/6, sheight/10), "Skill level");
+	GUI.skin.label.fontSize = 30;
+	GUI.Label(Rect(swidth/10*2.4, sheight/10*9, swidth/6, sheight/10), "559");
+	GUI.skin.label.fontSize = 25;
+   	/*============
+	right side
+	=============*/
+	
+	//Not sure yet
+	GUI.Label(Rect(swidth/10*5.9, sheight/10*8.5, swidth/6, sheight/10), "Kills/Deaths");
+	GUI.skin.label.fontSize = 30;
+	GUI.Label(Rect(swidth/10*5.9, sheight/10*9, swidth/6, sheight/10), "3");
+	GUI.skin.label.fontSize = 25;
+	
+	
+    //GUI.Label(Rect(swidth/10*6, sheight/10*9, swidth/10, sheight/10), "" + Stats.totalCasulties);
+    GUI.skin.label.alignment = TextAnchor.MiddleRight;
+    GUI.Label(Rect(swidth/10*7.1, sheight/10*8.5, swidth/6, sheight/10), "Reputation");
+
     
-    //left side
+    GUI.Box(Rect(swidth/10*7.5, sheight/10*9.2, swidth/8, sheight/30), "");
     
-    //right side
-    GUI.Label(Rect(swidth/10*6, sheight/10*9, swidth/10, sheight/10), "" + Stats.totalCasulties);
-    
-    GUI.Box(Rect(swidth/10*7, sheight/30*28, swidth/10, sheight/30), "");
+    /*
     GUI.color = NetworkManagerPrefab.BlueColor;
-    GUI.Box(Rect(swidth/10*7, sheight/30*28, swidth/10*(Stats.t1Kills/(Stats.totalKills + 0.1)), sheight/30), "");
+    GUI.Box(Rect(swidth/10*7.5, sheight/10*9.2, swidth/8*(Stats.t1Kills/(Stats.totalKills + 0.1)), sheight/30), "");
     GUI.color = NetworkManagerPrefab.GreenColor;
-    GUI.Box(Rect(swidth/10*7 + swidth/10*(Stats.t1Kills/(Stats.totalKills + 0.1)), sheight/30*28, swidth/10*(Stats.t2Kills/(Stats.totalKills  + 0.1)), sheight/30), "");
+    GUI.Box(Rect(swidth/10*7.5 + swidth/10*(Stats.t1Kills/(Stats.totalKills + 0.1)), sheight/10*9.2, swidth/10*(Stats.t2Kills/(Stats.totalKills  + 0.1)), sheight/30), "");
+    */
     
     GUI.color = Color.white;
+    GUI.skin.label.alignment = TextAnchor.MiddleCenter;
 }
 
 function QuickMatchScreen(weight:float) {

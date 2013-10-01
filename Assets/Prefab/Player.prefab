@@ -86464,7 +86464,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Ext-Mags
-  Description: Increase the amount of amunition per clip. More bullets = better
+  Description: Increases the amount of ammunition per clip
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -86517,8 +86517,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Name: Suppressor
+  Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -86572,7 +86572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -86598,7 +86598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
+  Name: Flash Suppressor
   Description: Hides the flash from your gun, however decreasing it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
@@ -86843,7 +86843,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -86897,7 +86897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Ext-Mags
-  Description: Increase the amount of amunition per clip. More bullets = better
+  Description: Increases the amount of ammunition per clip
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -86923,8 +86923,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Name: Suppressor
+  Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -86950,8 +86950,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -86977,8 +86977,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Name: Suppressor
+  Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -87005,7 +87005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Ext-Mags
-  Description: Increase the amount of amunition per clip. More bullets = better
+  Description: Increases the amount of ammunition per clip
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -87032,7 +87032,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -87058,8 +87058,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -87166,8 +87166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Name: Suppressor
+  Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -87221,7 +87221,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -87247,8 +87247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -87329,7 +87329,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -87383,7 +87383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -87491,7 +87491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -87572,7 +87572,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -87627,7 +87627,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -87763,8 +87763,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -87791,7 +87791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -87844,8 +87844,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Name: Suppressor
+  Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -88036,8 +88036,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Name: Suppressor
+  Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -88064,7 +88064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -88090,8 +88090,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -88118,7 +88118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -88714,7 +88714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
+  Name: Suppressor
   Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
@@ -88769,7 +88769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -88876,8 +88876,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -88958,7 +88958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -89382,7 +89382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -89463,7 +89463,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -89571,8 +89571,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -89599,7 +89599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -89709,7 +89709,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -89762,8 +89762,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Name: Suppressor
+  Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -89897,8 +89897,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -89925,7 +89925,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -90006,7 +90006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -90059,8 +90059,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Name: Suppressor
+  Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -90143,8 +90143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -90171,7 +90171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -90306,7 +90306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -90386,8 +90386,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Name: Suppressor
+  Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -90414,7 +90414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -90494,8 +90494,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -90974,8 +90974,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Name: Suppressor
+  Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -91056,7 +91056,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -91136,8 +91136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -91191,7 +91191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -91217,8 +91217,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Name: Suppressor
+  Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -91272,7 +91272,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -91352,8 +91352,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -91380,7 +91380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Ext-Mags
-  Description: Increase the amount of amunition per clip.
+  Description: Increases the amount of ammunition per clip
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -91407,7 +91407,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -91545,7 +91545,7 @@ MonoBehaviour:
   Name: XM8
   Type: 0
   Class: 4
-  Description: An lntense fully automatic Assault Rifle, great for medium range encounters
+  Description: An intense fully automatic Assault Rifle, great for medium range encounters
   Muzzle: {fileID: 400812}
   GunObject: {fileID: 400268}
   MuzzleFlashType: 0
@@ -91626,7 +91626,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -91652,8 +91652,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -91761,7 +91761,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -91869,7 +91869,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -91895,8 +91895,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -91950,7 +91950,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -92031,7 +92031,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -92111,8 +92111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -92220,7 +92220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -92273,8 +92273,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Name: Suppressor
+  Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -92785,7 +92785,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Ext-Mags
-  Description: Increase the amount of amunition per clip. More bullets = better
+  Description: Increases the amount of ammunition per clip
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -92811,8 +92811,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Name: Suppressor
+  Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -92893,7 +92893,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -92973,8 +92973,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -93055,7 +93055,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -93138,8 +93138,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Name: Suppressor
+  Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -93220,7 +93220,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -93300,8 +93300,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -93382,7 +93382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -93906,8 +93906,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Name: Suppressor
+  Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -93961,7 +93961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -94068,8 +94068,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -94150,7 +94150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -94177,7 +94177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Ext-Mags
-  Description: Increase the amount of amunition per clip. More bullets = better
+  Description: Increases the amount of ammunition per clip
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -94203,8 +94203,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Name: Suppressor
+  Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -94285,7 +94285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -94365,8 +94365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -94447,7 +94447,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -94474,7 +94474,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -94555,7 +94555,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -94635,8 +94635,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -94717,7 +94717,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -94819,7 +94819,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Ext-Mags
-  Description: Increase the amount of amunition per clip. More bullets = better
+  Description: Increases the amount of ammunition per clip
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -94959,7 +94959,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Ext-Mags
-  Description: Increase the amount of amunition per clip. More bullets = better
+  Description: Increases the amount of ammunition per clip.
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -94985,8 +94985,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Name: Suppressor
+  Description: Masksthe noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -95067,7 +95067,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -95120,8 +95120,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -95202,7 +95202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -95286,7 +95286,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -95366,8 +95366,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -95448,7 +95448,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -95528,8 +95528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Name: Suppressor
+  Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -95719,7 +95719,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: t sights for the weapon
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -95772,8 +95772,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -95800,7 +95800,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -95896,7 +95896,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Buckshot
-  Description: Fill the body of your enemy with hundreds of pelates in one single
+  Description: Fill the body of your enemy with hundreds of pellets in one single
     blast.
   texture: {fileID: 2800000, guid: 5cd6bb745e0cf424899721a54af729d3, type: 3}
   BulletTimes: 0
@@ -96005,7 +96005,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -96086,7 +96086,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Ext-Mags
-  Description: Increase the amount of amunition per clip. More bullets = better
+  Description: Increases the amount of ammunition per clip
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -96140,7 +96140,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -96223,8 +96223,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Name: Suppressor
+  Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -96305,7 +96305,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -96385,8 +96385,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -96467,7 +96467,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -96551,8 +96551,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Name: Suppressor
+  Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -96905,8 +96905,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Name: Suppressor
+  Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -96987,7 +96987,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -97067,8 +97067,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -97122,7 +97122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Ext-Mags
-  Description: Increase the amount of amunition per clip. More bullets = better
+  Description: Increases the amount of ammunition per clip
   texture: {fileID: 2800000, guid: 7e1faacfaee765a43afae1c0cdb36646, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -97149,7 +97149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -97232,8 +97232,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Name: Suppressor
+  Description: Masks the noise of your shots, but decreases their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -97287,7 +97287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -97476,7 +97476,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -97639,7 +97639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -97747,7 +97747,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -98158,8 +98158,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Supressor
-  Description: Mask the noise of your shots, but decrease thair strength
+  Name: Suppressor
+  Description: Masks the noise of your shots, but decreasee their strength
   texture: {fileID: 2800000, guid: 194c475c49f572a4ab70603ed3188725, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -98240,7 +98240,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Iron Sights
-  Description: The default sights for the weapon, AKA No-Scope
+  Description: The default sights for the weapon
   texture: {fileID: 2800000, guid: 832f3d24434ba2b4f8cf53f67e8b7054, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -98293,8 +98293,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Flash Supressor
-  Description: Hide the flash from your gun, while decreasing it's accuracy
+  Name: Flash Suppressor
+  Description: Hides the flash from your gun, however decreases it's accuracy
   texture: {fileID: 2800000, guid: 0eb8b5c888e975b48b41f673da89c462, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
@@ -98375,7 +98375,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Acog
-  Description: High powered scope, in the mid-range for sniping
+  Description: High powered scope, for mid range sniping
   texture: {fileID: 2800000, guid: 7eca2d2bfe235a54fb5ea8a65b8ff650, type: 3}
   BulletTimes: 0
   BulletPrefabType: -1
