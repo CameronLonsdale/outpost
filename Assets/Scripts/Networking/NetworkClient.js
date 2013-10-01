@@ -135,6 +135,7 @@ private var hudWeight:float;
 
 private var messageBoxTimer:float;
 private var hitMarkerTimer:float;
+private var damageTimer:float;
 
 private var killTimer:float;
 private var killMessage:String;
@@ -306,6 +307,8 @@ function Update() {
                     }
                 }
                 else {
+                    damageTimer = 0;
+                    
                     if (movementUpdateQueue.Count != 0) {
                         movementUpdateQueue.Clear();
                     }
@@ -860,7 +863,7 @@ function PlayerShoot() {
 }
 
 function DamagePlayer(amount:float) {
-	//stuff
+	damageTimer = ctime + amount/30;
 	player.object.Damage(amount);
 }
 
@@ -1793,12 +1796,13 @@ function HUDGUI(weight:float) {
 		GUI.Label(Rect(swidth/8*2, sheight/16*14, swidth/8*4/3, sheight/16), player.object.currentWeapon.Name);
 		GUI.Box(Rect(swidth/8*14/3, sheight/16*14, swidth/8*4/3, sheight/16), "Gx" + player.object.GrenadeAmmo);
 
-				
-		/*GUI.color = Color(1, 1, 1, HitFade.x*weight);
-		GUI.DrawTexture(Rect(-swidth/12, 0, swidth/6, sheight), HitTexture, ScaleMode.StretchToFill);
-		GUI.color = Color(1, 1, 1, HitFade.y*weight);
-		GUI.DrawTexture(Rect(swidth - swidth/12, 0, swidth/6, sheight), HitTexture, ScaleMode.StretchToFill);*/
-		
+        if (damageTimer > ctime) {
+            GUI.color = Color(1, 1, 1, Mathf.Clamp01(damageTimer - ctime)*weight);
+            GUI.DrawTexture(Rect(-swidth/12, 0, swidth/6, sheight), networkManager.HitTexture, ScaleMode.StretchToFill);
+            GUI.DrawTexture(Rect(swidth - swidth/12, 0, swidth/6, sheight), networkManager.HitTexture, ScaleMode.StretchToFill);
+            GUI.color = Color(1, 1, 1, weight);
+        }
+        
 		if (networkManager.gameMode == GameModes.KOTH) {
 			CPGUI(networkManager.mapInfo.CaptureTheFlagPoint, weight);
 		}
