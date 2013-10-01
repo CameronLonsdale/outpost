@@ -541,12 +541,17 @@ static function GetGameMode(map:int):int[] {
 static var mod:Mod = null;
 
 static function LoadMod(name:String) {
-    if (!File.Exists("Mods" + Path.DirectorySeparatorChar + name + ".dll")) {
-        Directory.CreateDirectory("Mods");
-        File.WriteAllBytes("Mods" + Path.DirectorySeparatorChar + "Default.dll", defaultMod.bytes);
-        name = "Default";
+    if (name == "Default") {
+        mod = new Mod(new Default());
     }
-    mod = new Mod("Mods" + Path.DirectorySeparatorChar + name + ".dll");
+    else {
+        if (!File.Exists("Mods" + Path.DirectorySeparatorChar + name + ".dll")) {
+            Directory.CreateDirectory("Mods");
+            File.WriteAllBytes("Mods" + Path.DirectorySeparatorChar + "Default.dll", defaultMod.bytes);
+            name = "Default";
+        }
+        mod = new Mod("Mods" + Path.DirectorySeparatorChar + name + ".dll");
+    }
 }
 
 //Mod class
@@ -616,17 +621,37 @@ class Mod {
 			fields[info.Name] = info;
 		}
 	}
+    
+    function Mod(obj:Object) {
+        //Create a new instance from the assembly with the same name as the file
+		instance = obj;
+		
+		//get the type of our instance
+		_type = instance.GetType();
+		
+		//Store all the methods of the instance in a Hashtable for easy access
+		methods = new Dictionary.<String, MethodInfo>();
+		for (var info:MethodInfo in _type.GetMethods()) {
+			methods[info.Name] = info;
+		}
+        
+        //Store all the methods of the instance in a Hashtable for easy access
+		fields = new Dictionary.<String, FieldInfo>();
+		for (var info:FieldInfo in _type.GetFields()) {
+			fields[info.Name] = info;
+		}
+    }
 	
 	//Check if the file exists at the path
 	//And wether the path links to a C# file
 	//Add errors when nessecary
 	private function CheckPath(path:String):boolean {
 		if (File.Exists(path)) {
-			if (Path.GetExtension(path) == ".cs" || Path.GetExtension(path) == ".js") {
+			if (Path.GetExtension(path) == ".dll") {
 				return false;
 			}
 			else {
-				AddError("File <'" + Path.GetFileName(path) +"'> is not of the right type <'.cs' || '.js'>");
+				AddError("File <'" + Path.GetFileName(path) +"'> is not of the right type <'.dll'>");
 			}
 		}
 		else {
