@@ -2,7 +2,7 @@
 Library
 Temp
 Settings
-Mods
+Mods/*
 *.csproj
 *.pidb
 *.unityproj
