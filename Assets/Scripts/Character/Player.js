@@ -722,7 +722,7 @@ function Move(input:InputState, deltaTime:float) {
 		controller.Move(currentState.velocity * deltaTime);
 		currentState.grounded = controller.isGrounded;
         
-        if (!currentState.grounded && previousState.grounded) {
+        if (!currentState.grounded && previousState.grounded && currentState.velocity.y < 0) {
             transform.position = previousState.position;
             currentState.velocity.y = currentState.acceleration.y;
             
