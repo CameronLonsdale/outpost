@@ -239,11 +239,9 @@ function OnDisconnectedFromServer() {
 }
 
 //Go to main Menu on connection fail
-function OnFailedToConnect() {
-	if (!Network.isServer) {
-        Destroy(gameObject);
-		Application.LoadLevel(0);
-	}
+function OnFailedToConnect(error:NetworkConnectionError) {
+    Destroy(gameObject);
+    Application.LoadLevel(0);
 }
 
 //Handle Frame Updates

@@ -592,6 +592,12 @@ Movement/Animations
 function ApplyState(state:PlayerState) {
 	transform.position = state.position;
 	Soldier.transform.eulerAngles.y = Mathf.Lerp(270, 90, state.rotation);
+    
+    if (currentState.selected != previousState.selected) {
+		HideGun(equipped[previousState.selected]);
+		ShowGun(equipped[currentState.selected]);
+	}
+    
 	ApplyAnimations(state, Time.deltaTime);
 }
 
@@ -862,10 +868,6 @@ function WeaponUpdate(time:float) {
 	//State Update
 	
 	weaponSwitching = (Mathf.Abs(currentState.selectionWeight) != 1);
-	if (currentState.selected != previousState.selected) {
-		HideGun(equipped[previousState.selected]);
-		ShowGun(equipped[currentState.selected]);
-	}
 	
 	//Weapon Update
 	if (!weaponSwitching) {
