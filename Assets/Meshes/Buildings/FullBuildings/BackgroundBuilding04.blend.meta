@@ -1,14 +1,16 @@
 fileFormatVersion: 2
-guid: f54783bbf9dee7f439915984ca1cdee3
+guid: 5385d4d768e170a4aba462f1c66151a9
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
     100000: //RootNode
     100002: Cube
     100004: Cube_001
+    100006: Empty
     400000: //RootNode
     400002: Cube
     400004: Cube_001
+    400006: Empty
     2300000: Cube
     2300002: Cube_001
     2300004: //RootNode
@@ -33,7 +35,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .949999988
+    globalScale: .579999983
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
@@ -47,7 +49,7 @@ ModelImporter:
     secondaryUVHardAngle: 88
     secondaryUVPackMargin: 4
   tangentSpace:
-    normalSmoothAngle: 60
+    normalSmoothAngle: 30
     splitTangentsAcrossUV: 1
     normalImportMode: 1
     tangentImportMode: 1

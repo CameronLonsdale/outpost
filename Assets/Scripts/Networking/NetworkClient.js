@@ -901,6 +901,9 @@ function UpdateInput(input:InputState, disabled:boolean) {
 		
 		input.horizontal += Input.GetAxis("Horizontal");
 		input.vertical -= Input.GetAxis("Vertical");
+        if (Controls.ladderMode == 0 && (input.vertical > 0.2 || input.vertical < -0.2)) {
+            input.ladder = true;
+        }
 	}
 	
 	if (Input.GetKey(Controls.crouch) && !disabled) {
@@ -963,7 +966,7 @@ function UpdateInput(input:InputState, disabled:boolean) {
 			input.jump = true;
 		}
 		
-		if (Input.GetKey(Controls.action)) {
+		if (Input.GetKey(Controls.action) && Controls.ladderMode == 1) {
 			input.ladder = true;
 		}
 	}
@@ -1522,9 +1525,15 @@ function OptionsScreen(weight:float) {
 			GUILayout.Space(10);
             
             GUILayout.BeginHorizontal();
-			GUILayout.Label("Ladder Type");
+			GUILayout.Label("Ladder Jump Type");
 			GUILayout.FlexibleSpace();
             Controls.autoLadderJump = GUILayout.SelectionGrid(Controls.autoLadderJump, ["Auto", "Manual"], 2, GUILayout.Height(sheight/20), GUILayout.Width(swidth/8*21/16));
+			GUILayout.EndHorizontal();
+            
+            GUILayout.BeginHorizontal();
+			GUILayout.Label("Ladder Climb Type");
+			GUILayout.FlexibleSpace();
+            Controls.ladderMode = GUILayout.SelectionGrid(Controls.ladderMode, ["W/S", "E-W/S"], 2, GUILayout.Height(sheight/20), GUILayout.Width(swidth/8*21/16));
 			GUILayout.EndHorizontal();
 			
 			GUILayout.EndScrollView();
