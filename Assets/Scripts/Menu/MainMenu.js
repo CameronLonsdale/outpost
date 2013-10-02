@@ -256,6 +256,10 @@ function RequestHostList() {
 }
 
 function OnGUI () {
+    if (debugMenu) {
+        GUI.Window(0, Rect(0, sheight/3, swidth/4, sheight/3), DebugWindow, "Debug Menu");
+    }
+    
     //Set gui style
     swidth = Screen.width;
     sheight = Screen.height;
@@ -329,13 +333,13 @@ function OnGUI () {
         sheight = Screen.height;
         windowOffset = Vector2.zero;
 	}
-    
-    if (debugMenu) {
-        GUI.Window(0, Rect(0, sheight/3, swidth/4, sheight/3), DebugWindow, "Debug Menu");
-    }
 }
 
 function Update() {
+    if (Input.GetKeyDown(KeyCode.F12)) {
+        debugMenu = !debugMenu;
+    }
+    
     //Update GUI weights
     if (loginType == 0) {
         loginTypeWeight += Time.deltaTime;
@@ -348,10 +352,6 @@ function Update() {
     if (refreshTimer < Time.time) {
         GetData();
         refreshTimer = Time.time + refreshTime;
-    }
-    
-    if (Input.GetKeyDown(KeyCode.F12)) {
-        debugMenu = !debugMenu;
     }
 }
 
@@ -1052,9 +1052,17 @@ function OptionsScreen(weight:float) {
         GUILayout.Space(10);
         
         GUILayout.BeginHorizontal();
-        GUILayout.Label("Ladder Type");
+        GUILayout.Label("Ladder Jump Type");
         GUILayout.FlexibleSpace();
         Controls.autoLadderJump = GUILayout.SelectionGrid(Controls.autoLadderJump, ["Auto", "Manual"], 2, GUILayout.Height(Screen.height/20), GUILayout.Width(Screen.width/8*21/16));
+        GUILayout.EndHorizontal();
+        
+        GUILayout.Space(10);
+        
+        GUILayout.BeginHorizontal();
+        GUILayout.Label("Ladder Climb Type");
+        GUILayout.FlexibleSpace();
+        Controls.ladderMode = GUILayout.SelectionGrid(Controls.ladderMode, ["W/S", "E-W/S"], 2, GUILayout.Height(sheight/20), GUILayout.Width(swidth/8*21/16));
         GUILayout.EndHorizontal();
         
 		GUILayout.EndScrollView();
@@ -1122,61 +1130,43 @@ function HelpScreen(weight:float) {
     
 function CreditsScreen(weight:float) {
     GUI.color.a = weight;
-    GUI.skin.box.fontSize = fontSize - 4;
     GUI.skin.label.fontSize = fontSize - 4;
-    GUI.skin.button.fontSize = fontSize - 4;
     
     GUI.Box(Rect(windowOffset.x, windowOffset.y, swidth, sheight), "");
-    
     GUILayout.BeginArea(Rect(windowOffset.x + 5, windowOffset.y + 5, swidth -5, sheight -5));
     
-    GUILayout.BeginHorizontal();
-    GUILayout.FlexibleSpace();
-    GUILayout.Label("Main Team");
-    GUILayout.FlexibleSpace();
-    GUILayout.EndHorizontal();
+    GUI.skin.label.alignment = TextAnchor.MiddleCenter;
+    GUILayout.Label("Main Team", GUILayout.ExpandWidth(true));
    
    	GUI.skin.label.alignment = TextAnchor.MiddleLeft;
-	GUILayout.Label(" Benjamin Schaaf\n Lead Programmer, 3D Artist and Designer");
-	GUILayout.Label(" Cameron Lonsdale\n Lead Designer, 3D Artist and Programmer");
+	GUILayout.Label("Benjamin Schaaf\n Lead Programmer, 3D Artist and Designer");
+	GUILayout.Label("Cameron Lonsdale\n Lead Designer, 3D Artist and Programmer");
+    
 	GUI.skin.label.alignment = TextAnchor.MiddleCenter;
-
-	GUILayout.BeginHorizontal();
-    GUILayout.FlexibleSpace();
-   	GUILayout.Label("Contributors");
-    GUILayout.FlexibleSpace();
-    GUILayout.EndHorizontal();
+   	GUILayout.Label("Contributors", GUILayout.ExpandWidth(true));
 	GUI.skin.label.alignment = TextAnchor.MiddleLeft;
-	GUILayout.Label(" Dean Gouskos\n 3D Artist - Gun Models");
+	GUILayout.Label("Dean Gouskos\n 3D Artist - Gun Models");
 	
 	GUI.skin.label.alignment = TextAnchor.MiddleCenter;
-	GUILayout.BeginHorizontal();
-    GUILayout.FlexibleSpace();
-   	GUILayout.Label("Made With");
-    GUILayout.FlexibleSpace();
-    GUILayout.EndHorizontal();
+   	GUILayout.Label("Made With", GUILayout.ExpandWidth(true));
 	GUI.skin.label.alignment = TextAnchor.MiddleLeft;
-	GUILayout.Label(" Blender - open source modelling software \n GIMP - open source image manipulation");
+	GUILayout.Label("Blender - open source modelling software \n GIMP - open source image manipulation");
 	
 	GUI.skin.label.alignment = TextAnchor.MiddleCenter;
-	GUILayout.BeginHorizontal();
-    GUILayout.FlexibleSpace();
-   	GUILayout.Label("Special Thanks");
-    GUILayout.FlexibleSpace();
-    GUILayout.EndHorizontal();
+   	GUILayout.Label("Special Thanks", GUILayout.ExpandWidth(true));
     GUI.skin.label.alignment = TextAnchor.MiddleLeft;
-	GUILayout.Label(" CGTextures - open source textures \n All our friends who supported us");
+	GUILayout.Label("CGTextures - open source textures \n All our friends who supported us");
 	
 	GUILayout.FlexibleSpace();
+    
     if (GUILayout.Button("Exit")) {
         window = MenuWindow.home;
     }
     
     GUILayout.EndArea();
     
-    GUI.skin.box.fontSize = fontSize;
     GUI.skin.label.fontSize = fontSize;
-    GUI.skin.button.fontSize = fontSize;
+    GUI.skin.label.alignment = TextAnchor.MiddleCenter;
     GUI.color = Color.white;
 }
     

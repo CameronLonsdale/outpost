@@ -83,6 +83,7 @@ static class Controls {
 	
 	var normalSprint:int = 0;
 	var autoLadderJump:int = 0;
+    var ladderMode:int = 0;
 	
 	function Save() {
 		ObjectSaver.Save("Settings" + Path.DirectorySeparatorChar + "controls.conf", Controls);
