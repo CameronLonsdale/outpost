@@ -1090,7 +1090,7 @@ function CreditsScreen(weight:float) {
     
     GUI.Box(Rect(windowOffset.x, windowOffset.y, swidth, sheight), "");
     
-    GUILayout.BeginArea(Rect(windowOffset.x + 5, windowOffset.y + 5, swidth -5, sheight -5));
+    GUILayout.BeginArea(Rect(windowOffset.x + 5, windowOffset.y + 5, swidth -5, sheight -10));
     
     GUILayout.BeginHorizontal();
     GUILayout.FlexibleSpace();
