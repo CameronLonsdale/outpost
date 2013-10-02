@@ -596,50 +596,65 @@ function MainMenuScreen(weight:float) {
 	GUI.Label(Rect(swidth/10*0.08, sheight/10*9.2, swidth/10, sheight/10), "1");
 	 
     //username
-    GUI.skin.label.alignment = TextAnchor.MiddleLeft;
-    GUI.Label(Rect(swidth/10*1.2, sheight/10*8.5, swidth/6, sheight/10), "" + AccountSettings.username);
-  
-     
+    //GUI.skin.label.alignment = TextAnchor.MiddleLeft;
+    //GUI.Label(Rect(swidth/10*1.2, sheight/10*8.5, swidth/6, sheight/10), "" + AccountSettings.username);
+    
+    
     //experience
-    GUI.Box(Rect(swidth/10*1.2, sheight/10*9.2, swidth/8, sheight/30), "");
+    /*GUI.Box(Rect(swidth/10*1.2, sheight/10*9.2, swidth/8, sheight/30), "");
     GUI.color = Color.yellow;
     GUI.Box(Rect(swidth/10*1.2, sheight/10*9.2, swidth/8*0.3, sheight/30), "");
 	GUI.color = Color.white;
-	GUI.skin.label.fontSize = 18;
+	GUI.skin.label.fontSize -= 2;
 	GUI.Label(Rect(swidth/10*1.2, sheight/10*9.2, swidth/6, sheight/10), "700XP til next level");
-	
-	GUI.skin.label.alignment = TextAnchor.MiddleCenter;
-	GUI.skin.label.fontSize = 25;
+	GUI.skin.label.fontSize += 2;*/
+    
+    GUI.skin.label.alignment = TextAnchor.UpperCenter;
+    GUI.Label(Rect(swidth/10*1.5, sheight/10*9 - fontSize/2, swidth/8, sheight/10), "Experience");
+    GUI.skin.label.alignment = TextAnchor.MiddleCenter;
+    GUI.Box(Rect(swidth/10*1.5, sheight/10*9.2, swidth/8, sheight/30), "");
+    
+    GUI.color = Color.yellow;
+    GUI.Box(Rect(swidth/10*1.5, sheight/10*9.2, swidth/8*(0.3), sheight/30), "");
+    GUI.color = Color.white;
+    GUI.Box(Rect(swidth/10*1.5 + swidth/8*(0.3), sheight/10*9.2, swidth/8*(0.7), sheight/30), "");
 	
 	//skill level
-	GUI.Label(Rect(swidth/10*2.4, sheight/10*8.5, swidth/6, sheight/10), "Skill level");
-	GUI.skin.label.fontSize = 30;
-	GUI.Label(Rect(swidth/10*2.4, sheight/10*9, swidth/6, sheight/10), "559");
-	GUI.skin.label.fontSize = 25;
+    GUI.skin.label.alignment = TextAnchor.UpperCenter;
+    GUI.skin.label.fontSize -= 1;
+	GUI.Label(Rect(swidth/10*2.5, sheight/10*9 - fontSize/2, swidth/10*2, sheight/10), "Skill level");
+    GUI.skin.label.fontSize += 1;
+	GUI.skin.label.alignment = TextAnchor.MiddleCenter;
+	GUI.Label(Rect(swidth/10*3, sheight/10*9.2, swidth/10, sheight/30), "559");
+    
    	/*============
 	right side
 	=============*/
 	
 	//Not sure yet
+    /*GUI.skin.label.fontSize += 5;
 	GUI.Label(Rect(swidth/10*5.9, sheight/10*8.5, swidth/6, sheight/10), "Kills/Deaths");
-	GUI.skin.label.fontSize = 30;
+	GUI.skin.label.fontSize += 3;
 	GUI.Label(Rect(swidth/10*5.9, sheight/10*9, swidth/6, sheight/10), "3");
-	GUI.skin.label.fontSize = 25;
+	GUI.skin.label.fontSize -= 8;*/
 	
-	
-    //GUI.Label(Rect(swidth/10*6, sheight/10*9, swidth/10, sheight/10), "" + Stats.totalCasulties);
-    GUI.skin.label.alignment = TextAnchor.MiddleRight;
-    GUI.Label(Rect(swidth/10*7.1, sheight/10*8.5, swidth/6, sheight/10), "Reputation");
-
+    GUI.skin.label.alignment = TextAnchor.UpperCenter;
+    GUI.skin.label.fontSize -= 1;
+    GUI.Label(Rect(swidth/10*6, sheight/10*9 - fontSize/2, swidth/10, sheight/10), "Casulties");
+    GUI.skin.label.fontSize += 1;
+	GUI.skin.label.alignment = TextAnchor.MiddleCenter;
+    GUI.Label(Rect(swidth/10*6, sheight/10*9.2, swidth/10, sheight/30), "" + Stats.totalCasulties);
     
+    GUI.skin.label.alignment = TextAnchor.UpperCenter;
+    GUI.Label(Rect(swidth/10*7.5, sheight/10*9 - fontSize/2, swidth/8, sheight/10), "Wager");
+    GUI.skin.label.alignment = TextAnchor.MiddleCenter;
     GUI.Box(Rect(swidth/10*7.5, sheight/10*9.2, swidth/8, sheight/30), "");
     
-    /*
     GUI.color = NetworkManagerPrefab.BlueColor;
     GUI.Box(Rect(swidth/10*7.5, sheight/10*9.2, swidth/8*(Stats.t1Kills/(Stats.totalKills + 0.1)), sheight/30), "");
     GUI.color = NetworkManagerPrefab.GreenColor;
-    GUI.Box(Rect(swidth/10*7.5 + swidth/10*(Stats.t1Kills/(Stats.totalKills + 0.1)), sheight/10*9.2, swidth/10*(Stats.t2Kills/(Stats.totalKills  + 0.1)), sheight/30), "");
-    */
+    GUI.Box(Rect(swidth/10*7.5 + swidth/8*(Stats.t1Kills/(Stats.totalKills + 0.1)), sheight/10*9.2, swidth/8*(Stats.t2Kills/(Stats.totalKills  + 0.1)), sheight/30), "");
+    
     
     GUI.color = Color.white;
     GUI.skin.label.alignment = TextAnchor.MiddleCenter;
@@ -739,32 +754,38 @@ function ServerEditScreen(weight:float) {
     
     GUILayout.BeginHorizontal();
     GUILayout.Label("Name");
-    ServerSettings.serverName = GUILayout.TextField(ServerSettings.serverName, 24);
+    GUILayout.FlexibleSpace();
+    ServerSettings.serverName = GUILayout.TextField(ServerSettings.serverName, 24, GUILayout.Width(swidth/2));
     GUILayout.EndHorizontal();
     
     GUILayout.BeginHorizontal();
     GUILayout.Label("Comment");
-    ServerSettings.comment = GUILayout.TextArea(ServerSettings.comment, 64, GUILayout.Height(sheight/20*3));
+    GUILayout.FlexibleSpace();
+    ServerSettings.comment = GUILayout.TextArea(ServerSettings.comment, 64, GUILayout.Height(sheight/20*3), GUILayout.Width(swidth/2));
     GUILayout.EndHorizontal();
     
     GUILayout.BeginHorizontal();
     GUILayout.Label("Map");
-    ServerSettings.map = SelectionGrid(ServerSettings.map, ServerSettings.maps);
+    GUILayout.FlexibleSpace();
+    ServerSettings.map = SelectionGrid(ServerSettings.map, ServerSettings.maps, GUILayout.Width(swidth/2));
     GUILayout.EndHorizontal();
     
     GUILayout.BeginHorizontal();
     GUILayout.Label("Mode");
-    ServerSettings.gameMode = SelectionGrid(ServerSettings.gameMode, ServerSettings.gameModes);
+    GUILayout.FlexibleSpace();
+    ServerSettings.gameMode = SelectionGrid(ServerSettings.gameMode, ServerSettings.gameModes, GUILayout.Width(swidth/2/2));
     GUILayout.EndHorizontal();
     
     GUILayout.BeginHorizontal();
     GUILayout.Label("Player Limit (" + ServerSettings.playerLimit + ")");
-    ServerSettings.playerLimit = GUILayout.HorizontalSlider(ServerSettings.playerLimit, 1, 16);
+    GUILayout.FlexibleSpace();
+    ServerSettings.playerLimit = GUILayout.HorizontalSlider(ServerSettings.playerLimit, 1, 16, GUILayout.Width(swidth/2));
     GUILayout.EndHorizontal();
     
     GUILayout.BeginHorizontal();
     GUILayout.Label("Target Kills (" + ServerSettings.targetKills + ")");
-    ServerSettings.targetKills = GUILayout.HorizontalSlider(ServerSettings.targetKills, 10, 1000);
+    GUILayout.FlexibleSpace();
+    ServerSettings.targetKills = GUILayout.HorizontalSlider(ServerSettings.targetKills, 10, 1000, GUILayout.Width(swidth/2));
     GUILayout.EndHorizontal();
     
     GUILayout.FlexibleSpace();
@@ -1130,10 +1151,10 @@ function Split(str:String, position:String, maxNumber:int):String[] {
     return out;
 }
 
-function SelectionGrid(selected:int, texts:String[]) {
+function SelectionGrid(selected:int, texts:String[], option:GUILayoutOption) {
     GUILayout.BeginHorizontal();
     for (var i:int = 0; i < texts.length; i++) {
-        if (GUILayout.Toggle(selected == i, texts[i])) {
+        if (GUILayout.Toggle(selected == i, texts[i], option)) {
             selected = i;
         }
     }
