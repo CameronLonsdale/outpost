@@ -40,7 +40,7 @@ static class Settings {
     }
     
     function get version():String {
-        return "0.26";
+        return "0.3";
     }
 }
 
