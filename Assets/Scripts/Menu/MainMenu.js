@@ -52,7 +52,7 @@ private var Detect:boolean = false;
 private enum Dropdown {none, play, profile, options, quit}
 private var dropdown:Dropdown = Dropdown.none;
 
-private enum MenuWindow {home, quickMatch, serverList, startServer, profile, options, help, credits}
+private enum MenuWindow {home, quickMatch, serverList, directConnect, startServer, profile, options, help, credits}
 private var window:MenuWindow = MenuWindow.home;
 
 //Text Scaling --
@@ -85,8 +85,11 @@ private var tmpFloat:float;
 var refreshTime:float;
 private var refreshTimer:float;
 
+//Direct Connect Options
+private var HostAddress:String = "";
+
 //DEBUG MENU
-var debugMenu:boolean = false;
+private var debugMenu:boolean = false;
 
 function Awake() {
     Settings.defaultMod = DefaultMod;
@@ -299,6 +302,9 @@ function OnGUI () {
             case MenuWindow.serverList:
                 ServerListScreen(1);
             break;
+            case MenuWindow.directConnect:
+                DirectConnectScreen(1);
+            break;
             case MenuWindow.startServer:
                 ServerEditScreen(1);
             break;
@@ -371,6 +377,12 @@ function PlayDropdown() {
         window = MenuWindow.serverList;
         dropdown = Dropdown.none;
     }
+    
+    if (GUILayout.Button("Direct Connect")) {
+        window = MenuWindow.directConnect;
+        dropdown = Dropdown.none;
+    }
+    
     if (GUILayout.Button("Host")) {
         window = MenuWindow.startServer;
         dropdown = Dropdown.none;
@@ -764,6 +776,34 @@ function ServerListScreen(weight:float) {
     GUI.skin.label.fontSize = fontSize;
     
     GUI.color = Color.white;
+}
+
+function DirectConnectScreen(weight:float) {
+    GUI.color.a = weight;
+    
+    GUI.Box(Rect(windowOffset.x, windowOffset.y, swidth, sheight), "");
+    GUILayout.BeginArea(Rect(windowOffset.x, windowOffset.y, swidth, sheight));
+    
+    GUILayout.Label("Direct Connect");
+    
+    GUI.skin.label.fontSize = fontSize - 4;
+    
+    GUILayout.BeginHorizontal();
+    GUILayout.Label("IP Address");
+    GUILayout.FlexibleSpace();
+    HostAddress = GUILayout.TextField(HostAddress, GUILayout.Width(swidth/2));
+    GUILayout.EndHorizontal();
+    
+    GUILayout.FlexibleSpace();
+    
+    if (GUILayout.Button("Connect")) {
+        Network.Connect(HostAddress, 2000);
+        StartGame(false, true);
+    }
+    
+    GUI.skin.label.fontSize = fontSize + 4;
+    
+    GUILayout.EndArea();
 }
 
 function ServerEditScreen(weight:float) {
