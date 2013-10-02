@@ -746,6 +746,7 @@ function Move(input:InputState, deltaTime:float) {
         if (!currentState.grounded && previousState.grounded && currentState.velocity.y < 0) {
             transform.position = previousState.position;
             currentState.velocity.y = currentState.acceleration.y;
+            currentState.acceleration.x = 0;
             
             //re-add velocity
             currentState.velocity += currentState.acceleration/2*deltaTime*50;
