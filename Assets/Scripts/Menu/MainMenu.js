@@ -882,7 +882,7 @@ function OptionsScreen(weight:float) {
     
     GUILayout.BeginArea(Rect(windowOffset.x, windowOffset.y, swidth, sheight));
     
-    optionsType = GUILayout.Toolbar(optionsType, ["Video",  "Controls"]);
+    optionsType = GUILayout.Toolbar(optionsType, ["Video",  "Controls"], GUILayout.Height(Screen.height/20));
     
 	if (optionsType == 0){
 		ScrollPosition = GUILayout.BeginScrollView(ScrollPosition);
@@ -920,12 +920,12 @@ function OptionsScreen(weight:float) {
 		GUILayout.Label("Fullscreen");
 		GUILayout.FlexibleSpace();
         if (VideoSettings.fullScreen) {
-            if (GUILayout.Toolbar(1, ["Off",  "On"]) == 0) {
+            if (GUILayout.Toolbar(1, ["Off",  "On"], GUILayout.Height(Screen.height/20), GUILayout.Width(swidth/15*4)) == 0) {
                 VideoSettings.fullScreen = false;
             }
         }
         else {
-            if (GUILayout.Toolbar(0, ["Off", "On"]) == 1) {
+            if (GUILayout.Toolbar(0, ["Off", "On"], GUILayout.Height(Screen.height/20), GUILayout.Width(swidth/15*4)) == 1) {
                 VideoSettings.fullScreen = true;
             }
         }
@@ -1098,10 +1098,7 @@ function HelpScreen(weight:float) {
     
     GUI.Box(Rect(windowOffset.x, windowOffset.y, swidth, sheight), "");
     
-    
     GUILayout.BeginArea(Rect(windowOffset.x, windowOffset.y, swidth, sheight));
-    
-  
   
     GUILayout.BeginHorizontal();
     if (GUILayout.Button("Exit")) {
