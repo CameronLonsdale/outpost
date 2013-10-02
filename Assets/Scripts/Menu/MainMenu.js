@@ -1099,6 +1099,12 @@ function HelpScreen(weight:float) {
     GUI.Box(Rect(windowOffset.x, windowOffset.y, swidth, sheight), "");
     
     GUILayout.BeginArea(Rect(windowOffset.x, windowOffset.y, swidth, sheight));
+    GUILayout.BeginHorizontal();
+    GUILayout.FlexibleSpace();
+    GUILayout.Label("Controls");
+    GUILayout.FlexibleSpace();
+    GUILayout.EndHorizontal();
+    GUILayout.Label("Movement: A to move Left \n D to move Right");
   
     GUILayout.BeginHorizontal();
     if (GUILayout.Button("Exit")) {
@@ -1122,21 +1128,49 @@ function CreditsScreen(weight:float) {
     
     GUI.Box(Rect(windowOffset.x, windowOffset.y, swidth, sheight), "");
     
-    GUILayout.BeginArea(Rect(windowOffset.x, windowOffset.y, swidth, sheight));
-    GUILayout.Label("Main Team");
-	GUILayout.Label("Benjamin Schaaf \n Lead Programmer, 3D Artist and Designer");
-	GUILayout.Label("Cameron Lonsdale \n Lead Designer, 3D Artist and Programmer");
-	GUILayout.Label("Contributors");
-	GUILayout.Label("Dean Gouskos \n 3D Artist and Designer");
-	GUILayout.Label("© 2012 Outpost Software. All rights reserved. Outpost Software, the Outpost Software logos and the Outpost game itself and included content are copyrighted under the Australian copyright law; the Copyright Act 1968. All other creative material is property of its respective owners.");
-	GUILayout.Label("Outpost Software makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability  or other violation of rights. In no event shall Outpost Software be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising from the use or inability to use the software and games produced by Outpost Software, even if Outpost Software or an Outpost Software authorized representative has been notified orally or in writing of the possibility of such damage.");
-	GUILayout.Label("By installing, using or accessing the Software or Services you are considered to have accepted the terms set out in this document. If you do not agree with or otherwise wish to accept the terms set out in this document, do not install, use or access the Software and/or the Services.");
-  
+    GUILayout.BeginArea(Rect(windowOffset.x + 5, windowOffset.y + 5, swidth -5, sheight -5));
+    
     GUILayout.BeginHorizontal();
+    GUILayout.FlexibleSpace();
+    GUILayout.Label("Main Team");
+    GUILayout.FlexibleSpace();
+    GUILayout.EndHorizontal();
+   
+   	GUI.skin.label.alignment = TextAnchor.MiddleLeft;
+	GUILayout.Label(" Benjamin Schaaf\n Lead Programmer, 3D Artist and Designer");
+	GUILayout.Label(" Cameron Lonsdale\n Lead Designer, 3D Artist and Programmer");
+	GUI.skin.label.alignment = TextAnchor.MiddleCenter;
+
+	GUILayout.BeginHorizontal();
+    GUILayout.FlexibleSpace();
+   	GUILayout.Label("Contributors");
+    GUILayout.FlexibleSpace();
+    GUILayout.EndHorizontal();
+	GUI.skin.label.alignment = TextAnchor.MiddleLeft;
+	GUILayout.Label(" Dean Gouskos\n 3D Artist - Gun Models");
+	
+	GUI.skin.label.alignment = TextAnchor.MiddleCenter;
+	GUILayout.BeginHorizontal();
+    GUILayout.FlexibleSpace();
+   	GUILayout.Label("Made With");
+    GUILayout.FlexibleSpace();
+    GUILayout.EndHorizontal();
+	GUI.skin.label.alignment = TextAnchor.MiddleLeft;
+	GUILayout.Label(" Blender - open source modelling software \n GIMP - open source image manipulation");
+	
+	GUI.skin.label.alignment = TextAnchor.MiddleCenter;
+	GUILayout.BeginHorizontal();
+    GUILayout.FlexibleSpace();
+   	GUILayout.Label("Special Thanks");
+    GUILayout.FlexibleSpace();
+    GUILayout.EndHorizontal();
+    GUI.skin.label.alignment = TextAnchor.MiddleLeft;
+	GUILayout.Label(" CGTextures - open source textures \n All our friends who supported us");
+	
+	GUILayout.FlexibleSpace();
     if (GUILayout.Button("Exit")) {
         window = MenuWindow.home;
     }
-    GUILayout.EndHorizontal();
     
     GUILayout.EndArea();
     
