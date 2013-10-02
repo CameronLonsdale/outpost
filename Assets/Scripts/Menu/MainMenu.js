@@ -85,6 +85,9 @@ private var tmpFloat:float;
 var refreshTime:float;
 private var refreshTimer:float;
 
+//DEBUG MENU
+var debugMenu:boolean = false;
+
 function Awake() {
     Settings.defaultMod = DefaultMod;
 	Input.eatKeyPressOnTextFieldFocus = false;
@@ -320,6 +323,10 @@ function OnGUI () {
         sheight = Screen.height;
         windowOffset = Vector2.zero;
 	}
+    
+    if (debugMenu) {
+        GUI.Window(0, Rect(0, sheight/3, swidth/4, sheight/3), DebugWindow, "Debug Menu");
+    }
 }
 
 function Update() {
@@ -336,6 +343,15 @@ function Update() {
         GetData();
         refreshTimer = Time.time + refreshTime;
     }
+    
+    if (Input.GetKeyDown(KeyCode.F12)) {
+        debugMenu = !debugMenu;
+    }
+}
+
+function DebugWindow(id:int) {
+    GUILayout.Label("Backend");
+    Settings.backend = GUILayout.TextField(Settings.backend);
 }
 
 function PlayDropdown() {
@@ -343,10 +359,13 @@ function PlayDropdown() {
     GUILayout.BeginArea(Rect(Screen.width/12*3, Screen.height/16, Screen.width/12*2, Screen.height/16*4));
     GUILayout.Space(2);
     
+    GUI.enabled = false;
     if (GUILayout.Button("QuickMatch")) {
         window = MenuWindow.quickMatch;
         dropdown = Dropdown.none;
     }
+    GUI.enabled = true;
+    
     if (GUILayout.Button("Server List")) {
         RequestHostList();
         window = MenuWindow.serverList;
@@ -549,6 +568,8 @@ function MainMenuScreen(weight:float) {
             dropdown = Dropdown.none;
         }
     }
+    
+    GUI.enabled = false;
     if (GUILayout.Button("Profile", GUILayout.Width(Screen.width/12*2), GUILayout.ExpandHeight(true))) {
         if (dropdown != Dropdown.profile) {
             dropdown = Dropdown.profile;
@@ -557,6 +578,8 @@ function MainMenuScreen(weight:float) {
             dropdown = Dropdown.none;
         }
     }
+    GUI.enabled = true;
+    
     if (GUILayout.Button("Options", GUILayout.Width(Screen.width/12*2), GUILayout.ExpandHeight(true))) {
       	if (dropdown != Dropdown.options) {
             dropdown = Dropdown.options;
@@ -566,6 +589,7 @@ function MainMenuScreen(weight:float) {
         }      
        
     }
+    
     if (GUILayout.Button("Quit", GUILayout.Width(Screen.width/12), GUILayout.ExpandHeight(true))) {
         if (dropdown != Dropdown.quit) {
             dropdown = Dropdown.quit;

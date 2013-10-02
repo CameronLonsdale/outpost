@@ -15,12 +15,8 @@ GLOBALS
 */
 
 static class Settings {
-    function get backend():String {
-        if (devMode) {
-            return "https://127.0.0.1:3000";
-        }
-        return "https://api.outpostsoftware.com";
-    }
+    var backend:String = "https://api.outpostsoftware.com";
+    
     var offline:boolean = false;
     var _upToDate:boolean = false;
     function get upToDate():boolean {
@@ -29,13 +25,18 @@ static class Settings {
     function set upToDate(value:boolean) {
         _upToDate = value;
     }
+    
+    function get devMode() {
+        #if UNITY_EDITOR
+         return true;
+        #endif
+        #if UNITY_STANDALONE
+         return false;
+        #endif
+    }
 
     function get loggedIn():boolean {
         return (((AccountSettings.secureCode != "" && AccountSettings.ticket != "") || offline) && upToDate);
-    }
-
-    function get devMode():boolean {
-        return true;
     }
     
     function get version():String {
