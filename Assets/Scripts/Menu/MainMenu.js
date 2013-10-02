@@ -643,7 +643,8 @@ function MainMenuScreen(weight:float) {
 	GUI.color = Color.white;
 	GUI.skin.label.fontSize -= 2;
 	GUI.Label(Rect(swidth/10*1.2, sheight/10*9.2, swidth/6, sheight/10), "700XP til next level");
-	GUI.skin.label.fontSize += 2;*/
+	GUI.skin.label.fontSize += 2;
+	*/
     
     GUI.skin.label.alignment = TextAnchor.UpperCenter;
     GUI.Label(Rect(swidth/10*1.5, sheight/10*9 - fontSize/2, swidth/8, sheight/10), "Experience");
@@ -880,20 +881,28 @@ function OptionsScreen(weight:float) {
     GUI.Box(Rect(windowOffset.x, windowOffset.y, swidth, sheight), "");
     
     
-    GUILayout.BeginArea(Rect(windowOffset.x, windowOffset.y, swidth, sheight));
-    
-    optionsType = GUILayout.Toolbar(optionsType, ["Video",  "Controls"], GUILayout.Height(Screen.height/20));
+    GUILayout.BeginArea(Rect(windowOffset.x + 5, windowOffset.y + 5, swidth-10, sheight - 10));
+
+    optionsType = GUILayout.Toolbar(optionsType, ["Video",  "Controls"], GUILayout.Height(Screen.height/20), GUILayout.Width(swidth-10));
+	
+	GUILayout.EndArea();
+	
+	GUILayout.BeginArea(Rect(windowOffset.x + 10, windowOffset.y + Screen.height/20 + 10, swidth-15, sheight - sheight/7));
     
 	if (optionsType == 0){
 		ScrollPosition = GUILayout.BeginScrollView(ScrollPosition);
         
 		GUILayout.BeginHorizontal();
+		
+		GUI.skin.label.alignment = TextAnchor.MiddleLeft;
         
 		GUILayout.Label("Quality Level");
+		GUI.skin.label.alignment = TextAnchor.MiddleCenter;
 		GUILayout.FlexibleSpace();
 		if (GUILayout.Button("<", GUILayout.Width(swidth/15))){
 			VideoSettings.qualityLevel  = Mathf.Clamp(VideoSettings.qualityLevel - 1, 0, VideoSettings.qualityLevels.length - 1);
 		}
+		
 		GUILayout.Label(VideoSettings.qualityLevels[VideoSettings.qualityLevel], GUILayout.Width(swidth/15*4));
 		if (GUILayout.Button(">", GUILayout.Width(swidth/15))) {
 			VideoSettings.qualityLevel  = Mathf.Clamp(VideoSettings.qualityLevel + 1, 0, VideoSettings.qualityLevels.length - 1);
@@ -902,8 +911,11 @@ function OptionsScreen(weight:float) {
         
 		GUILayout.Space(20);
         
+        GUI.skin.label.alignment = TextAnchor.MiddleLeft;
 		GUILayout.BeginHorizontal();
 		GUILayout.Label("Screen Size");
+		GUI.skin.label.alignment = TextAnchor.MiddleCenter;
+		GUI.skin.label.alignment = TextAnchor.MiddleCenter;
 		GUILayout.FlexibleSpace();
 		if (GUILayout.Button("<", GUILayout.Width(swidth/15))) {
 			VideoSettings.resolution  = Mathf.Clamp(VideoSettings.resolution - 1, 0, VideoSettings.resolutions.length - 1);
@@ -915,17 +927,19 @@ function OptionsScreen(weight:float) {
 		GUILayout.EndHorizontal();
         
 		GUILayout.Space(20);
-        
+		
+        GUI.skin.label.alignment = TextAnchor.MiddleLeft;
 		GUILayout.BeginHorizontal();
 		GUILayout.Label("Fullscreen");
+		GUI.skin.label.alignment = TextAnchor.MiddleCenter;
 		GUILayout.FlexibleSpace();
         if (VideoSettings.fullScreen) {
-            if (GUILayout.Toolbar(1, ["Off",  "On"], GUILayout.Height(Screen.height/20), GUILayout.Width(swidth/15*4)) == 0) {
+            if (GUILayout.Toolbar(1, ["Off",  "On"], GUILayout.Height(Screen.height/20), GUILayout.Width(swidth/15*6.2)) == 0) {
                 VideoSettings.fullScreen = false;
             }
         }
         else {
-            if (GUILayout.Toolbar(0, ["Off", "On"], GUILayout.Height(Screen.height/20), GUILayout.Width(swidth/15*4)) == 1) {
+            if (GUILayout.Toolbar(0, ["Off", "On"], GUILayout.Height(Screen.height/20), GUILayout.Width(swidth/15*6.2)) == 1) {
                 VideoSettings.fullScreen = true;
             }
         }
@@ -933,8 +947,10 @@ function OptionsScreen(weight:float) {
         
 		GUILayout.Space(20);
 		
+		GUI.skin.label.alignment = TextAnchor.MiddleLeft;
         GUILayout.BeginHorizontal();
 		GUILayout.Label("Texture Quality");
+		GUI.skin.label.alignment = TextAnchor.MiddleCenter;
 		GUILayout.FlexibleSpace();
 		if (GUILayout.Button("<", GUILayout.Width(swidth/15))) {
 			VideoSettings.textureMipMapLevel  = Mathf.Clamp(VideoSettings.textureMipMapLevel + 1, 0, 3);
@@ -947,16 +963,20 @@ function OptionsScreen(weight:float) {
         
 		GUILayout.Space(20);
 		
+		GUI.skin.label.alignment = TextAnchor.MiddleLeft;
         GUILayout.BeginHorizontal();
 		GUILayout.Label("Shadow Distance");
+		GUI.skin.label.alignment = TextAnchor.MiddleCenter;
 		GUILayout.FlexibleSpace();
 		GUILayout.Label(parseInt(VideoSettings.shadowDistance) + "");
 		VideoSettings.shadowDistance = GUILayout.HorizontalSlider(VideoSettings.shadowDistance, 0, 80, GUILayout.Width(swidth/10*4));
 		GUILayout.EndHorizontal();
 		GUILayout.Space(20);
 		
+		GUI.skin.label.alignment = TextAnchor.MiddleLeft;
 		GUILayout.BeginHorizontal();
 		GUILayout.Label("Volume");
+		GUI.skin.label.alignment = TextAnchor.MiddleCenter;
 		GUILayout.FlexibleSpace();
 		GUILayout.Label(parseInt(SoundSettings.volume * 100) + "");
 		SoundSettings.volume = GUILayout.HorizontalSlider(SoundSettings.volume, 0.0, 1.0, GUILayout.Width(swidth/10*4));
@@ -964,16 +984,20 @@ function OptionsScreen(weight:float) {
         
 		GUILayout.Space(20);
 		
+		GUI.skin.label.alignment = TextAnchor.MiddleLeft;
 		GUILayout.BeginHorizontal();
 		GUILayout.Label("Sensitivity");
+		GUI.skin.label.alignment = TextAnchor.MiddleCenter;
 		GUILayout.FlexibleSpace();
 		GUILayout.Label(parseInt(Controls.Sensitivity)/5 + "");
 		Controls.Sensitivity = GUILayout.HorizontalSlider(Controls.Sensitivity, 0.0, 500, GUILayout.Width(swidth/10*4));
 		GUILayout.EndHorizontal();
 		GUILayout.Space(20);
 		
+		GUI.skin.label.alignment = TextAnchor.MiddleLeft;
 		GUILayout.BeginHorizontal();
 		GUILayout.Label("Anti Aliasing");
+		GUI.skin.label.alignment = TextAnchor.MiddleCenter;
 		GUILayout.FlexibleSpace();
 		if (GUILayout.Button("<", GUILayout.Width(swidth/15))) {
 			VideoSettings.antiAliasing = Mathf.Clamp(VideoSettings.antiAliasing - 1, 0, VideoSettings.antiAliasings.length - 1);
@@ -1043,6 +1067,8 @@ function OptionsScreen(weight:float) {
         
         GUILayout.Space(10);
         
+        GUI.skin.label.alignment = TextAnchor.MiddleLeft;
+        
         GUILayout.BeginHorizontal();
         GUILayout.Label("Sprint Type");
         GUILayout.FlexibleSpace();
@@ -1068,6 +1094,10 @@ function OptionsScreen(weight:float) {
 		GUILayout.EndScrollView();
 	}
     
+    
+    GUILayout.EndArea();
+    
+    GUILayout.BeginArea(Rect(windowOffset.x + 5, sheight + windowOffset.y - sheight/20 , swidth-10, Screen.height/20));
     
     GUILayout.BeginHorizontal();
     if (GUILayout.Button("Save")) {
@@ -1106,14 +1136,32 @@ function HelpScreen(weight:float) {
     
     GUI.Box(Rect(windowOffset.x, windowOffset.y, swidth, sheight), "");
     
-    GUILayout.BeginArea(Rect(windowOffset.x, windowOffset.y, swidth, sheight));
+    GUILayout.BeginArea(Rect(windowOffset.x + 10, windowOffset.y + 5, swidth -15, sheight - 10));
+    
+    GUI.skin.label.alignment = TextAnchor.UpperLeft;
+    
     GUILayout.BeginHorizontal();
-    GUILayout.FlexibleSpace();
-    GUILayout.Label("Controls");
+    GUILayout.Label("Movement:");
     GUILayout.FlexibleSpace();
     GUILayout.EndHorizontal();
-    GUILayout.Label("Movement: A to move Left \n D to move Right");
+    GUILayout.Label("Move Left and Right by using the A and D keys. Jumping, Crouching and Sprinting are mappable in the Options Menu");
+    
+    GUILayout.BeginHorizontal();
+    GUILayout.Label("Weapons:");
+    GUILayout.FlexibleSpace();
+    GUILayout.EndHorizontal();
+    GUILayout.Label("You have a Primary and a Secondary weapon, you can either switch to one directly, or use the quickswap key to change to the other weapon.\nShooting the weapon and Aiming down sights are mappable, Make sure to watch out for the recoil and keep a steady hand.");
+  	
+  	GUILayout.BeginHorizontal();
+    GUILayout.Label("Ladders:");
+    GUILayout.FlexibleSpace();
+    GUILayout.EndHorizontal();
+    GUILayout.Label("Ladder Modes are configuarble in the Options menu. Depending on the mode, Hold E to grab the ladder and press W and S to go up and down. Or simply use W and S to go up and down the ladder. Ladder jumping is also configurable, Either Manual which is holding W and releasing E to jump or Automatic, just releasing E will make you jump");
   
+  	GUILayout.EndArea();
+  	
+  	GUILayout.BeginArea(Rect(windowOffset.x + 5, sheight + windowOffset.y - sheight/20 , swidth-10, Screen.height/20));
+  	
     GUILayout.BeginHorizontal();
     if (GUILayout.Button("Exit")) {
         window = MenuWindow.home;
@@ -1133,7 +1181,7 @@ function CreditsScreen(weight:float) {
     GUI.skin.label.fontSize = fontSize - 4;
     
     GUI.Box(Rect(windowOffset.x, windowOffset.y, swidth, sheight), "");
-    GUILayout.BeginArea(Rect(windowOffset.x + 5, windowOffset.y + 5, swidth -5, sheight -5));
+    GUILayout.BeginArea(Rect(windowOffset.x + 20, windowOffset.y + 5, swidth -10, sheight -10));
     
     GUI.skin.label.alignment = TextAnchor.MiddleCenter;
     GUILayout.Label("Main Team", GUILayout.ExpandWidth(true));
@@ -1141,21 +1189,23 @@ function CreditsScreen(weight:float) {
    	GUI.skin.label.alignment = TextAnchor.MiddleLeft;
 	GUILayout.Label("Benjamin Schaaf\n Lead Programmer, 3D Artist and Designer");
 	GUILayout.Label("Cameron Lonsdale\n Lead Designer, 3D Artist and Programmer");
-    
 	GUI.skin.label.alignment = TextAnchor.MiddleCenter;
    	GUILayout.Label("Contributors", GUILayout.ExpandWidth(true));
 	GUI.skin.label.alignment = TextAnchor.MiddleLeft;
 	GUILayout.Label("Dean Gouskos\n 3D Artist - Gun Models");
 	
-	GUI.skin.label.alignment = TextAnchor.MiddleCenter;
    	GUILayout.Label("Made With", GUILayout.ExpandWidth(true));
 	GUI.skin.label.alignment = TextAnchor.MiddleLeft;
-	GUILayout.Label("Blender - open source modelling software \n GIMP - open source image manipulation");
+	GUILayout.Label("Blender - open source modelling software GIMP - open source image manipulation");
 	
 	GUI.skin.label.alignment = TextAnchor.MiddleCenter;
    	GUILayout.Label("Special Thanks", GUILayout.ExpandWidth(true));
     GUI.skin.label.alignment = TextAnchor.MiddleLeft;
-	GUILayout.Label("CGTextures - open source textures \n All our friends who supported us");
+	GUILayout.Label("CGTextures - open source textures\nAll our friends who supported us");
+	
+	GUILayout.EndArea();
+	
+	GUILayout.BeginArea(Rect(windowOffset.x + 5, sheight + windowOffset.y - sheight/20*1.5 , swidth-10, Screen.height/20));
 	
 	GUILayout.FlexibleSpace();
     
@@ -1172,8 +1222,10 @@ function CreditsScreen(weight:float) {
     
 function KeyField(key:KeyCode, name:String) {
 	GUILayout.BeginHorizontal();
+	GUI.skin.label.alignment = TextAnchor.MiddleLeft;
 	GUILayout.Label(name);
 	GUILayout.FlexibleSpace();
+	GUI.skin.label.alignment = TextAnchor.MiddleCenter;
 	if(GUILayout.Button("" + key, GUILayout.Width(swidth/10*4)) && !Detect) {
 		key = KeyCode.None;
 		Detect = true;
