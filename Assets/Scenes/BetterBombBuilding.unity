@@ -3245,6 +3245,7 @@ GameObject:
   - 4: {fileID: 265572003}
   - 33: {fileID: 265572002}
   - 23: {fileID: 265572001}
+  - 65: {fileID: 265572004}
   m_Layer: 0
   m_Name: BackgroundBuilding05
   m_TagString: Untagged
@@ -3286,10 +3287,22 @@ Transform:
   m_PrefabInternal: {fileID: 1407731362}
   m_GameObject: {fileID: 265572000}
   m_LocalRotation: {x: -.707106888, y: 0, z: -0, w: .707106769}
-  m_LocalPosition: {x: -10.8098831, y: -25.6394653, z: 149.611465}
+  m_LocalPosition: {x: -10.8098831, y: -25.6394653, z: 149.711731}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1978807037}
+--- !u!65 &265572004
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 265572000}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 100.000053, y: 40.000042, z: 57.3000145}
+  m_Center: {x: -3.81469727e-06, y: 1.23977652e-05, z: 28.6500072}
 --- !u!1 &271379793
 GameObject:
   m_ObjectHideFlags: 0
@@ -17699,6 +17712,7 @@ GameObject:
   - 4: {fileID: 1311322392}
   - 33: {fileID: 1311322394}
   - 23: {fileID: 1311322393}
+  - 65: {fileID: 1311322395}
   m_Layer: 0
   m_Name: BackgroundBuilding04
   m_TagString: Untagged
@@ -17744,6 +17758,18 @@ MeshFilter:
   m_PrefabInternal: {fileID: 1780224558}
   m_GameObject: {fileID: 1311322391}
   m_Mesh: {fileID: 4300000, guid: 5385d4d768e170a4aba462f1c66151a9, type: 3}
+--- !u!65 &1311322395
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1311322391}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 54.7103958, y: 54.7104073, z: 105.333305}
+  m_Center: {x: 0, y: 0, z: 52.0866508}
 --- !u!1 &1314289174
 GameObject:
   m_ObjectHideFlags: 0
@@ -19109,7 +19135,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1978807037}
     m_Modifications:
     - target: {fileID: 400000, guid: 69ffaa12db0d23b44b38326999af3f5f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19121,7 +19147,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69ffaa12db0d23b44b38326999af3f5f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 149.611465
+      value: 149.711731
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 69ffaa12db0d23b44b38326999af3f5f, type: 3}
       propertyPath: m_LocalRotation.x
@@ -26485,6 +26511,7 @@ Transform:
   - {fileID: 44300858}
   - {fileID: 872273694}
   - {fileID: 1311322392}
+  - {fileID: 265572003}
   - {fileID: 1400310395}
   - {fileID: 1530774769}
   - {fileID: 597350764}

@@ -170,12 +170,12 @@ static class VideoSettings {
 	var resolution:int = 0;
 	
 	var qualityLevels:String[] = [
-		"Miss",
-		"Normal",
-		"Mini-Crit",
-		"Crit",
-		"Uber-Crit",
-		"Instakill"
+		"Terrible",
+		"Alright",
+		"Average",
+		"Nice",
+		"Great!",
+		"!BEAST!"
 	];
 	var qualityLevel:int = 5;
 	
