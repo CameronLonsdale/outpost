@@ -52,7 +52,7 @@ private var Detect:boolean = false;
 private enum Dropdown {none, play, profile, options, quit}
 private var dropdown:Dropdown = Dropdown.none;
 
-private enum MenuWindow {home, quickMatch, serverList, startServer, profile, options, help, credits}
+private enum MenuWindow {home, quickMatch, serverList, directConnect, startServer, profile, options, help, credits}
 private var window:MenuWindow = MenuWindow.home;
 
 //Text Scaling --
@@ -85,8 +85,11 @@ private var tmpFloat:float;
 var refreshTime:float;
 private var refreshTimer:float;
 
+//Direct Connect Options
+private var HostAddress:String = "";
+
 //DEBUG MENU
-var debugMenu:boolean = false;
+private var debugMenu:boolean = false;
 
 function Awake() {
     Settings.defaultMod = DefaultMod;
@@ -299,6 +302,9 @@ function OnGUI () {
             case MenuWindow.serverList:
                 ServerListScreen(1);
             break;
+            case MenuWindow.directConnect:
+                DirectConnectScreen(1);
+            break;
             case MenuWindow.startServer:
                 ServerEditScreen(1);
             break;
@@ -371,6 +377,12 @@ function PlayDropdown() {
         window = MenuWindow.serverList;
         dropdown = Dropdown.none;
     }
+    
+    if (GUILayout.Button("Direct Connect")) {
+        window = MenuWindow.directConnect;
+        dropdown = Dropdown.none;
+    }
+    
     if (GUILayout.Button("Host")) {
         window = MenuWindow.startServer;
         dropdown = Dropdown.none;
@@ -766,6 +778,34 @@ function ServerListScreen(weight:float) {
     GUI.color = Color.white;
 }
 
+function DirectConnectScreen(weight:float) {
+    GUI.color.a = weight;
+    
+    GUI.Box(Rect(windowOffset.x, windowOffset.y, swidth, sheight), "");
+    GUILayout.BeginArea(Rect(windowOffset.x, windowOffset.y, swidth, sheight));
+    
+    GUILayout.Label("Direct Connect");
+    
+    GUI.skin.label.fontSize = fontSize - 4;
+    
+    GUILayout.BeginHorizontal();
+    GUILayout.Label("IP Address");
+    GUILayout.FlexibleSpace();
+    HostAddress = GUILayout.TextField(HostAddress, GUILayout.Width(swidth/2));
+    GUILayout.EndHorizontal();
+    
+    GUILayout.FlexibleSpace();
+    
+    if (GUILayout.Button("Connect")) {
+        Network.Connect(HostAddress, 2000);
+        StartGame(false, true);
+    }
+    
+    GUI.skin.label.fontSize = fontSize + 4;
+    
+    GUILayout.EndArea();
+}
+
 function ServerEditScreen(weight:float) {
     GUI.color.a = weight;
     
@@ -842,7 +882,7 @@ function OptionsScreen(weight:float) {
     
     GUILayout.BeginArea(Rect(windowOffset.x, windowOffset.y, swidth, sheight));
     
-    optionsType = GUILayout.Toolbar(optionsType, ["Video",  "Controls"]);
+    optionsType = GUILayout.Toolbar(optionsType, ["Video",  "Controls"], GUILayout.Height(Screen.height/20));
     
 	if (optionsType == 0){
 		ScrollPosition = GUILayout.BeginScrollView(ScrollPosition);
@@ -880,12 +920,12 @@ function OptionsScreen(weight:float) {
 		GUILayout.Label("Fullscreen");
 		GUILayout.FlexibleSpace();
         if (VideoSettings.fullScreen) {
-            if (GUILayout.Toolbar(1, ["Off",  "On"]) == 0) {
+            if (GUILayout.Toolbar(1, ["Off",  "On"], GUILayout.Height(Screen.height/20), GUILayout.Width(swidth/15*4)) == 0) {
                 VideoSettings.fullScreen = false;
             }
         }
         else {
-            if (GUILayout.Toolbar(0, ["Off", "On"]) == 1) {
+            if (GUILayout.Toolbar(0, ["Off", "On"], GUILayout.Height(Screen.height/20), GUILayout.Width(swidth/15*4)) == 1) {
                 VideoSettings.fullScreen = true;
             }
         }
@@ -1058,7 +1098,6 @@ function HelpScreen(weight:float) {
     
     GUI.Box(Rect(windowOffset.x, windowOffset.y, swidth, sheight), "");
     
-    
     GUILayout.BeginArea(Rect(windowOffset.x, windowOffset.y, swidth, sheight));
     GUILayout.BeginHorizontal();
     GUILayout.FlexibleSpace();
@@ -1066,7 +1105,6 @@ function HelpScreen(weight:float) {
     GUILayout.FlexibleSpace();
     GUILayout.EndHorizontal();
     GUILayout.Label("Movement: A to move Left \n D to move Right");
-  
   
     GUILayout.BeginHorizontal();
     if (GUILayout.Button("Exit")) {
