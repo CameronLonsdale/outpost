@@ -880,8 +880,11 @@ function PlayerShoot() {
 }
 
 function DamagePlayer(amount:float) {
-	damageTimer = ctime + amount/30;
 	player.object.Damage(amount);
+}
+
+function OnPlayerDamaged(amount:float) {
+    damageTimer = ctime + amount/30;
 }
 
 function UpdateInput(input:InputState, disabled:boolean) {

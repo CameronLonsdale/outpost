@@ -577,12 +577,17 @@ function Damage(id:int, amount:float, multiplier:float, weapon:String) {
 		damageInstances.Add(DamageInstance(id, tmpFloat));
 	}
 	
-	if (Network.isServer && !Dead) {
-		networkManager.server.OnPlayerDamaged(NetId, id, tmpFloat, weapon);
-		if (Health <= 0) {
-			networkManager.server.OnPlayerKilled(NetId, id, multiplier, weapon);
-		}
-	}
+    if (!Dead) {
+        if (Network.isServer) {
+            networkManager.server.OnPlayerDamaged(NetId, id, tmpFloat, weapon);
+            if (Health <= 0) {
+                networkManager.server.OnPlayerKilled(NetId, id, multiplier, weapon);
+            }
+        }
+        if (networkManager.client.enabled) {
+            networkManager.client.OnPlayerDamaged(tmpFloat);
+        }
+    }
 }
 
 function CompileDamages() {
