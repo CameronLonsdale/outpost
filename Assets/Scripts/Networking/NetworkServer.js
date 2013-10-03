@@ -493,7 +493,13 @@ function OnVehicleKilled(index:int, kid:int, multi:float, weapon:String) {
 function OnPlayerFire(id:int) {
 	for (nPlayer in networkManager.NPlayers.Values) {
 		if (nPlayer.object) {
-			nPlayer.object.ApplyLagState(Time.time - (nPlayer.latancy + networkManager.NPlayers[id].latancy));
+            Debug.Log(nPlayer.latancy);
+            if (nPlayer.id == id) {
+                nPlayer.object.ApplyLagState(Time.time);
+            }
+            else {
+                nPlayer.object.ApplyLagState(Time.time - (nPlayer.latancy + networkManager.NPlayers[id].latancy));
+            }
 		}
 		
 		if (nPlayer.id != id && nPlayer.networkPlayer != Network.player) {
