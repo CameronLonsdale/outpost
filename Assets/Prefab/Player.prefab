@@ -40525,10 +40525,10 @@ MonoBehaviour:
   Head: {fileID: 401788}
   NPASkin: {fileID: 0}
   PCDSkin: {fileID: 0}
-  WalkSpeed: 1.89999998
-  RunSpeed: 5.0999999
+  WalkSpeed: 2.20000005
+  RunSpeed: 5.19999981
   JumpSpeed: 7.0999999
-  CrouchSpeed: 3.4000001
+  CrouchSpeed: 1.89999998
   TurnSpeed: 3.5
   AirAcc: .330000013
   Gravity: 15
