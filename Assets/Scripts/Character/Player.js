@@ -577,12 +577,17 @@ function Damage(id:int, amount:float, multiplier:float, weapon:String) {
 		damageInstances.Add(DamageInstance(id, tmpFloat));
 	}
 	
-	if (Network.isServer && !Dead) {
-		networkManager.server.OnPlayerDamaged(NetId, id, tmpFloat, weapon);
-		if (Health <= 0) {
-			networkManager.server.OnPlayerKilled(NetId, id, multiplier, weapon);
-		}
-	}
+    if (!Dead) {
+        if (Network.isServer) {
+            networkManager.server.OnPlayerDamaged(NetId, id, tmpFloat, weapon);
+            if (Health <= 0) {
+                networkManager.server.OnPlayerKilled(NetId, id, multiplier, weapon);
+            }
+        }
+        if (networkManager.client.enabled && networkManager.client.NetId == NetId) {
+            networkManager.client.OnPlayerDamaged(tmpFloat);
+        }
+    }
 }
 
 function CompileDamages() {
@@ -605,15 +610,17 @@ Movement/Animations
 ===*/
 
 function ApplyState(state:PlayerState) {
-	transform.position = state.position;
-	Soldier.transform.eulerAngles.y = Mathf.Lerp(270, 90, state.rotation);
-    
-    if (currentState.selected != previousState.selected) {
-		HideGun(equipped[previousState.selected]);
-		ShowGun(equipped[currentState.selected]);
+	if (transform) {
+		transform.position = state.position;
+		Soldier.transform.eulerAngles.y = Mathf.Lerp(270, 90, state.rotation);
+	    
+	    if (currentState.selected != previousState.selected) {
+			HideGun(equipped[previousState.selected]);
+			ShowGun(equipped[currentState.selected]);
+		}
+	    
+		ApplyAnimations(state, Time.deltaTime);
 	}
-    
-	ApplyAnimations(state, Time.deltaTime);
 }
 
 function SetupanimationStates() {
@@ -1249,27 +1256,22 @@ function AddLagState(state:PlayerState) {
 }
 
 function ApplyLagState(time:float) {
-	state1 = LagStates[LagStates.Count - 1];
-	state2 = state1;
+	state1 = nextState;
+	state2 = previousState;
 	for (IndexList = 0; IndexList < LagStates.Count; IndexList++) {
-		if (LagStates[IndexList].timestamp < time) {
-			state2 = LagStates[IndexList];
-			if (IndexList > 0) {
-				state1 = LagStates[IndexList - 1];
-			}
-			else {
-				state1 = nextState;
-			}
+		if (state1.timestamp > time) {
+			break;
 		}
+        state1 = state2;
+        state2 = LagStates[IndexList];
 	}
 	
-	//Interpolate states
-	state1 = PlayerState.Lerp(state1, state2, (state1.timestamp - time)/(state1.timestamp - state2.timestamp));
-	ApplyLagState(state1);
+	//Interpolate and apply states
+	ApplyLagState(PlayerState.Lerp(state1, state2, Mathf.Clamp01((state1.timestamp - time)/(state1.timestamp - state2.timestamp))));
 }
 
 function ApplyLagState(state:PlayerState) {
-	LagCompensator.position = state.position - Vector3(0, 0.5, 0);
+	LagCompensator.position = state.position - Vector3(0, 1, 0);
 	
 	LagCompensator.animation["Crouch"].enabled = true;
 	LagCompensator.animation["Idle"].enabled = true;

@@ -44,7 +44,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 10302, guid: 0000000000000000e000000000000000, type: 0}
+  - {fileID: 2100000, guid: b2f251a96bd5f4c4182c0b41cba0eceb, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -79,6 +79,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -89,6 +90,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 150
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400000, guid: 4f33a777eec480548baae468158718e4, type: 2}
@@ -102,6 +104,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 70
 --- !u!1001 &100100000
 Prefab:

@@ -70,6 +70,7 @@ function get serverStatus():ServerStatus {
         return ServerStatus.loading;
     }
 }
+
 function set serverStatus(value:ServerStatus) {
     if (value != _serverStatus) {
         _serverStatus = value;
@@ -544,6 +545,8 @@ function _SetServerData(respawnTime:float, killCamTime:float, gameMode:int, map:
         networkManager.gameMode = gameMode;
         networkManager.map = map;
         networkManager.targetKills = targetKills;
+        networkManager.team1Kills = 0;
+        networkManager.team2Kills = 0;
         networkManager.LoadLevel();
 	}
 }
@@ -651,18 +654,22 @@ function _UpdatePlayer(id:int, position:Vector3, rotation:float, grounded:boolea
 				pState = movementUpdateQueue[0];
 				movementUpdateQueue.RemoveAt(0);
 				
-				if (pState.position != position) {
-					if (movementUpdateQueue.Count > 0) {
+				if (Mathf.Approximately(Mathf.Round(pState.position.x*1000), Mathf.Round(position.x*1000)) &&
+					Mathf.Approximately(Mathf.Round(pState.position.y*1000), Mathf.Round(position.y*1000)) &&
+					Mathf.Approximately(Mathf.Round(pState.position.z*1000), Mathf.Round(position.z*1000))
+				) {
+					freezePlayer = false;
+				}
+				else {
+					if (movementUpdateQueue.Count != 0) {
 						freezePlayer = true;
+                        Debug.Log("?");
 					}
 					else {
 						player.object.nextState.position = position;
 						player.object.previousState.position = position;
 						freezePlayer = false;
 					}
-				}
-				else {
-					freezePlayer = false;
 				}
 			}
 			vehicleUpdateQueue.Clear();
@@ -846,6 +853,7 @@ function HealIndication(amount:float) {
 }
 
 function SendPMessage(id:int, input:String) {
+	messageBoxTimer = ctime + 3;
 	if (id == -1) {
 		Messages.Add(Message(input, "Server", Color.gray));
 	}
@@ -880,8 +888,11 @@ function PlayerShoot() {
 }
 
 function DamagePlayer(amount:float) {
-	damageTimer = ctime + amount/30;
 	player.object.Damage(amount);
+}
+
+function OnPlayerDamaged(amount:float) {
+    damageTimer = ctime + amount/30;
 }
 
 function UpdateInput(input:InputState, disabled:boolean) {
