@@ -74,12 +74,10 @@ function get serverStatus():ServerStatus {
 function set serverStatus(value:ServerStatus) {
     if (value != _serverStatus) {
         _serverStatus = value;
+        Debug.Log("Client:Server Status set to: " + value);
         
         if (!Network.isServer) {
             switch (value) {
-                case ServerStatus.preGame:
-                    network.RPC("_RequestServerData", RPCMode.Server);
-                break;
                 case ServerStatus.loading:
                     Application.LoadLevel(1);
                 break;
@@ -531,9 +529,10 @@ function _UpdateGameStatus(t1k:int, t2k:int, info:NetworkMessageInfo) {
 
 @RPC
 function _SetServerStatus(win:int, status:int, info:NetworkMessageInfo) {
-	if (Network.isServer || info.sender == Network.connections[0]) {
+	if (!Network.isServer && info.sender == Network.connections[0]) {
         networkManager.winTeam = win;
 		serverStatus = status;
+        Debug.Log("Server > Client: Server Status set to: " + serverStatus);
 	}
 }
 
@@ -1155,10 +1154,20 @@ function TeamSelect(weight:float) {
 
 	GUI.color = Color(1, 1, 1, weight);
 	if (GUI.Button(Rect((weight - 1)*swidth/3, 0, swidth/4, sheight), networkManager.FlagBlue) && player.team == 0) {
-		networkView.RPC("_JoinRequest", RPCMode.All, NetId, 1);
+        if (Network.isServer) {
+            networkManager.server.JoinRequest(NetId, 1);
+        }
+        else {
+            networkView.RPC("_JoinRequest", RPCMode.Server, NetId, 1);
+        }
 	}
 	if (GUI.Button(Rect(swidth/4*3 + (1 - weight)*swidth/3, 0, swidth/4, sheight), networkManager.FlagGreen) && player.team == 0) {
-		networkView.RPC("_JoinRequest", RPCMode.All, NetId, 2);
+        if (Network.isServer) {
+            networkManager.server.JoinRequest(NetId, 2);
+        }
+        else {
+            networkView.RPC("_JoinRequest", RPCMode.Server, NetId, 2);
+        }
 	}
 }
 

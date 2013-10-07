@@ -461,27 +461,26 @@ function UpdatePlayer(np:NetworkPlayer) {
 	
 	//Update Players
 	for (nPlayer in NPlayers.Values) {
-		if (nPlayer.networkPlayer != np) {
-			network.RPC("_AddPlayer", np, Network.player, nPlayer.id, nPlayer.username);
-			if (nPlayer.team != 0) {
-				network.RPC("_JoinPlayer", np, nPlayer.id, nPlayer.team);
-			}
-			if (nPlayer.object) {
-				network.RPC("_SpawnPlayer", np, nPlayer.id, nPlayer.object.currentState.position, nPlayer.object.seed, 
-					nPlayer.object.equipped[0].index, nPlayer.object.equipped[1].index, 
-					nPlayer.object.equipped[0].Addons[0], 
-					nPlayer.object.equipped[0].Addons[1], 
-					nPlayer.object.equipped[0].Addons[2], 
-					nPlayer.object.equipped[1].Addons[0], 
-					nPlayer.object.equipped[1].Addons[1], 
-					nPlayer.object.equipped[1].Addons[2],
-					nPlayer.object.GrenadeType
-				);
-			}
-			if (nPlayer.vehicle) {
-				network.RPC("_VehiclePlayerEnter", nPlayer.id, nPlayer.vehicle.index);
-			}
-		}
+        network.RPC("_AddPlayer", np, Network.player, nPlayer.id, nPlayer.username);
+        
+        if (nPlayer.team != 0) {
+            network.RPC("_JoinPlayer", np, nPlayer.id, nPlayer.team);
+        }
+        if (nPlayer.object) {
+            network.RPC("_SpawnPlayer", np, nPlayer.id, nPlayer.object.currentState.position, nPlayer.object.seed, 
+                nPlayer.object.equipped[0].index, nPlayer.object.equipped[1].index, 
+                nPlayer.object.equipped[0].Addons[0], 
+                nPlayer.object.equipped[0].Addons[1], 
+                nPlayer.object.equipped[0].Addons[2], 
+                nPlayer.object.equipped[1].Addons[0], 
+                nPlayer.object.equipped[1].Addons[1], 
+                nPlayer.object.equipped[1].Addons[2],
+                nPlayer.object.GrenadeType
+            );
+        }
+        if (nPlayer.vehicle) {
+            network.RPC("_VehiclePlayerEnter", nPlayer.id, nPlayer.vehicle.index);
+        }
 	}
 }
 
@@ -606,6 +605,7 @@ function CheckForWin() {
 }
 
 function KickPlayer(player:NetworkPlayer, message:String) {
+    Debug.Log(message);
     network.RPC("_DisconnectMessage", player, message);
     Network.CloseConnection(player, true);
 }

@@ -865,7 +865,9 @@ function ServerEditScreen(weight:float) {
     
     if (GUILayout.Button("Start Server")) {
         Network.InitializeServer(ServerSettings.playerLimit, 2000, true);
-        //.RegisterHost("OutpostGameV" + Settings.version, ServerSettings.serverName, ServerSettings.map + ";" + ServerSettings.gameMode + ";" + ServerSettings.comment);
+        if (!Settings.offline) {
+            MasterServer.RegisterHost("OutpostGameV" + Settings.version, ServerSettings.serverName, ServerSettings.map + ";" + ServerSettings.gameMode + ";" + ServerSettings.comment);
+        }
         ServerSettings.Save();
         StartGame(true, true);
     }
@@ -878,7 +880,6 @@ function ServerEditScreen(weight:float) {
 
 function ProfileScreen(weight:float) {
 }
-
 
 function OptionsScreen(weight:float) {
     GUI.color.a = weight;
