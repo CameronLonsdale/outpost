@@ -654,16 +654,15 @@ function _UpdatePlayer(id:int, position:Vector3, rotation:float, grounded:boolea
 				pState = movementUpdateQueue[0];
 				movementUpdateQueue.RemoveAt(0);
 				
-				if (Mathf.Approximately(Mathf.Round(pState.position.x*1000), Mathf.Round(position.x*1000)) &&
-					Mathf.Approximately(Mathf.Round(pState.position.y*1000), Mathf.Round(position.y*1000)) &&
-					Mathf.Approximately(Mathf.Round(pState.position.z*1000), Mathf.Round(position.z*1000))
+				if (Mathf.Approximately(Mathf.Round(pState.position.x*700), Mathf.Round(position.x*700)) &&
+					Mathf.Approximately(Mathf.Round(pState.position.y*700), Mathf.Round(position.y*700)) &&
+					Mathf.Approximately(Mathf.Round(pState.position.z*700), Mathf.Round(position.z*700))
 				) {
 					freezePlayer = false;
 				}
 				else {
 					if (movementUpdateQueue.Count != 0) {
 						freezePlayer = true;
-                        Debug.Log("?");
 					}
 					else {
 						player.object.nextState.position = position;
