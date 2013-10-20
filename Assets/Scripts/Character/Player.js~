@@ -238,12 +238,15 @@ var Head:Transform;
 @System.NonSerialized
 var controller:CharacterController;
 
+var NPASkin:Transform;
+var PCDSkin:Transform;
+
 //Iteratory/Optimisations
 private var tempBullet:Projectile;
 private var audioPrefab:AudioSource;
 private var ladder:Ladder;
 
-private var currentGun:Gun;
+private var gun:Gun;
 
 private var rigidTemp:Rigidbody;
 private var renderers:Renderer;
@@ -274,6 +277,7 @@ var CrouchSpeed:float;
 var TurnSpeed:float;
 var AirAcc:float;
 var Gravity:float;
+var GroundingForce:float;
 var LadderClimbSpeed:float;
 var WeaponSwapSpeed:float;
 var GreadeThrowStrength:float;
@@ -517,6 +521,21 @@ function Kill() {
 	Destroy(gameObject);
 }
 
+function Resupply(amount:int) {
+    Resupply(NetId, amount);
+}
+
+function Resupply(id:int, amount:int) {
+    for (gun in equipped) {
+        gun.Ammo += amount/100f * gun.AmmoMax;
+        gun.Ammo = Mathf.Min(gun.AmmoMax, gun.Ammo);
+    }
+    
+    if (Network.isServer) {
+        networkManager.server.OnPlayerResupplied(NetId, id, amount);
+    }
+}
+
 function Heal(amount:float) {
 	Heal(NetId, amount);
 }
@@ -558,12 +577,17 @@ function Damage(id:int, amount:float, multiplier:float, weapon:String) {
 		damageInstances.Add(DamageInstance(id, tmpFloat));
 	}
 	
-	if (Network.isServer && !Dead) {
-		networkManager.server.OnPlayerDamaged(NetId, id, tmpFloat, weapon);
-		if (Health <= 0) {
-			networkManager.server.OnPlayerKilled(NetId, id, multiplier, weapon);
-		}
-	}
+    if (!Dead) {
+        if (Network.isServer) {
+            networkManager.server.OnPlayerDamaged(NetId, id, tmpFloat, weapon);
+            if (Health <= 0) {
+                networkManager.server.OnPlayerKilled(NetId, id, multiplier, weapon);
+            }
+        }
+        if (networkManager.client.enabled && networkManager.client.NetId == NetId) {
+            networkManager.client.OnPlayerDamaged(tmpFloat);
+        }
+    }
 }
 
 function CompileDamages() {
@@ -586,9 +610,17 @@ Movement/Animations
 ===*/
 
 function ApplyState(state:PlayerState) {
-	transform.position = state.position;
-	Soldier.transform.eulerAngles.y = Mathf.Lerp(270, 90, state.rotation);
-	ApplyAnimations(state, Time.deltaTime);
+	if (transform) {
+		transform.position = state.position;
+		Soldier.transform.eulerAngles.y = Mathf.Lerp(270, 90, state.rotation);
+	    
+	    if (currentState.selected != previousState.selected) {
+			HideGun(equipped[previousState.selected]);
+			ShowGun(equipped[currentState.selected]);
+		}
+	    
+		ApplyAnimations(state, Time.deltaTime);
+	}
 }
 
 function SetupanimationStates() {
@@ -669,7 +701,7 @@ function Move(input:InputState, deltaTime:float) {
 		currentState.ladder = true;
 		currentState.acceleration = Vector3.zero;
 		currentState.velocity = Vector3.zero;
-		currentState.velocity.y = -input.vertical*LadderClimbSpeed*deltaTime;
+		currentState.velocity.y = input.vertical*LadderClimbSpeed*deltaTime;
 		
 		currentState.position.x = ladder.Top.position.x;
 		controller.Move(currentState.velocity*deltaTime);
@@ -697,7 +729,7 @@ function Move(input:InputState, deltaTime:float) {
 		}
 		
 		if (previousState.grounded && currentState.velocity.y < 0) {
-			currentState.velocity.y = -4;
+			currentState.velocity.y = -GroundingForce;
 		}
 		
 		if (previousState.grounded) {
@@ -717,6 +749,20 @@ function Move(input:InputState, deltaTime:float) {
 		//move player
 		controller.Move(currentState.velocity * deltaTime);
 		currentState.grounded = controller.isGrounded;
+        
+        if (!currentState.grounded && previousState.grounded && currentState.velocity.y < 0) {
+            transform.position = previousState.position;
+            currentState.velocity.y = currentState.acceleration.y;
+            currentState.acceleration.x = 0;
+            
+            //re-add velocity
+            currentState.velocity += currentState.acceleration/2*deltaTime*50;
+            ClampVelocity(currentState, input);
+            
+            //move player again
+            controller.Move(currentState.velocity * deltaTime);
+            currentState.grounded = controller.isGrounded;
+        }
 		
 		//add half acceleration
 		currentState.velocity += currentState.acceleration/2*deltaTime*50;
@@ -845,10 +891,6 @@ function WeaponUpdate(time:float) {
 	//State Update
 	
 	weaponSwitching = (Mathf.Abs(currentState.selectionWeight) != 1);
-	if (currentState.selected != previousState.selected) {
-		HideGun(equipped[previousState.selected]);
-		ShowGun(equipped[currentState.selected]);
-	}
 	
 	//Weapon Update
 	if (!weaponSwitching) {
@@ -881,6 +923,9 @@ function WeaponUpdate(time:float) {
 			}
 			else if (currentWeapon.Type == GunType.Burstfire && weaponBurstCount > 0) {
 				GunFire(currentWeapon, time);
+                if (weaponBurstCount >= currentWeapon.BurstLength) {
+                    weaponBurstCount = 0;
+                }
 			}
 			else if (currentWeapon.ChamberBullet) {
 				currentWeapon.BullInCham = true;
@@ -958,7 +1003,6 @@ function GunFire(gun:Gun, time:float) {
 				rigidTemp.velocity.y = 0;
 			}
 		}
-		return;
 	}
 	else {
 		if (Active) {
@@ -1126,10 +1170,11 @@ function SetEquipped(Main:int, Secondary:int, gtype:int) {
 	GrenadeType = gtype;
 	
 	equipped = [GunsMain[Main], GunsSecondary[Secondary]];
-	equipped[0].Addons = Settings.GunsMain[Main].Addons;
-	equipped[1].Addons = Settings.GunsSecondary[Secondary].Addons;
+	equipped[0].Addons = Loadout.gunsMain[Main].Addons;
+	equipped[1].Addons = Loadout.gunsSecondary[Secondary].Addons;
 	equipped[0].Clip = equipped[0].ClipSize + equipped[0].Front[equipped[0].Addons[1]].ClipAmmoAdd + equipped[0].Under[equipped[0].Addons[2]].ClipAmmoAdd;
 	equipped[1].Clip = equipped[1].ClipSize + equipped[1].Front[equipped[1].Addons[1]].ClipAmmoAdd + equipped[1].Under[equipped[1].Addons[2]].ClipAmmoAdd;
+    
 	for (renderers in (UpperBody.gameObject.GetComponentsInChildren(Renderer) as IEnumerable).Cast.<Renderer>()) {
 		renderers.enabled = false;
 	}
@@ -1211,27 +1256,22 @@ function AddLagState(state:PlayerState) {
 }
 
 function ApplyLagState(time:float) {
-	state1 = LagStates[LagStates.Count - 1];
-	state2 = state1;
+	state1 = nextState;
+	state2 = previousState;
 	for (IndexList = 0; IndexList < LagStates.Count; IndexList++) {
-		if (LagStates[IndexList].timestamp < time) {
-			state2 = LagStates[IndexList];
-			if (IndexList > 0) {
-				state1 = LagStates[IndexList - 1];
-			}
-			else {
-				state1 = nextState;
-			}
+		if (state1.timestamp > time) {
+			break;
 		}
+        state1 = state2;
+        state2 = LagStates[IndexList];
 	}
 	
-	//Interpolate states
-	state1 = PlayerState.Lerp(state1, state2, (state1.timestamp - time)/(state1.timestamp - state2.timestamp));
-	ApplyLagState(state1);
+	//Interpolate and apply states
+	ApplyLagState(PlayerState.Lerp(state1, state2, Mathf.Clamp01((state1.timestamp - time)/(state1.timestamp - state2.timestamp))));
 }
 
 function ApplyLagState(state:PlayerState) {
-	LagCompensator.position = state.position - Vector3(0, 0.5, 0);
+	LagCompensator.position = state.position - Vector3(0, 1, 0);
 	
 	LagCompensator.animation["Crouch"].enabled = true;
 	LagCompensator.animation["Idle"].enabled = true;

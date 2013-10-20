@@ -27,12 +27,12 @@ static class Settings {
     }
     
     function get devMode() {
-        #if UNITY_EDITOR
+        //#if UNITY_EDITOR
          return true;
-        #endif
-        #if UNITY_STANDALONE
-         return false;
-        #endif
+        //#endif
+        //#if UNITY_STANDALONE
+        // return false;
+        //#endif
     }
 
     function get loggedIn():boolean {

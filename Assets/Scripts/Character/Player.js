@@ -584,7 +584,7 @@ function Damage(id:int, amount:float, multiplier:float, weapon:String) {
                 networkManager.server.OnPlayerKilled(NetId, id, multiplier, weapon);
             }
         }
-        if (networkManager.client.enabled) {
+        if (networkManager.client.enabled && networkManager.client.NetId == NetId) {
             networkManager.client.OnPlayerDamaged(tmpFloat);
         }
     }
@@ -610,15 +610,17 @@ Movement/Animations
 ===*/
 
 function ApplyState(state:PlayerState) {
-	transform.position = state.position;
-	Soldier.transform.eulerAngles.y = Mathf.Lerp(270, 90, state.rotation);
-    
-    if (currentState.selected != previousState.selected) {
-		HideGun(equipped[previousState.selected]);
-		ShowGun(equipped[currentState.selected]);
+	if (transform) {
+		transform.position = state.position;
+		Soldier.transform.eulerAngles.y = Mathf.Lerp(270, 90, state.rotation);
+	    
+	    if (currentState.selected != previousState.selected) {
+			HideGun(equipped[previousState.selected]);
+			ShowGun(equipped[currentState.selected]);
+		}
+	    
+		ApplyAnimations(state, Time.deltaTime);
 	}
-    
-	ApplyAnimations(state, Time.deltaTime);
 }
 
 function SetupanimationStates() {

@@ -119,6 +119,7 @@ function Login() {
     if (loggingIn) {
         return;
     }
+    
 	try {
 		var www:WWW = WWW(Settings.backend + "/v1/auth/login?username=" + WWW.EscapeURL(AccountSettings.username) + "&password=" + WWW.EscapeURL(AccountSettings.password) + "&source=outpost");
 		loggingIn = true;
@@ -132,6 +133,7 @@ function Login() {
     
     if (!String.IsNullOrEmpty(www.error)) {
         loginMessage = "Connection failed";
+        Debug.Log(www.error);
         return;
     }
     
@@ -154,6 +156,10 @@ function Register() {
 		if (AccountSettings.username != "") {
 			if (AccountSettings.password != "") {
 				if (email != "") {
+					if (registering) {
+						return;
+					}
+					
 					try {
 						var www:WWW = WWW(Settings.backend + "/v1/auth/register?username=" + WWW.EscapeURL(AccountSettings.username) + "&email=" + WWW.EscapeURL(email) + "&password=" + WWW.EscapeURL(AccountSettings.password) + "&subscription=0" + "&source=outpost");
 						registering = true;
@@ -167,6 +173,7 @@ function Register() {
 					
                     if (!String.IsNullOrEmpty(www.error)) {
                         loginMessage = "Connection failed";
+                        Debug.Log(www.error);
                         return;
                     }
                     
@@ -370,14 +377,15 @@ function PlayDropdown() {
         window = MenuWindow.quickMatch;
         dropdown = Dropdown.none;
     }
-    GUI.enabled = true;
     
+    GUI.enabled = !Settings.offline;
     if (GUILayout.Button("Server List")) {
         RequestHostList();
         window = MenuWindow.serverList;
         dropdown = Dropdown.none;
     }
     
+    GUI.enabled = true;
     if (GUILayout.Button("Direct Connect")) {
         window = MenuWindow.directConnect;
         dropdown = Dropdown.none;
@@ -857,7 +865,9 @@ function ServerEditScreen(weight:float) {
     
     if (GUILayout.Button("Start Server")) {
         Network.InitializeServer(ServerSettings.playerLimit, 2000, true);
-        MasterServer.RegisterHost("OutpostGameV" + Settings.version, ServerSettings.serverName, ServerSettings.map + ";" + ServerSettings.gameMode + ";" + ServerSettings.comment);
+        if (!Settings.offline) {
+            MasterServer.RegisterHost("OutpostGameV" + Settings.version, ServerSettings.serverName, ServerSettings.map + ";" + ServerSettings.gameMode + ";" + ServerSettings.comment);
+        }
         ServerSettings.Save();
         StartGame(true, true);
     }
@@ -870,7 +880,6 @@ function ServerEditScreen(weight:float) {
 
 function ProfileScreen(weight:float) {
 }
-
 
 function OptionsScreen(weight:float) {
     GUI.color.a = weight;

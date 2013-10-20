@@ -70,15 +70,14 @@ function get serverStatus():ServerStatus {
         return ServerStatus.loading;
     }
 }
+
 function set serverStatus(value:ServerStatus) {
     if (value != _serverStatus) {
         _serverStatus = value;
+        Debug.Log("Client:Server Status set to: " + value);
         
         if (!Network.isServer) {
             switch (value) {
-                case ServerStatus.preGame:
-                    network.RPC("_RequestServerData", RPCMode.Server);
-                break;
                 case ServerStatus.loading:
                     Application.LoadLevel(1);
                 break;
@@ -530,9 +529,10 @@ function _UpdateGameStatus(t1k:int, t2k:int, info:NetworkMessageInfo) {
 
 @RPC
 function _SetServerStatus(win:int, status:int, info:NetworkMessageInfo) {
-	if (Network.isServer || info.sender == Network.connections[0]) {
+	if (!Network.isServer && info.sender == Network.connections[0]) {
         networkManager.winTeam = win;
 		serverStatus = status;
+        Debug.Log("Server > Client: Server Status set to: " + serverStatus);
 	}
 }
 
@@ -544,6 +544,8 @@ function _SetServerData(respawnTime:float, killCamTime:float, gameMode:int, map:
         networkManager.gameMode = gameMode;
         networkManager.map = map;
         networkManager.targetKills = targetKills;
+        networkManager.team1Kills = 0;
+        networkManager.team2Kills = 0;
         networkManager.LoadLevel();
 	}
 }
@@ -651,8 +653,14 @@ function _UpdatePlayer(id:int, position:Vector3, rotation:float, grounded:boolea
 				pState = movementUpdateQueue[0];
 				movementUpdateQueue.RemoveAt(0);
 				
-				if (pState.position != position) {
-					if (movementUpdateQueue.Count > 0) {
+				if (Mathf.Approximately(Mathf.Round(pState.position.x*700), Mathf.Round(position.x*700)) &&
+					Mathf.Approximately(Mathf.Round(pState.position.y*700), Mathf.Round(position.y*700)) &&
+					Mathf.Approximately(Mathf.Round(pState.position.z*700), Mathf.Round(position.z*700))
+				) {
+					freezePlayer = false;
+				}
+				else {
+					if (movementUpdateQueue.Count != 0) {
 						freezePlayer = true;
 					}
 					else {
@@ -660,9 +668,6 @@ function _UpdatePlayer(id:int, position:Vector3, rotation:float, grounded:boolea
 						player.object.previousState.position = position;
 						freezePlayer = false;
 					}
-				}
-				else {
-					freezePlayer = false;
 				}
 			}
 			vehicleUpdateQueue.Clear();
@@ -846,6 +851,7 @@ function HealIndication(amount:float) {
 }
 
 function SendPMessage(id:int, input:String) {
+	messageBoxTimer = ctime + 3;
 	if (id == -1) {
 		Messages.Add(Message(input, "Server", Color.gray));
 	}
@@ -1148,10 +1154,20 @@ function TeamSelect(weight:float) {
 
 	GUI.color = Color(1, 1, 1, weight);
 	if (GUI.Button(Rect((weight - 1)*swidth/3, 0, swidth/4, sheight), networkManager.FlagBlue) && player.team == 0) {
-		networkView.RPC("_JoinRequest", RPCMode.All, NetId, 1);
+        if (Network.isServer) {
+            networkManager.server.JoinRequest(NetId, 1);
+        }
+        else {
+            networkView.RPC("_JoinRequest", RPCMode.Server, NetId, 1);
+        }
 	}
 	if (GUI.Button(Rect(swidth/4*3 + (1 - weight)*swidth/3, 0, swidth/4, sheight), networkManager.FlagGreen) && player.team == 0) {
-		networkView.RPC("_JoinRequest", RPCMode.All, NetId, 2);
+        if (Network.isServer) {
+            networkManager.server.JoinRequest(NetId, 2);
+        }
+        else {
+            networkView.RPC("_JoinRequest", RPCMode.Server, NetId, 2);
+        }
 	}
 }
 

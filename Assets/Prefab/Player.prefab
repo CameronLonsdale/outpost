@@ -14847,7 +14847,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.0837512, y: 18.1033211, z: -2.25053191}
+  m_LocalPosition: {x: 2.71073008, y: 25.1103458, z: -18.7912235}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -31885,7 +31885,7 @@ Renderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: 562c1cc570c1b1240a3c8c859c869cf0, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -40525,10 +40525,10 @@ MonoBehaviour:
   Head: {fileID: 401788}
   NPASkin: {fileID: 0}
   PCDSkin: {fileID: 0}
-  WalkSpeed: 1.89999998
-  RunSpeed: 5.0999999
+  WalkSpeed: 2.20000005
+  RunSpeed: 5.19999981
   JumpSpeed: 7.0999999
-  CrouchSpeed: 3.4000001
+  CrouchSpeed: 1.89999998
   TurnSpeed: 3.5
   AirAcc: .330000013
   Gravity: 15
@@ -86544,7 +86544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -87193,7 +87193,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -87463,7 +87463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -87817,7 +87817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -87871,7 +87871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -87898,7 +87898,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -88795,7 +88795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -89123,7 +89123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -89544,7 +89544,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -89735,7 +89735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -90278,7 +90278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -90359,7 +90359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -90729,7 +90729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -91028,7 +91028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -91433,7 +91433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -91679,7 +91679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -91976,7 +91976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -92192,7 +92192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -92510,7 +92510,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -92865,7 +92865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -93192,7 +93192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -93465,7 +93465,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -93811,8 +93811,8 @@ MonoBehaviour:
   ReloadStartEmptySpeed: 2.29999995
   ReloadSpeed: 0
   ReloadEndSpeed: 0
-  MaxDamage: 29
-  MinDamage: 21
+  MaxDamage: 23
+  MinDamage: 17
   DamageFalloffStart: 4
   DamageFalloffEnd: 10
   ClipSize: 21
@@ -93987,7 +93987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -94257,7 +94257,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -94527,7 +94527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -95039,7 +95039,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -95474,7 +95474,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -95690,7 +95690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -95976,7 +95976,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -96276,7 +96276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -96631,7 +96631,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -96958,7 +96958,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -97312,7 +97312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -97610,7 +97610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -97910,7 +97910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0
@@ -98211,7 +98211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5824f32733c5a584db12a6a05611d567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Lazer
+  Name: Laser
   Description: Increases accuracy. It shows you where your bullets will hit
   texture: {fileID: 2800000, guid: d912d2995c0333746862c3aa6ce65b87, type: 3}
   BulletTimes: 0

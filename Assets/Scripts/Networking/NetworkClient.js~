@@ -61,7 +61,32 @@ Variables
 ===========================
 */
 
-private var serverStatus:ServerStatus;
+private var _serverStatus:ServerStatus = ServerStatus.none;
+function get serverStatus():ServerStatus {
+    if (Application.loadedLevel > 1) {
+        return _serverStatus;
+    }
+    else {
+        return ServerStatus.loading;
+    }
+}
+
+function set serverStatus(value:ServerStatus) {
+    if (value != _serverStatus) {
+        _serverStatus = value;
+        
+        if (!Network.isServer) {
+            switch (value) {
+                case ServerStatus.preGame:
+                    network.RPC("_RequestServerData", RPCMode.Server);
+                break;
+                case ServerStatus.loading:
+                    Application.LoadLevel(1);
+                break;
+            }
+        }
+    }
+}
 
 @System.NonSerialized
 var NetId:int;
@@ -111,6 +136,7 @@ private var hudWeight:float;
 
 private var messageBoxTimer:float;
 private var hitMarkerTimer:float;
+private var damageTimer:float;
 
 private var killTimer:float;
 private var killMessage:String;
@@ -150,10 +176,13 @@ private var player:NPlayer;
 private var vState:VehicleState;
 
 private var tmpStringList:String[];
+private var playerList:NPlayer[];
 
 //Timers
 private var networkTimer:float;
 private var pingTimer:float;
+
+private var gameTimer:float;
 
 //Input Manager
 private var inputManager:InputState;
@@ -181,34 +210,40 @@ function Awake() {
 	inputManager = new InputState();
 	movementUpdateQueue = new List.<PlayerState>();
 	vehicleUpdateQueue = new List.<VehicleState>();
+    
+    //Load relevant settings
+    Loadout.Load();
 }
 
 function Start() {
 	//Startup authentication (Only when Client is Server)
 	if (Network.isServer) {
 		authenticated = true;
-		networkManager.GetComponent(NetworkServer).AddPlayer(Network.player, Settings.username, Settings.secureCode);
+		networkManager.GetComponent(NetworkServer).AddPlayer(Network.player, AccountSettings.username, AccountSettings.secureCode);
 	}
 }
 
 //Request Connection On Join
 function OnConnectedToServer() {
-	network.RPC("_PlayerConnect", RPCMode.Server, Settings.username, Settings.secureCode);
+	network.RPC("_PlayerConnect", RPCMode.Server, AccountSettings.username, AccountSettings.secureCode);
 }
 
 //Go to main Menu on diconnection
 function OnDisconnectedFromServer() {
 	if (!Network.isServer) {
 		Application.LoadLevel(0);
+        if (!NetworkSettings.showDisconnectMessage) {
+            NetworkSettings.disconnectMessage = "You were disconnected from the server";
+            NetworkSettings.showDisconnectMessage = true;
+        }
 	}
 }
 
 //Go to main Menu on connection fail
-function OnFailedToConnect() {
-	if (!Network.isServer) {
-		Application.LoadLevel(0);
-	}
-}
+/*function OnFailedToConnect(error:NetworkConnectionError) {
+    Destroy(gameObject);
+    Application.LoadLevel(0);
+}*/
 
 //Handle Frame Updates
 function Update() {
@@ -216,202 +251,247 @@ function Update() {
 	dtime = Time.deltaTime;
 	swidth = Screen.width;
 	sheight = Screen.height;
-	player = networkManager.NPlayers[NetId];
+    
+    if (NetId in networkManager.NPlayers) {
+        player = networkManager.NPlayers[NetId];
+    }
+    
+    if (Network.isServer) {
+        serverStatus = networkManager.server.serverStatus;
+    }
 	
 	if (authenticated && networkManager.mapInfo) {
-		if (player.object) {
-			player.object.NetId = NetId;
-			player.object.Active = true;
-			
-			//Update Player Input
-			if (!optionsShow && !escapeMenu && !messageBox) {
-				Screen.lockCursor = true;
-				
-				if (!player.vehicle) {
-					if (Input.GetKeyDown(Controls.grenade)) {
-						player.object.ThrowGrenade();
-					}
-					
-					if (Input.GetKeyDown(Controls.reload)) {
-						player.object.WeaponStartReload(Time.time);
-					}
-					else {
-						if (Input.GetKey(Controls.fire)) {
-							if (player.object.WeaponInputFire(Time.time)) {
-								PlayerShoot();
-							}
-						}
-						
-						if (Input.GetKeyDown(Controls.fire)) {
-							if (player.object.WeaponInputFireDown(Time.time)) {
-								PlayerShoot();
-							}
-						}
-					}
-				}
-				else {
-					if (Input.GetKey(Controls.fire)) {
-						if (player.vehicle.WeaponInputFire(player.vehicleSlot, Time.time)) {
-							PlayerShoot();
-						}
-					}
-					
-					if (Input.GetKeyDown(Controls.fire)) {
-						if (player.vehicle.WeaponInputFireDown(player.vehicleSlot, Time.time)) {
-							PlayerShoot();
-						}
-					}
-				}
-				
-				//Check for vehicle input
-				if (Input.GetKeyDown(Controls.action)) {
-					if (Network.isServer) {
-						networkManager.server.VehicleToggleInput(NetId);
-					}
-					else {
-						network.RPC("_VehicleToggleInput", RPCMode.Server, NetId);
-					}
-				}
-			}
-			else {
-				Screen.lockCursor = false;
-			}
-			
-			if (player.object.WeaponUpdate(Time.time)) {
-				PlayerShoot();
-			}
-			
-			
-			inputManager = UpdateInput(inputManager, optionsShow || escapeMenu || messageBox);
-			
-			//Perform a network Update
-			if (!freezePlayer) {
-				if (networkTimer < Time.time) {
-					NetworkUpdate();
-					networkTimer = Time.time + 1.0/networkManager.UPS;
-				}
-			}
-			
-			//Apply Camera
-			if (!player.vehicle) {
-				transform.position = player.object.cam.transform.position;
-				transform.rotation = player.object.cam.transform.rotation;
-				
-				//Apply recoil
-				if (recoilWeight < 1) {
-					recoilWeight -= recoilRecoverEnd*Time.deltaTime;
-				}
-				else {
-					recoilWeight -= recoilRecoverStart*Time.deltaTime;
-				}
-				recoilWeight = Mathf.Clamp(recoilWeight, 0, 2);
-			}
-			else {
-				transform.position = player.vehicle.Cams[player.vehicleSlot].transform.position;
-				transform.rotation = player.vehicle.Cams[player.vehicleSlot].transform.rotation;
-			}
-		}
-		else {
-			if (movementUpdateQueue.Count != 0) {
-				movementUpdateQueue.Clear();
-			}
-			if (vehicleUpdateQueue.Count != 0) {
-				vehicleUpdateQueue.Clear();
-			}
-			
-			Screen.lockCursor = false;
-			
-			if (player.killCamTimer > Time.time) {
-				
-			}
-			else {
-				transform.position = networkManager.mapInfo.CommonCam.transform.position;
-				transform.rotation = networkManager.mapInfo.CommonCam.transform.rotation;
-			}
-		}
+        switch (serverStatus) {
+            case ServerStatus.preGame:
+                MoveTo(networkManager.mapInfo.SpawnCam);
+                Screen.lockCursor = false;
+            break;
+            
+            case ServerStatus.inGame:
+                if (player.object) {
+                    player.object.NetId = NetId;
+                    player.object.Active = true;
+                    
+                    if (!optionsShow && !escapeMenu && !messageBox) {
+                        Screen.lockCursor = true;
+                        //Update Input
+                        UpdatePlayerInput();
+                        inputManager = UpdateInput(inputManager, optionsShow || escapeMenu || messageBox);
+                    }
+                    else {
+                        Screen.lockCursor = false;
+                    }
+                    
+                    //Perform a network Update
+                    if (!freezePlayer) {
+                        if (networkTimer < Time.time) {
+                            NetworkUpdate();
+                            networkTimer = Time.time + 1.0/networkManager.UPS;
+                        }
+                    }
+                    
+                    if (!player.vehicle) {
+                        MoveTo(player.object.cam);
+                        
+                        //Apply recoil
+                        if (recoilWeight < 1) {
+                            recoilWeight -= recoilRecoverEnd*Time.deltaTime;
+                        }
+                        else {
+                            recoilWeight -= recoilRecoverStart*Time.deltaTime;
+                        }
+                        recoilWeight = Mathf.Clamp(recoilWeight, 0, 2);
+                    }
+                    else {
+                        MoveTo(player.vehicle.Cams[player.vehicleSlot]);
+                    }
+                }
+                else {
+                    damageTimer = 0;
+                    
+                    if (movementUpdateQueue.Count != 0) {
+                        movementUpdateQueue.Clear();
+                    }
+                    if (vehicleUpdateQueue.Count != 0) {
+                        vehicleUpdateQueue.Clear();
+                    }
+                    Screen.lockCursor = false;
+                    
+                    if (player.killCamTimer > Time.time) {
+                        
+                    }
+                    else {
+                        MoveTo(networkManager.mapInfo.SpawnCam);
+                    }
+                }
+            break;
+            
+            case ServerStatus.winScreen:
+                MoveTo(networkManager.mapInfo.WinCam);
+                Screen.lockCursor = false;
+            break;
+            
+            case ServerStatus.postGame:
+                MoveTo(networkManager.mapInfo.PostCam);
+                Screen.lockCursor = false;
+            break;
+            
+            case ServerStatus.loading:
+                Screen.lockCursor = true;
+                transform.position = Vector3.zero;
+                transform.rotation = Quaternion.identity;
+            break;
+        }
+        
 		UpdateGUIInput();
 		//Update weightings for GUI animations
 		UpdateGUIWeights();
 	}
 }
 
+function MoveTo(obj:GameObject) {
+    transform.position = obj.transform.position;
+    transform.rotation = obj.transform.rotation;
+}
+
+function MoveTo(obj:Component) {
+    transform.position = obj.transform.position;
+    transform.rotation = obj.transform.rotation;
+}
+
+function UpdatePlayerInput() {
+    if (!player.vehicle) {
+        if (Input.GetKeyDown(Controls.grenade)) {
+            player.object.ThrowGrenade();
+        }
+        
+        if (Input.GetKeyDown(Controls.reload)) {
+            player.object.WeaponStartReload(Time.time);
+        }
+        else {
+            if (Input.GetKey(Controls.fire)) {
+                if (player.object.WeaponInputFire(Time.time)) {
+                    PlayerShoot();
+                }
+            }
+            
+            if (Input.GetKeyDown(Controls.fire)) {
+                if (player.object.WeaponInputFireDown(Time.time)) {
+                    PlayerShoot();
+                }
+            }
+        }
+    }
+    else {
+        if (Input.GetKey(Controls.fire)) {
+            if (player.vehicle.WeaponInputFire(player.vehicleSlot, Time.time)) {
+                PlayerShoot();
+            }
+        }
+        
+        if (Input.GetKeyDown(Controls.fire)) {
+            if (player.vehicle.WeaponInputFireDown(player.vehicleSlot, Time.time)) {
+                PlayerShoot();
+            }
+        }
+    }
+
+    //Check for vehicle input
+    if (Input.GetKeyDown(Controls.action)) {
+        if (Network.isServer) {
+            networkManager.server.VehicleToggleInput(NetId);
+        }
+        else {
+            network.RPC("_VehicleToggleInput", RPCMode.Server, NetId);
+        }
+    }
+    
+    //check for weapon input feedback
+    if (player.object.WeaponUpdate(Time.time)) {
+        PlayerShoot();
+    }
+}
+
 //Handle GUI Updates
 function OnGUI() {
+    //Set Skin attributes
+    GUI.skin = networkManager.CustomSkin;
+    tmpFloat = 6+12*(swidth-360)/(1080-360);
+    GUI.skin.label.fontSize = tmpFloat;
+    GUI.skin.box.fontSize = tmpFloat;
+    GUI.skin.button.fontSize = tmpFloat;
+    GUI.skin.textField.fontSize = tmpFloat;
+    GUI.skin.window.fontSize = tmpFloat;
+    
 	if (authenticated) {
-		if (networkManager.winTeam == 0) {
-			//Set Skin attributes
-			GUI.skin = networkManager.CustomSkin;
-			tmpFloat = 6+12*(swidth-360)/(1080-360);
-			GUI.skin.label.fontSize = tmpFloat;
-			GUI.skin.box.fontSize = tmpFloat;
-			GUI.skin.button.fontSize = tmpFloat;
-			GUI.skin.textField.fontSize = tmpFloat;
-			GUI.skin.window.fontSize = tmpFloat;
-			GUI.skin.customStyles[1].fontSize = tmpFloat;
-			player = networkManager.NPlayers[NetId];
-			
-			if (!player.object && networkManager.winTeam == 0) {
-				GUI.color = Color(1, 1, 1, -((player.killCamTimer - ctime) - networkManager.deathTime));
-				
-				if (player.killCamTimer > ctime) {
-					if (playerKill == "n") {
-						GUI.Box(Rect(5, sheight/6*5, swidth, sheight/6), "You died of natural causes");
-					}
-					else if (playerKill == "s") {
-						GUI.Box(Rect(5, sheight/6*5, swidth, sheight/6), "You comitted suicide");
-					}
-					else {
-						GUI.Box(Rect(5, sheight/6*5, swidth/2, sheight/6), playerKill + " Killed You");
-						GUI.Box(Rect(5 + swidth/2, sheight/6*5, swidth/2-5, sheight/6), "Using the " + weaponKill);
-					}
-				}
-			}
-			GUI.color = Color.white;
-					
-			//Render All Screens with animations
-			
-			if (hudWeight > 0.1) {
-				HUDGUI(hudWeight);
-			}
-			
-			if (teamScreenWeight > 0.1) {
-				TeamSelect(teamScreenWeight);
-			}
-			
-			if (spawnScreenWeight > 0.1) {
-				SpawnScreen(spawnScreenWeight, mainWeaponWeight, secondaryWeaponWeight);
-			}
-			
-			if (optionsWeight > 0.1) {
-				OptionsScreen(optionsWeight);
-			}
-			
-			if (escapeMenuWeight > 0.1) {
-				EscapeMenu(escapeMenuWeight);
-			}
-			
-			if (player.team != 0) {
-				messageBoxTimer = MessageGUI(messageBoxTimer);
-			}
-			
-			if (scorebordWeight > 0.1) {
-				ScorebordScreen(scorebordWeight);
-			}
-			
-			GlobalGUI();
-		}
-		else {
-			if (player.team == networkManager.winTeam) {
-				GUI.Box(Rect(5, 5, swidth - 10, sheight - 10), "You Win!");
-			}
-			else {
-				GUI.Box(Rect(5, 5, swidth - 10, sheight - 10), "You Lose");
-			}
-		}
+		switch (serverStatus) {
+            case ServerStatus.inGame:
+                player = networkManager.NPlayers[NetId];
+                
+                if (!player.object && networkManager.winTeam == 0) {
+                    GUI.color = Color(1, 1, 1, -((player.killCamTimer - ctime) - networkManager.deathTime));
+                    
+                    if (player.killCamTimer > ctime) {
+                        if (playerKill == "n") {
+                            GUI.Box(Rect(5, sheight/6*5, swidth, sheight/6), "You died of natural causes");
+                        }
+                        else if (playerKill == "s") {
+                            GUI.Box(Rect(5, sheight/6*5, swidth, sheight/6), "You committed suicide");
+                        }
+                        else {
+                            GUI.Box(Rect(5, sheight/6*5, swidth/2, sheight/6), playerKill + " Killed You");
+                            GUI.Box(Rect(5 + swidth/2, sheight/6*5, swidth/2-5, sheight/6), "Using the " + weaponKill);
+                        }
+                    }
+                }
+                GUI.color = Color.white;
+                        
+                //Render All Screens with animations
+                
+                if (hudWeight > 0.1) {
+                    HUDGUI(hudWeight);
+                }
+            case ServerStatus.postGame:
+                
+            break;
+            case ServerStatus.winScreen:
+                if (networkManager.winTeam == player.team) {
+                    GUI.Box(Rect(swidth/16*7, sheight/16*7, swidth/16*2, sheight/16), "You Win!");
+                }
+                else {
+                    GUI.Box(Rect(swidth/16*7, sheight/16*7, swidth/16*2, sheight/16), "You Lose!");
+                }
+            break;
+        }
 	}
-	
-	GUI.color = Color.white;
-	GUILayout.Label("" + parseInt(1/Time.smoothDeltaTime));
+    
+    if (serverStatus != ServerStatus.loading) {
+        if (spawnScreenWeight > 0.1) {
+            SpawnScreen(spawnScreenWeight, mainWeaponWeight, secondaryWeaponWeight);
+        }
+        
+        if (teamScreenWeight > 0.1) {
+            TeamSelect(teamScreenWeight);
+        }
+        
+        if (scorebordWeight > 0.1) {
+            ScorebordScreen(scorebordWeight);
+        }
+        
+        if (optionsWeight > 0.1) {
+            OptionsScreen(optionsWeight);
+        }
+        
+        if (escapeMenuWeight > 0.1) {
+            EscapeMenu(escapeMenuWeight);
+        }
+        
+        if (player.team != 0) {
+            messageBoxTimer = MessageGUI(messageBoxTimer);
+        }
+        
+        GlobalGUI();
+    }
 }
 
 function OnReload() {
@@ -425,9 +505,63 @@ RPC's
 */
 
 @RPC
-function _SetServerStatus(map:int, status:int, info:NetworkMessageInfo) {
+function _DisconnectMessage(message:String, info:NetworkMessageInfo) {
+    if (info.sender == Network.connections[0]) {
+        if (message != "") {
+            NetworkSettings.disconnectMessage = message;
+            NetworkSettings.showDisconnectMessage = true;
+        }
+    }
+}
+
+@RPC
+function _SetGameTimer(val:float, info:NetworkMessageInfo) {
+    if (Network.isServer || info.sender == Network.connections[0]) {
+        gameTimer = val + 1;
+	}
+}
+
+@RPC
+function _UpdateGameStatus(t1k:int, t2k:int, info:NetworkMessageInfo) {
+    if (!Network.isServer && info.sender == Network.connections[0]) {
+		networkManager.team1Kills = t1k;
+        networkManager.team2Kills = t2k;
+	}
+}
+
+@RPC
+function _SetServerStatus(win:int, status:int, info:NetworkMessageInfo) {
 	if (Network.isServer || info.sender == Network.connections[0]) {
+        networkManager.winTeam = win;
 		serverStatus = status;
+	}
+}
+
+@RPC
+function _SetServerData(respawnTime:float, killCamTime:float, gameMode:int, map:int, targetKills:int, info:NetworkMessageInfo) {
+    if (!Network.isServer && info.sender == Network.connections[0]) {
+		networkManager.respawnTime = respawnTime;
+        networkManager.deathTime = killCamTime;
+        networkManager.gameMode = gameMode;
+        networkManager.map = map;
+        networkManager.targetKills = targetKills;
+        networkManager.team1Kills = 0;
+        networkManager.team2Kills = 0;
+        networkManager.LoadLevel();
+	}
+}
+
+@RPC
+function _ResupplyPlayer(amount:int, info:NetworkMessageInfo) {
+    if (info.sender == Network.connections[0]) {
+		player.object.Heal(amount);
+	}
+}
+
+@RPC
+function _ResupplyIndication(amount:int, info:NetworkMessageInfo) {
+    if (info.sender == Network.connections[0]) {
+		ResupplyIndication(amount);
 	}
 }
 
@@ -520,8 +654,14 @@ function _UpdatePlayer(id:int, position:Vector3, rotation:float, grounded:boolea
 				pState = movementUpdateQueue[0];
 				movementUpdateQueue.RemoveAt(0);
 				
-				if (pState.position != position) {
-					if (movementUpdateQueue.Count > 0) {
+				if (Mathf.Approximately(pState.position.x, position.x) &&
+					Mathf.Approximately(pState.position.y, position.y) &&
+					Mathf.Approximately(pState.position.z, position.z)
+				) {
+					freezePlayer = false;
+				}
+				else {
+					if (movementUpdateQueue.Count != 0) {
 						freezePlayer = true;
 					}
 					else {
@@ -529,9 +669,6 @@ function _UpdatePlayer(id:int, position:Vector3, rotation:float, grounded:boolea
 						player.object.previousState.position = position;
 						freezePlayer = false;
 					}
-				}
-				else {
-					freezePlayer = false;
 				}
 			}
 			vehicleUpdateQueue.Clear();
@@ -564,20 +701,13 @@ function _UpdatePlayer(id:int, position:Vector3, rotation:float, grounded:boolea
 
 @RPC
 function _UpdateCapturePoint(index:int, cp:float, info:NetworkMessageInfo) {
-	if (info.sender == Network.connections[0]) {
+	if (info.sender == Network.connections[0] && Application.loadedLevel > 1) {
 		if (networkManager.gameMode == GameModes.KOTH) {
 			networkManager.mapInfo.CaptureTheFlagPoint.CP = cp;
 		}
 		else if (networkManager.gameMode == GameModes.CP) {
 			networkManager.mapInfo.CapturePointPoints[index].CP = cp;
 		}
-	}
-}
-
-@RPC
-function _Unload(info:NetworkMessageInfo) {
-	if (info.sender == Network.connections[0]) {
-		MainMenu.StartGame(false, true);
 	}
 }
 
@@ -713,11 +843,16 @@ function VehicleAssistNotification(index:int, amount:float) {
 	
 }
 
+function ResupplyIndication(amount:int) {
+
+}
+
 function HealIndication(amount:float) {
 	//PointFeed.Add(PointMessage("Heal", amount));
 }
 
 function SendPMessage(id:int, input:String) {
+	messageBoxTimer = ctime + 3;
 	if (id == -1) {
 		Messages.Add(Message(input, "Server", Color.gray));
 	}
@@ -731,10 +866,10 @@ function SendPMessage(id:int, input:String) {
 	}
 	else {
 		if (player.team == 1) {
-			Messages.Add(Message(input, Settings.username, networkManager.BlueColor));
+			Messages.Add(Message(input, AccountSettings.username, networkManager.BlueColor));
 		}
 		else {
-			Messages.Add(Message(input, Settings.username, networkManager.GreenColor));
+			Messages.Add(Message(input, AccountSettings.username, networkManager.GreenColor));
 		}
 	}
 	if (Messages.Count > 18) {
@@ -752,8 +887,11 @@ function PlayerShoot() {
 }
 
 function DamagePlayer(amount:float) {
-	//stuff
 	player.object.Damage(amount);
+}
+
+function OnPlayerDamaged(amount:float) {
+    damageTimer = ctime + amount/30;
 }
 
 function UpdateInput(input:InputState, disabled:boolean) {
@@ -772,7 +910,10 @@ function UpdateInput(input:InputState, disabled:boolean) {
 		}
 		
 		input.horizontal += Input.GetAxis("Horizontal");
-		input.vertical += Input.GetAxis("Vertical");
+		input.vertical -= Input.GetAxis("Vertical");
+        if (Controls.ladderMode == 0 && (input.vertical > 0.2 || input.vertical < -0.2)) {
+            input.ladder = true;
+        }
 	}
 	
 	if (Input.GetKey(Controls.crouch) && !disabled) {
@@ -826,20 +967,18 @@ function UpdateInput(input:InputState, disabled:boolean) {
 	}
 	
 	if (!disabled) {
-		if (!input.sprint) {
-			input.sprint = ((Input.GetKey(Controls.sprint) && Controls.normalSprint == 0) || (!Input.GetKey(Controls.sprint) && Controls.normalSprint == 1));
+		if ((Input.GetKey(Controls.sprint) && Controls.normalSprint == 0) || 
+            (!Input.GetKey(Controls.sprint) && Controls.normalSprint == 1)) {
+			input.sprint = true;
 		}
 		
-		if (!input.jump) {
-			input.jump = Input.GetKeyDown(Controls.jump);
+		if (Input.GetKeyDown(Controls.jump)) {
+			input.jump = true;
 		}
 		
-		if (Input.GetKey(Controls.action)) {
+		if (Input.GetKey(Controls.action) && Controls.ladderMode == 1) {
 			input.ladder = true;
 		}
-		
-		//Check for vehicle entering
-		
 	}
 	
 	input.times += 1;
@@ -851,6 +990,10 @@ function UpdateInput(input:InputState, disabled:boolean) {
 function NetworkUpdate() {
 	//Server
 	inputManager.Average();
+    if (!inputManager.ladder && Controls.autoLadderJump == 0) {
+        inputManager.vertical = 1;
+    }
+    
 	network.RPC("_UpdateInput", RPCMode.Server, NetId, player.object.currentState.lookAngle, inputManager.horizontal, inputManager.vertical, inputManager.crouch, inputManager.rotation, inputManager.sprint, inputManager.jump, inputManager.ladder, player.object.currentState.aimWeight, inputManager.switchTo);
 	
 	if (Network.isServer) {
@@ -883,38 +1026,44 @@ function UpdateGUIInput() {
 	}
 	
 	
-	if (Input.GetKeyDown("escape") && !optionsShow){
+	if (Input.GetKeyDown(KeyCode.Escape) && !optionsShow){
 		escapeMenu = !escapeMenu;
 		messageBox = false;
 	}
-	if (Input.GetKeyDown("escape") && optionsShow){
+	if (Input.GetKeyDown(KeyCode.Escape) && optionsShow){
 		optionsShow = false;
 		escapeMenu = true;
 		messageBox = false;
 	}
 	
 	if (player.team != 0) {
-		if (messageBox && Input.GetKey(KeyCode.Return)) {
-			messageBoxText = messageBoxText.Replace("\n", "").Replace("\r", "");
-			if (messageBoxText == ""){
-				messageBox = false;
-			}
-			else {
-				if (messageBoxText[0] != "/") {
-					networkView.RPC("_SendPMessage", RPCMode.All, NetId, messageBoxText);
-				}
-				else {
-					messageBoxText.ToLower().Replace("/", "");
-					SendPMessage(-1, "Message-Function are currently unsupported");
-				}
-				
-				messageBoxText = "";
-				messageBox = false;
-			}
+		if (messageBox) {
+            if (Input.GetKeyDown(KeyCode.Return)) {
+                messageBoxText = messageBoxText.Replace("\n", "").Replace("\r", "");
+                if (messageBoxText == ""){
+                    messageBox = false;
+                }
+                else {
+                    if (messageBoxText[0] != "/") {
+                        networkView.RPC("_SendPMessage", RPCMode.All, NetId, messageBoxText);
+                    }
+                    else {
+                        messageBoxText.ToLower().Replace("/", "");
+                        SendPMessage(-1, "Message-Function are currently unsupported");
+                    }
+                    
+                    messageBoxText = "";
+                    messageBox = false;
+                }
+            }
+            else if (Input.GetKeyDown(KeyCode.Escape)) {
+                messageBoxText = "";
+                messageBox = false;
+            }
 		}
 	}
 	
-	if (Input.GetButton("Tab")) {
+	if ((Input.GetKey(KeyCode.Tab) && !optionsShow && !escapeMenu) || serverStatus == ServerStatus.postGame) {
 		scorebordWeight += dtime*5;
 	}
 	else {
@@ -931,7 +1080,7 @@ function UpdateGUIWeights() {
 		hudWeight -= dtime*2; 
 		spawnScreenWeight -= dtime*2;
 	}
-	else if (player.killCamTimer < ctime) {
+	else if (player.killCamTimer < ctime && (serverStatus == ServerStatus.preGame || serverStatus == ServerStatus.inGame)) {
 		teamScreenWeight -= dtime*2;
 		
 		if (player.object) {
@@ -1004,8 +1153,7 @@ function TeamSelect(weight:float) {
 	}
 	GUI.DrawTexture(Rect(0, 0, swidth, sheight), networkManager.White);
 
-	GUI.color = Color.white;
-	GUI.color.a = weight;
+	GUI.color = Color(1, 1, 1, weight);
 	if (GUI.Button(Rect((weight - 1)*swidth/3, 0, swidth/4, sheight), networkManager.FlagBlue) && player.team == 0) {
 		networkView.RPC("_JoinRequest", RPCMode.All, NetId, 1);
 	}
@@ -1026,92 +1174,98 @@ function SpawnScreen(weight:float, mainWeight:float, secondaryWeight:float) {
 	
 	//Spawn Button
 	GUI.color = Color(1, 1, 1, weight);
-	if (player.respawnTimer < ctime) {
+	if (player.respawnTimer < ctime && serverStatus == ServerStatus.inGame) {
 		if (GUI.Button(Rect(0, sheight/16*14 + sheight/3*(1 - weight), swidth/4, sheight/16*2), "") && !player.object){
 			if (Network.isServer) {
 				networkManager.server.SpawnRequest(NetId, 
-					Settings.SelectedMain, 
-					Settings.SelectedSecondary, 
-					Settings.GunsMain[Settings.SelectedMain].Addons[0], 
-					Settings.GunsMain[Settings.SelectedMain].Addons[1], 
-					Settings.GunsMain[Settings.SelectedMain].Addons[2], 
-					Settings.GunsSecondary[Settings.SelectedSecondary].Addons[0], 
-					Settings.GunsSecondary[Settings.SelectedSecondary].Addons[1], 
-					Settings.GunsSecondary[Settings.SelectedSecondary].Addons[2], 
-					Settings.GrenadeType
+					Loadout.selectedMain, 
+					Loadout.selectedSecondary, 
+					Loadout.gunsMain[Loadout.selectedMain].Addons[0], 
+					Loadout.gunsMain[Loadout.selectedMain].Addons[1], 
+					Loadout.gunsMain[Loadout.selectedMain].Addons[2], 
+					Loadout.gunsSecondary[Loadout.selectedSecondary].Addons[0], 
+					Loadout.gunsSecondary[Loadout.selectedSecondary].Addons[1], 
+					Loadout.gunsSecondary[Loadout.selectedSecondary].Addons[2], 
+					Loadout.selectedGrenade
 				);
 			}
 			else {
 				network.RPC("_SpawnRequest", RPCMode.Server, NetId, 
-					Settings.SelectedMain, 
-					Settings.SelectedSecondary, 
-					Settings.GunsMain[Settings.SelectedMain].Addons[0], 
-					Settings.GunsMain[Settings.SelectedMain].Addons[1], 
-					Settings.GunsMain[Settings.SelectedMain].Addons[2], 
-					Settings.GunsSecondary[Settings.SelectedSecondary].Addons[0], 
-					Settings.GunsSecondary[Settings.SelectedSecondary].Addons[1], 
-					Settings.GunsSecondary[Settings.SelectedSecondary].Addons[2], 
-					Settings.GrenadeType
+					Loadout.selectedMain, 
+					Loadout.selectedSecondary, 
+					Loadout.gunsMain[Loadout.selectedMain].Addons[0], 
+					Loadout.gunsMain[Loadout.selectedMain].Addons[1], 
+					Loadout.gunsMain[Loadout.selectedMain].Addons[2], 
+					Loadout.gunsSecondary[Loadout.selectedSecondary].Addons[0], 
+					Loadout.gunsSecondary[Loadout.selectedSecondary].Addons[1], 
+					Loadout.gunsSecondary[Loadout.selectedSecondary].Addons[2], 
+					Loadout.selectedGrenade
 				);
 			}
+            Loadout.Save();
 		}
 		GUI.Label(Rect(0, sheight/16*14 + sheight/3*(1 - weight), swidth/4, sheight/16*2), "Spawn");
 	}
 	else {
-		GUI.Button(Rect(0, sheight/16*14 + sheight/3*(1 - weight), swidth/4, sheight/16*2), parseInt(player.respawnTimer + 1 - ctime) + "");
+        if (serverStatus == ServerStatus.inGame) {
+            GUI.Button(Rect(0, sheight/16*14 + sheight/3*(1 - weight), swidth/4, sheight/16*2), parseInt(player.respawnTimer + 1 - ctime) + "");
+        }
+        else {
+            GUI.Button(Rect(0, sheight/16*14 + sheight/3*(1 - weight), swidth/4, sheight/16*2), parseInt(gameTimer) + "");
+        }
 	}
 	
 	//Main Gun Select
-	Settings.SelectedMain = GUIGun(Rect(swidth/4, sheight/16*14 + sheight/3*(1 - weight), swidth/4, sheight/16*2), Settings.GunsMain, mainWeaponWeight, parseInt(Settings.SelectedMainClass), Settings.SelectedMain, 1);
+	Loadout.selectedMain = GUIGun(Rect(swidth/4, sheight/16*14 + sheight/3*(1 - weight), swidth/4, sheight/16*2), Loadout.gunsMain, mainWeaponWeight, parseInt(Loadout.selectedMainClass), Loadout.selectedMain, 1);
 	
 	//Main Gun Category Select
 	GUI.color.a = 1 - (escapeMenuWeight + optionsWeight);
 	if ((1 - mainWeaponWeight)*(1 - (escapeMenuWeight + optionsWeight)) > 0.1) {
-		if (GUI.Button(Rect(swidth/8*2, sheight/16*13 + sheight/3*(1 - weight) + sheight/16*(mainWeaponWeight), swidth/8*2, sheight/16*(1 - mainWeaponWeight)), "" + Settings.SelectedMainClass) && (!optionsShow) && (!escapeMenu)) {
-			if (parseInt(Settings.SelectedMainClass) + 1 == 9) {
-				Settings.SelectedMainClass = System.Enum.ToObject(typeof(GunClass), 0);
+		if (GUI.Button(Rect(swidth/8*2, sheight/16*13 + sheight/3*(1 - weight) + sheight/16*(mainWeaponWeight), swidth/8*2, sheight/16*(1 - mainWeaponWeight)), "" + Loadout.selectedMainClass) && (!optionsShow) && (!escapeMenu)) {
+			if (parseInt(Loadout.selectedMainClass) + 1 == 9) {
+				Loadout.selectedMainClass = System.Enum.ToObject(typeof(GunClass), 0);
 			}
 			else {
-				Settings.SelectedMainClass = System.Enum.ToObject(typeof(GunClass), parseInt(Settings.SelectedMainClass) + 1);
+				Loadout.selectedMainClass = System.Enum.ToObject(typeof(GunClass), parseInt(Loadout.selectedMainClass) + 1);
 			}
-			Settings.SelectedMain = GUIGunLoop(1, Settings.GunsMain, parseInt(Settings.SelectedMainClass), 0);
+			Loadout.selectedMain = GUIGunLoop(1, Loadout.gunsMain, parseInt(Loadout.selectedMainClass), 0);
 		}
 	}
 	GUI.color = Color.white;
 	
 	//Secondary Gun Select
-	Settings.SelectedSecondary = GUIGun(Rect(swidth/4*2, sheight/16*14 + sheight/3*(1 - weight), swidth/4, sheight/16*2), Settings.GunsSecondary, secondaryWeaponWeight, parseInt(Settings.SelectedSecondaryClass), Settings.SelectedSecondary, 2);
+	Loadout.selectedSecondary = GUIGun(Rect(swidth/4*2, sheight/16*14 + sheight/3*(1 - weight), swidth/4, sheight/16*2), Loadout.gunsSecondary, secondaryWeaponWeight, parseInt(Loadout.selectedSecondaryClass), Loadout.selectedSecondary, 2);
 	
 	//Secondary Gun Category Select
 	GUI.color.a = 1 - (escapeMenuWeight + optionsWeight);
 	if ((1 - secondaryWeaponWeight)*(1 - (escapeMenuWeight + optionsWeight)) > 0.1) {
-		if (GUI.Button(Rect(swidth/8*4, sheight/16*13 + sheight/3*(1 - weight) + sheight/16*(secondaryWeaponWeight), swidth/8*2, sheight/16*(1 - secondaryWeaponWeight)), "" + Settings.SelectedSecondaryClass) && (!optionsShow) && (!escapeMenu)) {
-			if (parseInt(Settings.SelectedSecondaryClass) == 13) {
-				Settings.SelectedSecondaryClass = System.Enum.ToObject(typeof(GunClass), 9);
+		if (GUI.Button(Rect(swidth/8*4, sheight/16*13 + sheight/3*(1 - weight) + sheight/16*(secondaryWeaponWeight), swidth/8*2, sheight/16*(1 - secondaryWeaponWeight)), "" + Loadout.selectedSecondaryClass) && (!optionsShow) && (!escapeMenu)) {
+			if (parseInt(Loadout.selectedSecondaryClass) == 13) {
+				Loadout.selectedSecondaryClass = System.Enum.ToObject(typeof(GunClass), 9);
 			}
 			else {
-				Settings.SelectedSecondaryClass = System.Enum.ToObject(typeof(GunClass), parseInt(Settings.SelectedSecondaryClass) + 1);
+				Loadout.selectedSecondaryClass = System.Enum.ToObject(typeof(GunClass), parseInt(Loadout.selectedSecondaryClass) + 1);
 			}
-			Settings.SelectedSecondary = GUIGunLoop(1, Settings.GunsSecondary, parseInt(Settings.SelectedSecondaryClass), 0);
+			Loadout.selectedSecondary = GUIGunLoop(1, Loadout.gunsSecondary, parseInt(Loadout.selectedSecondaryClass), 0);
 		}
 	}
 	GUI.color = Color.white;
 	
 	//Grenade Select
 	if (GUI.Button(Rect(swidth/4*3, sheight/16*14 + sheight/3*(1 - weight), swidth/4/6, sheight/16*2), networkManager.ArrowTexture2)) {
-		Settings.GrenadeType += 1;
-		if (Settings.GrenadeType == 4) {
-			Settings.GrenadeType = 0;
+		Loadout.selectedGrenade += 1;
+		if (Loadout.selectedGrenade == 4) {
+			Loadout.selectedGrenade = 0;
 		}
 	}
 	if (GUI.Button(Rect(swidth/4*3 + swidth/4/6*5, sheight/16*14 + sheight/3*(1 - weight), swidth/4/6, sheight/16*2), networkManager.ArrowTexture)) {
-		Settings.GrenadeType -= 1;
-		if (Settings.GrenadeType == -1) {
-			Settings.GrenadeType = 3;
+		Loadout.selectedGrenade -= 1;
+		if (Loadout.selectedGrenade == -1) {
+			Loadout.selectedGrenade = 3;
 		}
 	}
-	GUI.Box(Rect(swidth/4*3 + swidth/4/6,  sheight/16*14 + sheight/3*(1 - weight), swidth/4/6*4, sheight/16*2), networkManager.PlayerObjects[Settings.GrenadeType].GetComponent(Grenade).Icon);
-	GUI.Label(Rect(swidth/4*3 + swidth/4/6,  sheight/16*14 + sheight/3*(1 - weight), swidth/4/6*4, sheight/16), networkManager.PlayerObjects[Settings.GrenadeType].GetComponent(Grenade).Name);
+	GUI.Box(Rect(swidth/4*3 + swidth/4/6,  sheight/16*14 + sheight/3*(1 - weight), swidth/4/6*4, sheight/16*2), networkManager.PlayerObjects[Loadout.selectedGrenade].GetComponent(Grenade).Icon);
+	GUI.Label(Rect(swidth/4*3 + swidth/4/6,  sheight/16*14 + sheight/3*(1 - weight), swidth/4/6*4, sheight/16), networkManager.PlayerObjects[Loadout.selectedGrenade].GetComponent(Grenade).Name);
 }
 
 //SpawnScreen Helpers
@@ -1379,6 +1533,18 @@ function OptionsScreen(weight:float) {
 			GUILayout.EndHorizontal();
 			
 			GUILayout.Space(10);
+            
+            GUILayout.BeginHorizontal();
+			GUILayout.Label("Ladder Jump Type");
+			GUILayout.FlexibleSpace();
+            Controls.autoLadderJump = GUILayout.SelectionGrid(Controls.autoLadderJump, ["Auto", "Manual"], 2, GUILayout.Height(sheight/20), GUILayout.Width(swidth/8*21/16));
+			GUILayout.EndHorizontal();
+            
+            GUILayout.BeginHorizontal();
+			GUILayout.Label("Ladder Climb Type");
+			GUILayout.FlexibleSpace();
+            Controls.ladderMode = GUILayout.SelectionGrid(Controls.ladderMode, ["W/S", "E-W/S"], 2, GUILayout.Height(sheight/20), GUILayout.Width(swidth/8*21/16));
+			GUILayout.EndHorizontal();
 			
 			GUILayout.EndScrollView();
 		}
@@ -1389,12 +1555,14 @@ function OptionsScreen(weight:float) {
 		if (GUILayout.Button("Save")) {
 			optionsShow = false;
 			Controls.Save();
+            SoundSettings.Save();
 			VideoSettings.Save();
 			VideoSettings.Apply();
 		}
 		if (GUILayout.Button("Exit Without Saving")) {
 			optionsShow = false;
 			Controls.Load();
+            SoundSettings.Save();
 			VideoSettings.Load();
 		}
 		if (GUILayout.Button("Restore to Default")){
@@ -1493,7 +1661,7 @@ function MessageGUI(weight:float) {
 	//Message Display
 	GUI.skin.label.alignment = TextAnchor.MiddleLeft;
 	GUI.color = Color(1, 1, 1, Mathf.Clamp01(weight - ctime)/2);
-	GUILayout.BeginArea(Rect(0, 0, swidth/4*9/8, sheight/16*5), GUI.skin.customStyles[0]);
+	GUILayout.BeginArea(Rect(0, 0, swidth/4*9/8, sheight/16*5));
 	if (tmpHeight + sheight/16/2 > sheight/16*5) {
 		GUILayout.Space(sheight/16*5 - (tmpHeight + sheight/16/2));
 	}
@@ -1558,7 +1726,7 @@ function MessageGUI(weight:float) {
 		GUILayout.EndArea();
 	}
 	
-	GUI.skin.box.fontSize = tmpFloat;
+	GUI.skin.label.fontSize = tmpFloat;
 	GUI.skin.label.alignment = TextAnchor.MiddleCenter;
 	
 	return weight;
@@ -1567,28 +1735,67 @@ function MessageGUI(weight:float) {
 function ScorebordScreen(weight:float) {
 	//Draw All players in a table (Unsorted as of yet)
 	GUI.color = Color(1, 1, 1, weight);
+    GUI.skin.box.fontSize -= 3;
+    GUI.skin.label.fontSize -= 3;
+    
 	GUI.Box(Rect(swidth/8*9/4, sheight/16, swidth/8*14/4, sheight/16*13*weight), "");
-	GUILayout.BeginArea(Rect(swidth/8*9/4, sheight/16, swidth/8*14/4, sheight/16*13));
-	GUILayout.BeginVertical();
-	GUILayout.BeginHorizontal();
-	GUILayout.Box("username", GUILayout.Width(swidth/8*3/2));
-	GUILayout.Box("Team", GUILayout.Width(swidth/16 -5));
-	GUILayout.Box("Kills", GUILayout.Width(swidth/16 -5));
-	GUILayout.Box("Deaths", GUILayout.Width(swidth/16 -5));
-	GUILayout.Box("Ping", GUILayout.Width(swidth/16 -5));
-	GUILayout.EndHorizontal();
-	for (nPlayer in networkManager.NPlayers.Values) {
-		GUILayout.BeginHorizontal();
-		GUILayout.Box(nPlayer.username,  GUILayout.Width(swidth/8*3/2));
-		GUILayout.Box("" + nPlayer.team, GUILayout.Width(swidth/16 -5));
-		GUILayout.Box("" + nPlayer.kills, GUILayout.Width(swidth/16 -5));
-		GUILayout.Box("" + nPlayer.deaths, GUILayout.Width(swidth/16 -5));
-		GUILayout.Box("" + nPlayer.ping ,GUILayout.Width(swidth/16 -5));
-		//GUILayout.Box("" + obj.id);
-		GUILayout.EndHorizontal();
-	}
-	GUILayout.EndVertical();
-	GUILayout.EndArea();
+	GUI.BeginGroup(Rect(swidth/8*9/4, sheight/16, swidth/8*14/4, sheight/16*13*weight));
+    sheight = sheight/16*13;
+    swidth = swidth/8*14/4;
+    
+    GUI.Box(Rect(0, 0, swidth/7*3, sheight/20), "Username");
+    GUI.Box(Rect(swidth/7*3, 0, swidth/7, sheight/20), "Team");
+    GUI.Box(Rect(swidth/7*4, 0, swidth/7, sheight/20), "Kills");
+    GUI.skin.box.fontSize -= 1;
+    GUI.Box(Rect(swidth/7*5, 0, swidth/7, sheight/20), "Deaths");
+    GUI.skin.box.fontSize += 1;
+    GUI.Box(Rect(swidth/7*6, 0, swidth/7, sheight/20), "Ping");
+    
+    playerList = networkManager.NPlayers.Values.ToArray();
+    SortByKills(playerList);
+    
+    for (IndexList = 0; IndexList < playerList.length; IndexList++) {
+        nPlayer = playerList[IndexList];
+        GUI.color = Color.grey;
+        if (nPlayer.team == 1) {
+            GUI.color = networkManager.BlueColor;
+        }
+        else if (nPlayer.team == 2) {
+            GUI.color = networkManager.GreenColor;
+        }
+        GUI.color.a = weight;
+        GUI.Box(Rect(0, sheight/20 + sheight/20*IndexList, swidth, sheight/20), "");
+        
+        GUI.color = Color(1, 1, 1, weight);
+        GUI.Label(Rect(0, sheight/20 + sheight/20*IndexList, swidth/7*3, sheight/20), nPlayer.username);
+        if (nPlayer.team == 1) {
+            GUI.Label(Rect(swidth/7*3, sheight/20 + sheight/20*IndexList, swidth/7, sheight/20), "NPA");
+        }
+        else if (nPlayer.team == 2) {
+            GUI.Label(Rect(swidth/7*3, sheight/20 + sheight/20*IndexList, swidth/7, sheight/20), "PCD");
+        }
+        else {
+            GUI.Label(Rect(swidth/7*3, sheight/20 + sheight/20*IndexList, swidth/7, sheight/20), "None");
+        }
+        GUI.Label(Rect(swidth/7*4, sheight/20 + sheight/20*IndexList, swidth/7, sheight/20), "" + nPlayer.kills);
+        GUI.Label(Rect(swidth/7*5, sheight/20 + sheight/20*IndexList, swidth/7, sheight/20), "" + nPlayer.deaths);
+        GUI.Label(Rect(swidth/7*6, sheight/20 + sheight/20*IndexList, swidth/7, sheight/20), "" + nPlayer.ping);
+    }
+    
+    swidth = Screen.width;
+    sheight = Screen.height;
+	GUI.EndGroup();
+    
+    GUI.skin.box.fontSize += 3;
+    GUI.skin.label.fontSize += 3;
+}
+
+function SortByKills(players:NPlayer[]) {
+    System.Array.Sort.<NPlayer>(players, CompareKills);
+}
+
+function CompareKills(X:NPlayer, Y:NPlayer) {
+    return Y.kills.CompareTo(X.kills);
 }
 
 function HUDGUI(weight:float) {
@@ -1604,6 +1811,8 @@ function HUDGUI(weight:float) {
 		else {
 			GUI.color = networkManager.GreenColor;
 		}
+        GUI.color.a = weight;
+        
 		for (nPlayer in networkManager.NPlayers.Values) {
 			if (nPlayer.object && nPlayer.team == player.team && nPlayer != player) {
 				TempVector = player.object.cam.WorldToScreenPoint(nPlayer.object.transform.position + Vector3(0,0.7,0));
@@ -1627,18 +1836,18 @@ function HUDGUI(weight:float) {
 		GUI.DrawTexture(Rect(5 + swidth/8*10/3, 5 + sheight/16*15, (swidth/8*8/3  - 10)/100.0*player.object.Health, sheight/16 - 10), networkManager.White, ScaleMode.StretchToFill);
 		GUI.color = Color(1, 1, 1, weight);
 		
-		
 		GUI.Box(Rect(swidth/8*2, sheight/16*14, swidth/8*4/3, sheight/16*2), player.object.currentWeapon.texture);
 		GUI.Box(Rect(swidth/8*10/3, sheight/16*14, swidth/8*4/3, sheight/16), player.object.currentWeapon.Clip + "/" + player.object.currentWeapon.Ammo);
 		GUI.Label(Rect(swidth/8*2, sheight/16*14, swidth/8*4/3, sheight/16), player.object.currentWeapon.Name);
 		GUI.Box(Rect(swidth/8*14/3, sheight/16*14, swidth/8*4/3, sheight/16), "Gx" + player.object.GrenadeAmmo);
 
-				
-		/*GUI.color = Color(1, 1, 1, HitFade.x*weight);
-		GUI.DrawTexture(Rect(-swidth/12, 0, swidth/6, sheight), HitTexture, ScaleMode.StretchToFill);
-		GUI.color = Color(1, 1, 1, HitFade.y*weight);
-		GUI.DrawTexture(Rect(swidth - swidth/12, 0, swidth/6, sheight), HitTexture, ScaleMode.StretchToFill);*/
-		
+        if (damageTimer > ctime) {
+            GUI.color = Color(1, 1, 1, Mathf.Clamp01(damageTimer - ctime)*weight);
+            GUI.DrawTexture(Rect(-swidth/12, 0, swidth/6, sheight), networkManager.HitTexture, ScaleMode.StretchToFill);
+            GUI.DrawTexture(Rect(swidth - swidth/12, 0, swidth/6, sheight), networkManager.HitTexture, ScaleMode.StretchToFill);
+            GUI.color = Color(1, 1, 1, weight);
+        }
+        
 		if (networkManager.gameMode == GameModes.KOTH) {
 			CPGUI(networkManager.mapInfo.CaptureTheFlagPoint, weight);
 		}

@@ -41,8 +41,9 @@ function get serverStatus():ServerStatus {
 }
 
 function set serverStatus(value:ServerStatus) {
-	if (value != _serverStatus) {
+	if (value != _serverStatus && Network.isServer) {
 		network.RPC("_SetServerStatus", RPCMode.Others, networkManager.winTeam, parseInt(value));
+        Debug.Log("Server: Status sent to: " + value);
 		
 		//Handle game state implications
 		switch (value) {
@@ -65,7 +66,10 @@ function set serverStatus(value:ServerStatus) {
 }
 
 function SetServerStatus(np:NetworkPlayer) {
-    network.RPC("_SetServerStatus", RPCMode.Others, networkManager.winTeam, parseInt(serverStatus));
+    if (Network.isServer) {
+        network.RPC("_SetServerStatus", np, networkManager.winTeam, parseInt(serverStatus));
+        Debug.Log("Server: Status sent to: " + serverStatus);
+    }
 }
 
 //Connection Queue
@@ -493,7 +497,6 @@ function OnVehicleKilled(index:int, kid:int, multi:float, weapon:String) {
 function OnPlayerFire(id:int) {
 	for (nPlayer in networkManager.NPlayers.Values) {
 		if (nPlayer.object) {
-            Debug.Log(nPlayer.latancy);
             if (nPlayer.id == id) {
                 nPlayer.object.ApplyLagState(Time.time);
             }
@@ -524,12 +527,14 @@ RPC's
 
 @RPC
 function _RequestServerData(info:NetworkMessageInfo) {
-    SetServerData(info.sender);
+    if (Network.isServer) {
+        SetServerData(info.sender);
+    }
 }
 
 @RPC
 function _UpdateInput(id:int, lookAngle:float, horizontal:float, vertical:float, crouch:float, rotation:float, sprint:boolean, jump:boolean, ladder:boolean, aim:float, swap:int, info:NetworkMessageInfo) {
-	if (id in networkManager.NPlayers && (networkManager.NPlayers[id].networkPlayer == info.sender || info.sender + "" == "-1")) {
+	if (id in networkManager.NPlayers && (networkManager.NPlayers[id].networkPlayer == info.sender || info.sender + "" == "-1") && Network.isServer) {
 		//Regenerate Input from client
 		tmpInput = new InputState();
 		
@@ -556,7 +561,7 @@ function _UpdateInput(id:int, lookAngle:float, horizontal:float, vertical:float,
 
 @RPC
 function _PingReply(id:int, info:NetworkMessageInfo) {
-	if (networkManager.NPlayers[id] && (networkManager.NPlayers[id].networkPlayer == info.sender)) {
+	if (networkManager.NPlayers[id] && (networkManager.NPlayers[id].networkPlayer == info.sender) && Network.isServer) {
 		networkManager.NPlayers[id].StopPing();
 		
 		if (networkManager.NPlayers[id].ping > networkManager.maxPing) {
@@ -571,14 +576,16 @@ function _PingReply(id:int, info:NetworkMessageInfo) {
 
 @RPC
 function _RequestUpdate(id:int, info:NetworkMessageInfo) {
-	if (networkManager.NPlayers[id] && (networkManager.NPlayers[id].networkPlayer == info.sender)) {
+	if (networkManager.NPlayers[id] && (networkManager.NPlayers[id].networkPlayer == info.sender) && Network.isServer) {
 		networkManager.UpdatePlayer(info.sender);
 	}
 }
 
 @RPC
 function _PlayerConnect(username:String, code:String, info:NetworkMessageInfo) {
-	//confirm player is in connection queue
+	if (!Network.isServer) {
+        return;
+    }
 	
 	var done:boolean = false;
 	for (IndexList = 0; IndexList < connectionQueue.Count; IndexList += 1) {
@@ -594,24 +601,30 @@ function _PlayerConnect(username:String, code:String, info:NetworkMessageInfo) {
 	}
 	
 	//Confirm username matches secure code
-	
-	/*
-    var www:WWW = new WWW("api.outpostsoftware.com/v1/auth/confirm?username=" + username + "&secure_code=" + secureCode);
-	
-	yield www;
-	
-	try {
-		if (wwwConfirm.text) {
-			if (wwwConfirm.text.Trim() == "fail") {
-				networkManager.KickPlayer(info.sender, "Server has lost connection to API");
-				return;
-			}
-		}
-	}
-	catch (err) {
-		networkManager.KickPlayer(info.sender, "Server has lost connection to API");
-		return;
-	}*/
+	if (!Settings.offline) {
+        try {
+            var www:WWW = new WWW(Settings.backend + "/v1/auth/confirm?username=" + username + "&secure_code=" + code);
+        }
+        catch (err) {
+            networkManager.KickPlayer(info.sender, "Could not connect to outpostsoftware.com");
+            return;
+        }
+        
+        yield www;
+        
+        if (!String.IsNullOrEmpty(www.error)) {
+            Debug.Log(www.error);
+            networkManager.KickPlayer(info.sender, "Could not connect to outpostsoftware.com");
+            return;
+        }
+        
+        var message:BackendMessage = BackendMessage(www.text);
+        
+        if (message.isError) {
+            networkManager.KickPlayer(info.sender, message.message[0]);
+            return;
+        }
+    }
 	
 	//all security layers passed, connect player now
 	networkManager.UpdatePlayer(info.sender);
@@ -653,14 +666,14 @@ function _PlayerConnect(username:String, code:String, info:NetworkMessageInfo) {
 
 @RPC
 function _JoinRequest(id:int, team:int, info:NetworkMessageInfo) {
-	if (networkManager.NPlayers[id].networkPlayer == info.sender || info.sender + "" == "-1") {
-		network.RPC("_JoinPlayer", RPCMode.All, id, team);
+	if (networkManager.NPlayers[id].networkPlayer == info.sender || info.sender + "" == "-1" && Network.isServer) {
+		JoinRequest(id, team);
 	}
 }
 
 @RPC
 function _SpawnRequest(id:int, main:int, secondary:int, ma1:int, ma2:int, ma3:int, sa1:int, sa2:int, sa3:int, g:int, info:NetworkMessageInfo) {
-	if (networkManager.NPlayers[id].networkPlayer == info.sender || info.sender + "" == "-1") {
+	if ((networkManager.NPlayers[id].networkPlayer == info.sender || info.sender + "" == "-1") && Network.isServer) {
 		//Security
 		if (main >= 0 && main < Loadout.gunsMain.length) {
 		if (secondary >= 0 && secondary < Loadout.gunsSecondary.length) {
@@ -679,7 +692,7 @@ function _SpawnRequest(id:int, main:int, secondary:int, ma1:int, ma2:int, ma3:in
 
 @RPC
 function _LeaveRequest(id:int, info:NetworkMessageInfo) {
-	if (networkManager.NPlayers[id].networkPlayer == info.sender || info.sender + "" == "-1") {
+	if ((networkManager.NPlayers[id].networkPlayer == info.sender || info.sender + "" == "-1") && Network.isServer) {
         if (networkManager.NPlayers[id].object) {
 			networkManager.NPlayers[id].object.Damage(Mathf.Infinity);
 		}
@@ -689,7 +702,7 @@ function _LeaveRequest(id:int, info:NetworkMessageInfo) {
 
 @RPC
 function _PlayerFireRequest(id:int, info:NetworkMessageInfo) {
-	if (networkManager.NPlayers[id].networkPlayer == info.sender) {
+	if (networkManager.NPlayers[id].networkPlayer == info.sender && Network.isServer) {
 		if (networkManager.NPlayers[id].object) {
 			if (!networkManager.NPlayers[id].vehicle) {
 				if (networkManager.NPlayers[id].object.WeaponInput(Time.time + networkManager.NPlayers[id].latancy)) {
@@ -707,7 +720,7 @@ function _PlayerFireRequest(id:int, info:NetworkMessageInfo) {
 
 @RPC
 function _SuicideRequest(id:int, info:NetworkMessageInfo) {
-	if (networkManager.NPlayers[id].networkPlayer == info.sender) {
+	if (networkManager.NPlayers[id].networkPlayer == info.sender && Network.isServer) {
 		if (networkManager.NPlayers[id].object) {
 			networkManager.NPlayers[id].object.Damage(Mathf.Infinity);
 		}
@@ -716,7 +729,7 @@ function _SuicideRequest(id:int, info:NetworkMessageInfo) {
 
 @RPC
 function _GrenadeThrowRequest(id:int, info:NetworkMessageInfo) {
-	if (networkManager.NPlayers[id].networkPlayer == info.sender) {
+	if (networkManager.NPlayers[id].networkPlayer == info.sender && Network.isServer) {
 		if (networkManager.NPlayers[id].object) {
 			networkManager.NPlayers[id].object.ThrowGrenade();
 		}
@@ -725,14 +738,14 @@ function _GrenadeThrowRequest(id:int, info:NetworkMessageInfo) {
 
 @RPC
 function _RequestReload(id:int, info:NetworkMessageInfo) {
-	if (networkManager.NPlayers[id].networkPlayer == info.sender && networkManager.NPlayers[id].object) {
+	if (networkManager.NPlayers[id].networkPlayer == info.sender && networkManager.NPlayers[id].object && Network.isServer) {
 		networkManager.NPlayers[id].object.WeaponStartReload(Time.time + networkManager.NPlayers[id].latancy);
 	}
 }
 
 @RPC
 function _VehicleToggleInput(id:int, info:NetworkMessageInfo) {
-	if (networkManager.NPlayers[id].networkPlayer == info.sender) {
+	if (networkManager.NPlayers[id].networkPlayer == info.sender && Network.isServer) {
 		VehicleToggleInput(id);
 	}
 }
@@ -742,6 +755,10 @@ function _VehicleToggleInput(id:int, info:NetworkMessageInfo) {
 Helper Functions
 ===========================
 */
+
+function JoinRequest(id:int, team:int) {
+    network.RPC("_JoinPlayer", RPCMode.All, id, team);
+}
 
 function VehicleToggleInput(id:int) {
 	if (networkManager.NPlayers[id].vehicle) {
@@ -840,14 +857,7 @@ function UpdateInput(input:InputState, id:int) {
 
 function AddPlayer(np:NetworkPlayer, username:String, code:String) {
 	networkManager.NPlayers[networkIdAssign] = new NPlayer(np, networkIdAssign, username, code);
-	for (nPlayer in networkManager.NPlayers.Values) {
-		if (nPlayer.id != networkIdAssign) {
-			network.RPC("_AddPlayer", RPCMode.Others, Network.player, networkIdAssign, username);
-		}
-		else {
-			network.RPC("_AddPlayer", RPCMode.Others, np, networkIdAssign, username);
-		}
-	}
+	network.RPC("_AddPlayer", RPCMode.Others, np, networkIdAssign, username);
 	networkIdAssign += 1;
 	return networkManager.NPlayers[networkIdAssign - 1];
 }
