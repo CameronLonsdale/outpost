@@ -305,6 +305,7 @@ function Update() {
                     }
                 }
                 else {
+                    freezePlayer = false;
                     damageTimer = 0;
                     
                     if (movementUpdateQueue.Count != 0) {
