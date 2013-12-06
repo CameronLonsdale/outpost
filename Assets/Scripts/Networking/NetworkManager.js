@@ -62,6 +62,9 @@ class NPlayer {
 	var object:Player;
 	var vehicle:Vehicle;
 	var vehicleSlot:int;
+    
+    //timers
+    var lastUpdateTime:float;
 	
 	//Network Stats
 	var latancy:float;
@@ -128,6 +131,10 @@ class NPlayer {
 	function ToString() {
 		return "NPlayers - id:" + id + ", username:" + username + ", team:" + team + ", object:" + (object != null);
 	}
+    
+    function GetLatancy() {
+        return latancy + (Time.time - lastUpdateTime);
+    }
 }
 
 

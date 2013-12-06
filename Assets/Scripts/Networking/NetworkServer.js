@@ -244,7 +244,7 @@ function Update() {
 			for (nPlayer in networkManager.NPlayers.Values) {
 				if (nPlayer.object) {
 					if (!nPlayer.object.Active) {
-						nPlayer.object.WeaponUpdate(Time.time + nPlayer.latancy);
+						nPlayer.object.WeaponUpdate(Time.time + nPlayer.GetLatancy());
 					}
 				}
 			}
@@ -501,7 +501,7 @@ function OnPlayerFire(id:int) {
                 nPlayer.object.ApplyLagState(Time.time);
             }
             else {
-                nPlayer.object.ApplyLagState(Time.time - (nPlayer.latancy + networkManager.NPlayers[id].latancy)/*TODO: add interpolation time*/);
+                nPlayer.object.ApplyLagState(Time.time - (nPlayer.GetLatancy() + networkManager.NPlayers[id].GetLatancy()));
             }
 		}
 		
@@ -705,12 +705,12 @@ function _PlayerFireRequest(id:int, info:NetworkMessageInfo) {
 	if (networkManager.NPlayers[id].networkPlayer == info.sender && Network.isServer) {
 		if (networkManager.NPlayers[id].object) {
 			if (!networkManager.NPlayers[id].vehicle) {
-				if (networkManager.NPlayers[id].object.WeaponInput(Time.time + networkManager.NPlayers[id].latancy)) {
+				if (networkManager.NPlayers[id].object.WeaponInput(Time.time + networkManager.NPlayers[id].GetLatancy())) {
 					OnPlayerFire(id);
 				}
 			}
 			else {
-				if (networkManager.NPlayers[id].vehicle.WeaponInput(networkManager.NPlayers[id].vehicleSlot, Time.time + networkManager.NPlayers[id].latancy)) {
+				if (networkManager.NPlayers[id].vehicle.WeaponInput(networkManager.NPlayers[id].vehicleSlot, Time.time + networkManager.NPlayers[id].GetLatancy())) {
 					OnPlayerFire(id);
 				}
 			}
@@ -739,7 +739,7 @@ function _GrenadeThrowRequest(id:int, info:NetworkMessageInfo) {
 @RPC
 function _RequestReload(id:int, info:NetworkMessageInfo) {
 	if (networkManager.NPlayers[id].networkPlayer == info.sender && networkManager.NPlayers[id].object && Network.isServer) {
-		networkManager.NPlayers[id].object.WeaponStartReload(Time.time + networkManager.NPlayers[id].latancy);
+		networkManager.NPlayers[id].object.WeaponStartReload(Time.time + networkManager.NPlayers[id].GetLatancy());
 	}
 }
 
@@ -844,6 +844,8 @@ function SpawnRequest(id:int, main:int, secondary:int, ma1:int, ma2:int, ma3:int
 }
 
 function UpdateInput(input:InputState, id:int) {
+    networkManager.NPlayers[id].lastUpdateTime = Time.time;
+    
 	if (!networkManager.NPlayers[id].vehicle) {
 		pState = networkManager.NPlayers[id].object.Move(input, 1.0/networkManager.UPS);
 		

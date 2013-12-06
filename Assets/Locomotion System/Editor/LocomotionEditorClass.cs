@@ -37,7 +37,7 @@ class LocomotionEditorClass : Editor {
 		if (!lc)
 			return;
 		
-		EditorGUIUtility.LookLikeControls(100);
+		//EditorGUIUtility.LookLikeControls(100);
 		
 		GUI.changed = false;
 		lc.groundPlaneHeight = EditorGUILayout.FloatField("Ground Height", lc.groundPlaneHeight);
@@ -80,7 +80,7 @@ class LocomotionEditorClass : Editor {
 		if (legsFoldout) {
 			int removeIndex = -1;
 			for (int l=0; l<legs.Count; l++) {
-				EditorGUIUtility.LookLikeControls(50);
+				//EditorGUIUtility.LookLikeControls(50);
 				GUILayout.BeginHorizontal();
 				string str = "Leg " + (l+1) + (legs[l].hip != null ? " (" + legs[l].hip.name + ")" : "");
 				legFoldouts[l] = EditorGUILayout.Foldout(legFoldouts[l], str);
@@ -101,7 +101,7 @@ class LocomotionEditorClass : Editor {
 					GUILayout.BeginHorizontal();
 					EditorGUILayout.PrefixLabel("Foot");
 					EditorGUI.indentLevel--;
-					EditorGUIUtility.LookLikeControls(45, 0);
+					//EditorGUIUtility.LookLikeControls(45, 0);
 					GUILayout.BeginVertical();
 					li.footWidth = EditorGUILayout.FloatField("Width", li.footWidth);
 					li.footLength = EditorGUILayout.FloatField("Length", li.footLength);
@@ -146,7 +146,7 @@ class LocomotionEditorClass : Editor {
 			
 			lc.legs = legs.ToArray();
 			
-			EditorGUIUtility.LookLikeControls(100);
+			//EditorGUIUtility.LookLikeControls(100);
 		}
 		
 		EditorGUILayout.Space();
@@ -159,7 +159,7 @@ class LocomotionEditorClass : Editor {
 		
 		animsFoldout = EditorGUILayout.Foldout(animsFoldout, "Source Animations");
 		if (animsFoldout) {
-			EditorGUIUtility.LookLikeControls(160);
+			//EditorGUIUtility.LookLikeControls(160);
 			
 			if (rebuildGroups || groups == null) {
 				rebuildGroups = false;
@@ -178,7 +178,7 @@ class LocomotionEditorClass : Editor {
 				}
 				
 				InspectorAnimationGroup unusedGroup = groups[groups.Count-1];
-				List<AnimationClip> unusedClips = new List<AnimationClip>(AnimationUtility.GetAnimationClips(lc.animation));
+				List<AnimationClip> unusedClips = new List<AnimationClip>(AnimationUtility.GetAnimationClips(lc.animation.gameObject));
 				
 				if (lc.sourceAnimations == null)
 					lc.sourceAnimations = new MotionAnalyzer[0];
@@ -345,7 +345,7 @@ class LocomotionEditorClass : Editor {
 				}
 			}
 			
-			EditorGUIUtility.LookLikeControls(120);
+			//EditorGUIUtility.LookLikeControls(120);
 			
 			// Apply changes to selections
 			bool clearInspectorGroups = false;
