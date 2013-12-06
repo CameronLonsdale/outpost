@@ -501,7 +501,7 @@ function OnPlayerFire(id:int) {
                 nPlayer.object.ApplyLagState(Time.time);
             }
             else {
-                nPlayer.object.ApplyLagState(Time.time - (nPlayer.latancy + networkManager.NPlayers[id].latancy));
+                nPlayer.object.ApplyLagState(Time.time - (nPlayer.latancy + networkManager.NPlayers[id].latancy)/*TODO: add interpolation time*/);
             }
 		}
 		
