@@ -844,8 +844,6 @@ function SpawnRequest(id:int, main:int, secondary:int, ma1:int, ma2:int, ma3:int
 }
 
 function UpdateInput(input:InputState, id:int) {
-    networkManager.NPlayers[id].lastUpdateTime = Time.time;
-    
 	if (!networkManager.NPlayers[id].vehicle) {
 		pState = networkManager.NPlayers[id].object.Move(input, 1.0/networkManager.UPS);
 		

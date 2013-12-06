@@ -690,6 +690,8 @@ function ApplyAnimations(state:PlayerState, deltaTime:float) {
 }
 
 function Move(input:InputState, deltaTime:float) {
+    networkManager.NPlayers[NetId].lastUpdateTime = Time.time;
+    
 	//Update previous
 	ApplyState(nextState);
 	previousState = nextState.Copy();
