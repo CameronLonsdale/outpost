@@ -13,12 +13,13 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   - 65: {fileID: 6500000}
+  - 114: {fileID: 11400004}
   m_Layer: 0
   m_Name: WoodenCrate1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &400000
 Transform:
@@ -26,8 +27,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: .184143081, y: .682708859, z: .6827088, w: -.184143066}
-  m_LocalPosition: {x: -10.9730234, y: 15.9314632, z: -.350725442}
+  m_LocalRotation: {x: 1.79721393e-08, y: 1.8552636e-07, z: -.700951993, w: .713208556}
+  m_LocalPosition: {x: 5.60580635, y: .35842222, z: 43.1202011}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,8 +41,8 @@ Renderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
+  m_LightmapIndex: 5
+  m_LightmapTilingOffset: {x: .021484375, y: .021484375, z: .0829238892, w: .900306702}
   m_Materials:
   - {fileID: 2100000, guid: 213447bba7278aa48bb091d384953e38, type: 2}
   m_SubsetIndices: 
@@ -49,6 +50,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &3300000
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -78,6 +82,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 100
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400060, guid: 249295d9cb694cd4dbbe8f6eeb2741b8, type: 2}
@@ -91,6 +96,20 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf240dab9debc84da67e0c417535eb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 0
+  Parent: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

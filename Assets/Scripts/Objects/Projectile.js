@@ -164,12 +164,17 @@ function EvalHit(hit:RaycastHit) {
 			}
 			
 			Hit(hitType, parent, hit);
+            if (percentage > 0) {
+                hit.normal = -hit.normal;
+                Hit(hitType, parent, hit);
+            }
 		}
 	}
 }
 
 function Hit(type:int, parnt:boolean, hit:RaycastHit) {
-	obj = Instantiate(networkManager.BulletHits[type], hit.point + hit.normal/20, Quaternion.FromToRotation(Vector3.up, hit.normal));
+	obj = Instantiate(networkManager.BulletHits[type], hit.point + hit.normal/20, Quaternion.identity);
+    obj.forward = hit.normal;
 	Random.seed = Time.time;
 	obj.position += obj.TransformDirection(Vector3.forward)*Random.Range(-0.3, 0.3);
 	if (parnt) {

@@ -861,11 +861,17 @@ function ServerEditScreen(weight:float) {
     ServerSettings.targetKills = GUILayout.HorizontalSlider(ServerSettings.targetKills, 10, 1000, GUILayout.Width(swidth/2));
     GUILayout.EndHorizontal();
     
+    GUILayout.BeginHorizontal();
+    GUILayout.Label("Listed");
+    GUILayout.FlexibleSpace();
+    ServerSettings.listed = GUILayout.Toggle(ServerSettings.listed, "", GUILayout.Width(swidth/2));
+    GUILayout.EndHorizontal();
+    
     GUILayout.FlexibleSpace();
     
     if (GUILayout.Button("Start Server")) {
         Network.InitializeServer(ServerSettings.playerLimit, 2000, true);
-        if (!Settings.offline) {
+        if (!Settings.offline && ServerSettings.listed) {
             MasterServer.RegisterHost("OutpostGameV" + Settings.version, ServerSettings.serverName, ServerSettings.map + ";" + ServerSettings.gameMode + ";" + ServerSettings.comment);
         }
         ServerSettings.Save();

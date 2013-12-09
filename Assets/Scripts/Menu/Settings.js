@@ -261,6 +261,7 @@ static class SoundSettings {
 static class ServerSettings {
     var serverName:String = "Default Server Name";
     var comment:String = "No-comment";
+    var listed:boolean = true;
     
     var playerLimit:int = 10;
     

@@ -14,6 +14,7 @@ GameObject:
   - 114: {fileID: 11400002}
   - 114: {fileID: 11400000}
   - 65: {fileID: 6500000}
+  - 114: {fileID: 11400006}
   m_Layer: 0
   m_Name: WoodenPlank
   m_TagString: Untagged
@@ -50,6 +51,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &3300000
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -79,6 +83,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8e826a661066b914da711b268bf5d6ff, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Percent: 80
 --- !u!114 &11400002
 MonoBehaviour:
@@ -90,6 +95,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 16629e8344e20f142ab4e99285ceb5db, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
   Health: 500
   Dependancy: {fileID: 0}
   DeathPrefab: {fileID: 400000, guid: 65d3daee2132c48478d8d07d594db0d6, type: 2}
@@ -103,6 +109,20 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8b576efc5a124048b890556c10f18ba, type: 3}
   m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &11400006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf240dab9debc84da67e0c417535eb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 0
+  Parent: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

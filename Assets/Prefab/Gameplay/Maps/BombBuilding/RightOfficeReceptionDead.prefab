@@ -12,6 +12,7 @@ GameObject:
   - 23: {fileID: 2300000}
   - 65: {fileID: 6500000}
   - 54: {fileID: 5400000}
+  - 114: {fileID: 11400000}
   m_Layer: 12
   m_Name: RightOfficeReceptionPiece2
   m_TagString: Untagged
@@ -46,6 +47,7 @@ GameObject:
   - 23: {fileID: 2300002}
   - 65: {fileID: 6500002}
   - 54: {fileID: 5400002}
+  - 114: {fileID: 11400002}
   m_Layer: 12
   m_Name: RightOfficeReceptionPiece1
   m_TagString: Untagged
@@ -106,6 +108,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!23 &2300002
 Renderer:
   m_ObjectHideFlags: 1
@@ -124,6 +129,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &3300000
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -192,6 +200,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .15000008, y: .881529391, z: .708120406}
   m_Center: {x: -.00310799992, y: .0510705262, z: -.00540751079}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf240dab9debc84da67e0c417535eb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 1
+  Parent: 0
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf240dab9debc84da67e0c417535eb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 1
+  Parent: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

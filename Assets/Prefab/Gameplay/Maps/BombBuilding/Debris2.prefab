@@ -12,6 +12,7 @@ GameObject:
   - 23: {fileID: 2300000}
   - 54: {fileID: 5400000}
   - 64: {fileID: 6400000}
+  - 114: {fileID: 11400000}
   m_Layer: 12
   m_Name: Debris2
   m_TagString: Untagged
@@ -48,6 +49,9 @@ Renderer:
   m_UseLightProbes: 0
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_SortingLayerID: 0
 --- !u!33 &3300000
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -83,6 +87,19 @@ MeshCollider:
   m_SmoothSphereCollisions: 0
   m_Convex: 1
   m_Mesh: {fileID: 4300072, guid: f4f5082171fe3a04688068d69674e809, type: 3}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eaf240dab9debc84da67e0c417535eb3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 1
+  Parent: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

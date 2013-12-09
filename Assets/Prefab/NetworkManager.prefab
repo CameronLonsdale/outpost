@@ -62,6 +62,7 @@ Camera:
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_HDR: 0
+  m_OcclusionCulling: 1
 --- !u!81 &8100000
 AudioListener:
   m_ObjectHideFlags: 1
@@ -92,10 +93,12 @@ MonoBehaviour:
   PlayerPrefab: {fileID: 400000, guid: f0a4bef21dc504f4f8c6eeeebd250e58, type: 2}
   BulletHits:
   - {fileID: 400000, guid: d6a5c8f0f803ed94aa0ee5091f28bac7, type: 2}
-  - {fileID: 400000, guid: 6218cf260d74b914d85a2ffb9f1359f6, type: 2}
+  - {fileID: 400002, guid: 0ca638251b8306c43b28b25190862f4f, type: 2}
   - {fileID: 400000, guid: 02f6c420e531a0e4283e23f32a904b2d, type: 2}
-  - {fileID: 400000, guid: 00a102b7ff70d2e41aa1a6e1b30962ee, type: 2}
-  - {fileID: 400000, guid: f56b8ee9f745c344e849dc6706541cea, type: 2}
+  - {fileID: 400002, guid: ec5fb0eae59e4a843809acb1caa3aa91, type: 2}
+  - {fileID: 400002, guid: 35fb7d6177dc37a46993935e8df79f94, type: 2}
+  - {fileID: 400002, guid: d1c9a6c4c30dc6742b170cd404a6f79a, type: 2}
+  - {fileID: 400002, guid: ae3db7d03b7a3af44ae945589082f9d8, type: 2}
   ShootEffects:
   - {fileID: 400002, guid: 1f22810a05d3fd942b43a1b082b81a83, type: 2}
   - {fileID: 400002, guid: e2497ca8b69035d46b7bd71b88515874, type: 2}
