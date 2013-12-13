@@ -10,4 +10,4 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoadingScreen.unity
   - enabled: 1
-    path: Assets/Scenes/BetterBombBuilding.unity
+    path: Assets/Scenes/BombBuilding.unity
