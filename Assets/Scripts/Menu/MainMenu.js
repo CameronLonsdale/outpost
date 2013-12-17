@@ -66,6 +66,8 @@ var mapTexture:Texture;
 //outpost symbol
 var image:Texture;
 var loginStrip:Texture;
+var BottomBar:Texture;
+var MiddleBump:Texture;
 //rank
 var rank:Texture;
 
@@ -638,11 +640,15 @@ function MainMenuScreen(weight:float) {
     //Bottom Bar
     //rank, exp, kills, button, casualties, war direction
     //
-    GUI.Box(Rect(0, sheight/10*8.75, swidth, sheight/10*1.25), "");
+    GUI.DrawTexture(Rect(0, 0, swidth, sheight), BottomBar, ScaleMode.StretchToFill);	
     
-    if (GUI.Button(Rect(swidth/10*4, sheight/20*17, swidth/10*2, swidth/20*3), "Swap")) {
+    GUI.DrawTexture(Rect(swidth/2.9, sheight/16*13, swidth/16*5, sheight/16*5), MiddleBump, ScaleMode.ScaleToFit);	
+    
+   // GUI.Box(Rect(0, sheight/10*8.75, swidth, sheight/10*1.25), "");
+    
+    //if (GUI.Button(Rect(swidth/10*4, sheight/20*17, swidth/10*2, swidth/20*3), "Swap")) {
         //swap team view
-    }
+    //}
     /*============
 	left side
 	=============*/
