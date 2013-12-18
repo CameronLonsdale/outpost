@@ -461,7 +461,7 @@ function LoginScreen(weight:float) {
     //GUI.Box(Rect(swidth/16*5, 0, swidth/16*6, sheight/16*6), "");	
     //GUI.Box(Rect(swidth/16*6, sheight/16*6, swidth/16*4, sheight/16*10), "");
     
-    //GUI.DrawTexture(Rect(swidth/16*6.5, sheight/16, swidth/16*3, sheight/16*4), image, ScaleMode.ScaleToFit);	
+    GUI.DrawTexture(Rect(swidth/16*6.5, sheight/16, swidth/16*3, sheight/16*4), image, ScaleMode.ScaleToFit);	
     
     if (Settings.upToDate) {
         if (loginTypeWeight > 0.1) {
@@ -483,8 +483,7 @@ function LoginGUI(weight:float) {
     GUILayout.BeginArea(Rect(swidth/16*6.2, sheight/16*7, swidth/16*3.6, sheight/16*8.5 - 4));
     
     GUILayout.Label("Username");
-    GUILayout.Space(5);    
-    
+   
     AccountSettings.username = GUILayout.TextField(AccountSettings.username, 16);
     
    	//GUILayout.Space(sheight/40);
@@ -495,7 +494,6 @@ function LoginGUI(weight:float) {
     GUILayout.Label("Save");
     GUILayout.EndHorizontal();
     
-    GUILayout.Space(5);
     GUILayout.BeginHorizontal();
     AccountSettings.password = GUILayout.PasswordField(AccountSettings.password, "*"[0], 16, GUILayout.Width(swidth/16*3));
     AccountSettings.savePassword = GUILayout.Toggle(AccountSettings.savePassword, "");
