@@ -65,6 +65,9 @@ var mapTexture:Texture;
 
 //outpost symbol
 var image:Texture;
+var loginStrip:Texture;
+var BottomBar:Texture;
+var MiddleBump:Texture;
 //rank
 var rank:Texture;
 
@@ -410,7 +413,7 @@ function OptionsDropdown() {
     GUILayout.BeginArea(Rect(Screen.width/12*3 + Screen.width/12*4 + 7, Screen.height/16, Screen.width/12*2, Screen.height/16*4));
     GUILayout.Space(2);
     
-    if (GUILayout.Button("Options")) {
+    if (GUILayout.Button("Settings")) {
         window = MenuWindow.options;
         dropdown = Dropdown.none;
     }
@@ -431,7 +434,6 @@ function OptionsDropdown() {
 function QuitDropdown() {
     GUI.skin.button.fontSize = fontSize - 5;
     GUILayout.BeginArea(Rect(Screen.width - Screen.width/12*3 + 4, Screen.height/16, Screen.width/12, Screen.height/16*4));
-    GUILayout.Space(2);
     
     if (GUILayout.Button("Logout")) {
         window = MenuWindow.quickMatch;
@@ -453,8 +455,12 @@ function LoginScreen(weight:float) {
     GUI.color.a = weight;
     
     //Draw Layout
-    GUI.Box(Rect(swidth/16*5, 0, swidth/16*6, sheight/16*6), "");	
-    GUI.Box(Rect(swidth/16*6, sheight/16*6, swidth/16*4, sheight/16*10), "");
+    GUI.DrawTexture(Rect(0,0,swidth, sheight), loginStrip, ScaleMode.ScaleToFit);
+    
+   	
+    //GUI.Box(Rect(swidth/16*5, 0, swidth/16*6, sheight/16*6), "");	
+    //GUI.Box(Rect(swidth/16*6, sheight/16*6, swidth/16*4, sheight/16*10), "");
+    
     GUI.DrawTexture(Rect(swidth/16*6.5, sheight/16, swidth/16*3, sheight/16*4), image, ScaleMode.ScaleToFit);	
     
     if (Settings.upToDate) {
@@ -474,19 +480,25 @@ function LoginScreen(weight:float) {
 
 function LoginGUI(weight:float) {
     GUI.color = Color(1, 1, 1, weight);
-    GUILayout.BeginArea(Rect(swidth/16*6, sheight/16*6, swidth/16*4, sheight/16*10 - 4));
+    GUILayout.BeginArea(Rect(swidth/16*6.2, sheight/16*7, swidth/16*3.6, sheight/16*8.5 - 4));
     
     GUILayout.Label("Username");
+   
     AccountSettings.username = GUILayout.TextField(AccountSettings.username, 16);
-    GUILayout.Label("Password");
-    AccountSettings.password = GUILayout.PasswordField(AccountSettings.password, "*"[0], 16);
     
-    GUILayout.BeginHorizontal();
-    GUILayout.Label("Save Password");
+   	//GUILayout.Space(sheight/40);
+   	
+   	GUILayout.BeginHorizontal();
+    GUILayout.Label("Password");
     GUILayout.FlexibleSpace();
-    AccountSettings.savePassword = GUILayout.Toggle(AccountSettings.savePassword, "");
+    GUILayout.Label("Save");
     GUILayout.EndHorizontal();
     
+    GUILayout.BeginHorizontal();
+    AccountSettings.password = GUILayout.PasswordField(AccountSettings.password, "*"[0], 16, GUILayout.Width(swidth/16*3));
+    AccountSettings.savePassword = GUILayout.Toggle(AccountSettings.savePassword, "");
+    GUILayout.EndHorizontal();
+      
     GUILayout.Label(loginMessage);
     
     GUILayout.FlexibleSpace();
@@ -516,7 +528,7 @@ function LoginGUI(weight:float) {
 
 function RegisterGUI(weight:float) {
     GUI.color.a = weight;
-    GUILayout.BeginArea(Rect(swidth/16*6, sheight/16*6, swidth/16*4, sheight/16*10 - 4));
+    GUILayout.BeginArea(Rect(swidth/16*6.2, sheight/16*7, swidth/16*3.6, sheight/16*8.5 - 4));
     
     GUILayout.Label("Username");
     AccountSettings.username = GUILayout.TextField(AccountSettings.username, 16);
@@ -626,11 +638,15 @@ function MainMenuScreen(weight:float) {
     //Bottom Bar
     //rank, exp, kills, button, casualties, war direction
     //
-    GUI.Box(Rect(0, sheight/10*8.75, swidth, sheight/10*1.25), "");
+    GUI.DrawTexture(Rect(0, 0, swidth, sheight), BottomBar, ScaleMode.StretchToFill);	
     
-    if (GUI.Button(Rect(swidth/10*4, sheight/20*17, swidth/10*2, swidth/20*3), "Swap")) {
+    GUI.DrawTexture(Rect(swidth/2.9, sheight/16*13, swidth/16*5, sheight/16*5), MiddleBump, ScaleMode.ScaleToFit);	
+    
+   // GUI.Box(Rect(0, sheight/10*8.75, swidth, sheight/10*1.25), "");
+    
+    //if (GUI.Button(Rect(swidth/10*4, sheight/20*17, swidth/10*2, swidth/20*3), "Swap")) {
         //swap team view
-    }
+    //}
     /*============
 	left side
 	=============*/
