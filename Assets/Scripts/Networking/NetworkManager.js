@@ -16,32 +16,6 @@ enum GameModes {
 	CP = 4
 };
 
-enum Genders {
-	male = 0, 
-	female = 1
-};
-
-//Single Player stats instance
-class CharacterStats {
-	var name:String;
-	var gender:int = 0;
-	var level:int;
-	var experience:int;
-	
-	function CharacterStats(n:String, g:int, l:int, e:int) {
-		name = n;
-		gender = g;
-		level = l;
-		experience = e;
-	}
-	
-	function CharacterStats(parse:String) {
-		var input:String[] = parse.Trim().Split("`"[0]);
-		name = input[0];
-		gender = parseInt(input[1]);
-	}
-}
-
 //Single player on the network
 class NPlayer {
 	var networkPlayer:NetworkPlayer;

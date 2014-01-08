@@ -49,9 +49,30 @@ static class Stats {
     var t1Kills:long;
     var t2Kills:long;
     
+    var character:CharacterStats;
+    
     function get totalKills():long {
         return t1Kills + t2Kills;
     }
+}
+
+class CharacterStats {
+    var name:String;
+    var experience:int;
+    var gender:int;
+    
+    var guns:GunStats[];
+    
+    function get level():int {
+        //get level functions
+        return 1;
+    }
+}
+
+class GunStats {
+    var id:int;
+    var kills:int;
+    var deaths:int;
 }
 
 /*

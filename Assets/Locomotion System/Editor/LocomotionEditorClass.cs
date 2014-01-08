@@ -413,7 +413,7 @@ class LocomotionEditorClass : Editor {
 	}
 	
 	void OnSceneGUI () {
-		if (Application.isPlaying || AnimationUtility.InAnimationMode())
+		if (Application.isPlaying || AnimationMode.InAnimationMode())
 			return;
 		
 		Vector3 up = lc.transform.up;
